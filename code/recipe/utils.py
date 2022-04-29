@@ -24,9 +24,18 @@ class GCD:
         self.targets = self._get_targets()
         
         self.resize = resize
-    
-        self.norm_mean = 155.5673
-        self.norm_std = 70.5983
+        
+        ### Extracted in notebook: GCD image stats
+        self.meanR = 123.0767
+        self.meanG = 156.9277
+        self.meanB = 195.6296
+        
+        self.stdR = 22.0008
+        self.stdG = 19.7520
+        self.stdB = 17.5623
+        
+        norm_transform = T.Normalize(mean=[self.meanR, self.meanG, self.meanB], 
+                    std=[self.stdR, self.stdG, self.stdB])
         
         
     def __len__(self):
@@ -34,7 +43,10 @@ class GCD:
 
     def __getitem__(self, item):
         image = read_image(self.image_paths[item]).float()
-        image = (image-self.norm_mean)/self.norm_std
+        #Normalize by channel
+        image[0,:,:] = (image[0,:,:]-self.meanR)/self.stdR
+        image[1,:,:] = (image[1,:,:]-self.meanG)/self.stdG
+        image[2,:,:] = (image[2,:,:]-self.meanB)/self.stdB
 
 
         targets = self.targets[item]
