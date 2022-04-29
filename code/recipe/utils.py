@@ -34,7 +34,7 @@ class GCD:
         self.stdG = 19.7520
         self.stdB = 17.5623
         
-        norm_transform = T.Normalize(mean=[self.meanR, self.meanG, self.meanB], 
+        self.norm_transform = T.Normalize(mean=[self.meanR, self.meanG, self.meanB], 
                     std=[self.stdR, self.stdG, self.stdB])
         
         
@@ -44,9 +44,7 @@ class GCD:
     def __getitem__(self, item):
         image = read_image(self.image_paths[item]).float()
         #Normalize by channel
-        image[0,:,:] = (image[0,:,:]-self.meanR)/self.stdR
-        image[1,:,:] = (image[1,:,:]-self.meanG)/self.stdG
-        image[2,:,:] = (image[2,:,:]-self.meanB)/self.stdB
+        image = self.norm_transform(image)
 
 
         targets = self.targets[item]
