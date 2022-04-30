@@ -207,6 +207,27 @@ class GraphClassifier(nn.Module):
         if isinstance(m, nn.Linear):
             torch.nn.init.xavier_uniform_(m.weight, gain=gain)
             m.bias.data.fill_(0)
+            
+    def get_deep_features(self, x):
+        return self.cnn(x)
+    
+    def message_passing(self, deep_features):
+        ### CREATE GRAPH
+        with torch.no_grad():
+            norm = deep_features.norm(dim=1).view(-1,1)
+            batch_nodes = deep_features/norm
+
+            sim_matrix = batch_nodes @ batch_nodes.T
+            adj_matrix = torch.where(sim_matrix > self.THRESHOLD, 1, 0)
+            row, col = torch.where(adj_matrix==1)
+
+            g = dgl.graph((row, col))
+        
+        agg_features = self.graphconv(g, deep_features)
+        final_features = torch.cat([deep_features, agg_features], dim=1)
+                
+        return self.mlp(final_features)
+        
         
     def get_adjacency_matrix(self, x):
         with torch.no_grad():
