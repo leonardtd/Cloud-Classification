@@ -6,13 +6,15 @@ from .modules import *
 
 
 class IsotropicVIG(nn.Module):
-    def __init__(self, in_channels, out_channels, num_blocks, kernel_size=16, patch_size=4):
+    def __init__(self, img_hw, in_channels, out_channels, num_blocks, kernel_size=16, patch_size=4):
         super().__init__()
-
+        
+        self.hw = img_hw
         self.num_blocks = num_blocks
+        self.patch_size = patch_size
 
         self.patchifier = Patchifier(
-            patch_size=patch_size, hidden_channels=in_channels, norm=True
+            hw=img_hw, patch_size=patch_size, hidden_channels=in_channels
         )
         self.network = nn.ModuleList()
         self.norms = nn.ModuleList()
@@ -23,7 +25,7 @@ class IsotropicVIG(nn.Module):
 
         self.head = nn.Sequential(
             nn.Dropout(0.1),
-            nn.Linear(in_channels*(224//patch_size)**2, 512, bias=False),
+            nn.Linear(in_channels*(img_hw//patch_size)**2, 512, bias=False),
             nn.GELU(),
             nn.Linear(512, out_channels, bias=True)
         )
@@ -50,6 +52,7 @@ class IsotropicVIG(nn.Module):
             x = block(x)
             x = F.gelu(x)
             x = self.norms[i](x)
+            x = F.dropout(x, 0.7, training=self.training)
 
         x = x.flatten(1)
       

@@ -1,15 +1,16 @@
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 from .graph_conv import *
 from .utils import *
 
 
 class Patchifier(nn.Module):
-    def __init__(self, patch_size=4, hidden_channels=768, norm=True):
+    def __init__(self, hw, patch_size=4, hidden_channels=768):
         super().__init__()
 
-        hw = 224  # img height/width
+        self.hw = hw  # img height/width
 
         self.patch_size = patch_size
         self.proyection = nn.Conv2d(  # No overlap
@@ -19,7 +20,6 @@ class Patchifier(nn.Module):
             stride=patch_size,
         )
 
-        self.norm = nn.BatchNorm2d(hidden_channels) if norm else nn.Identity()
 
         self.pos_embedding = nn.Parameter(  # Init at 0
             torch.zeros(
@@ -32,7 +32,6 @@ class Patchifier(nn.Module):
 
     def forward(self, x):
         x = self.proyection(x)
-        x = self.norm(x)
         x = x + self.pos_embedding
         return x
 
@@ -42,9 +41,11 @@ class FFN(nn.Module):
         super().__init__()
 
         self.feed_forward = nn.Sequential(
-            nn.Conv2d(in_channels, in_channels, 1, bias=False),
+            nn.Conv2d(in_channels, 2*in_channels, 1, bias=False),
             nn.GELU(),
-            nn.Conv2d(in_channels, in_channels, 1, bias=False),
+            nn.BatchNorm2d(2*in_channels),
+            nn.Conv2d(2*in_channels, in_channels, 1, bias=False),
+            
         )
 
     def forward(self, x):
@@ -64,15 +65,22 @@ class Grapher(nn.Module):
             in_channels, in_channels, act="gelu", norm="batch", bias=True
         )
 
+        self.norms = nn.ModuleList()
+        for _ in range(2):
+            self.norms.append(nn.BatchNorm2d(in_channels))
+
     def forward(self, x):
 
         input = x
         # 1. fc1
         x = self.fc1(x)
+        x = self.norms[0](x)
         # 2. Get index based on knns
         edge_index = dense_knn_matrix(x.detach(), self.k)
         # 3. Max Relative Graph Convolution
         x = self.graph_conv(x, edge_index)
+        x = F.gelu(x)
+        x = self.norms[1](x)
         # 4. fc2
         x = self.fc2(x)
         return x + input
@@ -85,8 +93,8 @@ class Block(nn.Module):
         self.block = nn.Sequential(
             Grapher(in_channels, kernel_size), 
             nn.GELU(),
-            nn.BatchNorm2d(in_channels),
-            FFN(in_channels),
+            nn.BatchNorm2d(in_channels), 
+            FFN(in_channels)
         )
 
     def forward(self, x):

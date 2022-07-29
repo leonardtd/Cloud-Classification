@@ -13,17 +13,19 @@ from dgl.nn import GATConv, GraphConv
 
 
 from torchvision import models
+import torchvision.transforms as T
 import torch.nn as nn
 import torch.nn.functional as F
 
 
 class GCD:
-    def __init__(self, image_paths, resize=None):
+    def __init__(self, image_paths, resize=None, augmentation=False):
 
         self.image_paths  = image_paths
         self.targets = self._get_targets()
         
         self.resize = resize
+        self.augmentation = augmentation
         
         ### Extracted in notebook: GCD image stats
         self.meanR = 123.0767
@@ -36,6 +38,11 @@ class GCD:
         
         self.norm_transform = T.Normalize(mean=[self.meanR, self.meanG, self.meanB], 
                     std=[self.stdR, self.stdG, self.stdB])
+        
+        self.transform = T.Compose([T.RandomHorizontalFlip(),
+                      T.RandomVerticalFlip(),
+                      T.RandomRotation((-12,12)),
+                      ])
         
         
     def __len__(self):
@@ -53,11 +60,13 @@ class GCD:
 
         if self.resize is not None:
             image = T.Resize(self.resize)(image)
+            
+        if self.augmentation is not None:
+            image = self.transform(image)
 
         return {
             "images": image,
             "targets": targets,
-            'paths': self.image_paths[item].split('/')[-1]
         }
     
     

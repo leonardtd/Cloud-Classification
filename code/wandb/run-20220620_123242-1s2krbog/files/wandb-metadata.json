@@ -1,0 +1,26 @@
+{
+    "os": "Linux-5.4.0-109-generic-x86_64-with-glibc2.27",
+    "python": "3.9.7",
+    "heartbeatAt": "2022-06-20T17:32:43.900965",
+    "startedAt": "2022-06-20T17:32:42.723902",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_count": 4,
+    "cpu_count": 24,
+    "cuda": null,
+    "args": [
+        "-f",
+        "/home/ltorres/.local/share/jupyter/runtime/kernel-0fb79d6e-bd09-41f8-8d95-92f469254573.json"
+    ],
+    "state": "running",
+    "program": "leo/Cloud-Classification/code/ViG/ViG training.ipynb",
+    "root": "/home/ltorres/leo/Cloud-Classification",
+    "git": {
+        "remote": "https://github.com/leonardtd/Cloud-Classification.git",
+        "commit": "0d3b86550e96e91cc1e87eac5536b4d8f5dd3729"
+    },
+    "email": "leonardtd@gmail.com",
+    "host": "discovery",
+    "username": "ltorres",
+    "executable": "/home/ltorres/miniconda3/bin/python"
+}
