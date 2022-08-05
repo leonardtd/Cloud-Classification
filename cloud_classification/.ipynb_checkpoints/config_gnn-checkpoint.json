@@ -1,0 +1,36 @@
+{
+    "hardware": {
+        "device": "cuda:3",
+    },
+    "data": {
+        "path_dataset": "/data/ltorres",
+        "path_save_weights": "/data/CLOUD_CLASSIFICATION_WEIGHTS",
+        
+        // image preprocessing
+        "resize": 224,
+        "use_augmentation": true,
+    },
+    "hyperparameters":{
+        "epochs": 30,
+        "batch_size": 32,
+        
+        "learning_rate": 0.0003,
+        "lr_decay_steps": 15,
+        "lr_decay_gamma": 1,
+        "early_stopping_tolerance": 5,
+        
+        // loss & optimizer
+        "loss_fn": "cross-entropy",
+        "optimizer": "adam", 
+    },
+    "model": {
+        "hidden_dim": 512,
+        "num_hidden": 2,
+        "num_classes": 7,
+        "conv_type": "gcn",
+        "conv_parameters": {"num_heads":4, "residual": True, "agg":"mean"}, //only for gat
+        "graph_builder": "cos_sim",
+        "builder_parameter": 0.5,
+        "use_both_heads": false,
+    }
+}
