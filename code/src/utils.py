@@ -126,6 +126,8 @@ def build_dataset_gcd(batch_size):
 def build_model_gatconv(num_classes, hid_dim, num_hidden, num_heads, threshold, device):
     return graph_nets.GATConvGNN(num_classes, hid_dim, num_hidden, num_heads, threshold).to(device)
 
+
+
 def build_optimizer(optim_type, model, lr):
     
     if optim_type=='adam':

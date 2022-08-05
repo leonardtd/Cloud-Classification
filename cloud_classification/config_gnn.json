@@ -14,12 +14,14 @@
         "batch_size": 32,
 
         "learning_rate": 0.0003,
-        "lr_decay_steps": 15,
-        "lr_decay_gamma": 1,
         "early_stopping_tolerance": 5,
         
-        "loss_fn": "cross-entropy",
-        "optimizer": "adam"
+        "criterion": "cross_entropy",
+        "optimizer": "adam",
+        
+        "use_scheduler": true,
+        "lr_decay_steps": 15,
+        "lr_decay_gamma": 1,
     },
     "model": {
         "hidden_dim": 512,
@@ -27,7 +29,7 @@
         "num_classes": 7,
         "conv_type": "gcn",
         "conv_parameters": {"num_heads":4, "residual": true, "agg":"mean"},
-        "graph_builder": "cos_sim",
+        "adjacency_builder": "cos_sim",
         "builder_parameter": 0.5,
         "use_both_heads": false
     }

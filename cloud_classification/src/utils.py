@@ -6,6 +6,9 @@ import glob
 
 import numpy as np
 import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torch.optim import lr_scheduler
 
 
 def set_seed(seed):
@@ -60,7 +63,7 @@ def configure_model(config_file, use_wandb):
         lr_decay_steps = config_file["hyperparameters"]["lr_decay_steps"],
         lr_decay_gamma = config_file["hyperparameters"]["lr_decay_gamma"],
         early_stopping_tolerance = config_file["hyperparameters"]["early_stopping_tolerance"],
-        loss_fn = config_file["hyperparameters"]["loss_fn"],
+        criterion = config_file["hyperparameters"]["criterion"],
         optimizer = config_file["hyperparameters"]["optimizer"],
         
         # model
@@ -69,7 +72,7 @@ def configure_model(config_file, use_wandb):
         num_classes = config_file["model"]["num_classes"],
         conv_type = config_file["model"]["conv_type"],
         conv_parameters = config_file["model"]["conv_parameters"],
-        graph_builder = config_file["model"]["graph_builder"],
+        adjacency_builder = config_file["model"]["adjacency_builder"],
         builder_parameter = config_file["model"]["builder_parameter"],
         use_both_heads = config_file["model"]["use_both_heads"],
     )
@@ -110,4 +113,56 @@ def build_data_loader(dataset, batch_size, shuffle=False):
     )
     
     return data_loader
+
+
+def loge_loss(x , labels):
     
+    epsilon = 1 - math.log(2)
+    criterion = nn.CrossEntropyLoss(reduction='none')
+    loss = criterion(x, labels)
+   
+    loss = torch.mean(torch.log(epsilon + loss) - math.log(epsilon))
+    
+    return loss
+    
+    
+def build_criterions(config):
+    
+    criterions = {}
+    criterion_name = config["hyperparameters"]["criterion"]
+    
+    if criterion_name == 'cross_entropy':
+        main_criterion = nn.CrossEntropyLoss()
+    elif criterion_name == 'loge':
+        main_criterion = loge_loss
+    else:
+        raise NotImplementedError(f"{criterion_name} is not a valid criterion")
+        
+    criterions["main_head"] = main_criterion
+    
+    if config["model"]["use_both_heads"]:
+        criterions["second_head"] = nn.CrossEntropyLoss()
+    
+    return criterions
+        
+    
+def build_optimizer(model, config):
+    
+    optim_name = config["hyperparameters"]["optimizer"]
+    learning_rate = config["hyperparameters"]["learning_rate"]
+    
+    if optim_name == "sgd":
+        return torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0.9, weight_decay=0.001)
+    elif optim_name == "adam":
+        return torch.optim.Adam(model.parameters(), lr=learning_rate)
+    elif optim_type == "nadam":
+        optim=torch.optim.NAdam(model.parameters(), lr=learning_rate)  
+    else:
+        raise NotImplementedError(f"{optim_name} is not a valid optimizer")
+        
+def build_scheduler(optimizer, config):
+    
+    lr_decay_steps = config["hyperparameters"]["lr_decay_steps"]
+    lr_decay_gamma = config["hyperparameters"]["lr_decay_gamma"]
+    
+    return lr_scheduler.StepLR(optimizer, step_size=lr_decay_steps, gamma=lr_decay_gamma)

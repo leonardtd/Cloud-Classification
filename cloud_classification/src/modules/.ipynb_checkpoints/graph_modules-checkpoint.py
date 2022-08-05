@@ -165,11 +165,11 @@ class GraphClassifier(nn.Module):
                 x = F.leaky_relu(x)
         
         agg_features = torch.cat([deep_features, x], dim=1)
-        logits_agg = self.head(agg_features)
+        logits_main_head = self.head(agg_features)
         
-        logits_cnn = self.second_head(deep_features)
+        logits_second_head = self.second_head(deep_features)
 
-        return logits_agg, logits_cnn
+        return logits_main_head, logits_second_head
     
     def get_deep_features(self, x):
         with torch.no_grad():
