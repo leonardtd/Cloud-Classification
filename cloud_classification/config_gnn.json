@@ -11,15 +11,15 @@
         "use_augmentation": true
     },
     "hyperparameters": {
-        "epochs": 2,
-        "batch_size": 32,
+        "epochs": 40,
+        "batch_size": 40,
         "learning_rate": 0.0003,
         "early_stopping_tolerance": 5,
         "criterion": "cross_entropy",
-        "optimizer": "adam",
+        "optimizer": "sgd",
         "use_scheduler": true,
         "lr_decay_steps": 15,
-        "lr_decay_gamma": 1
+        "lr_decay_gamma": 0.5
     },
     "model": {
         "hidden_dim": 512,

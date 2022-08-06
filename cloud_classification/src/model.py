@@ -46,6 +46,7 @@ class ModelTrainer:
             
         ### training parameters
         self.best_accuracy = 0
+        self.best_loss = 999999
         self.early_stopping_tolerance = self.config["hyperparameters"]["early_stopping_tolerance"]
             
     def train(self):
@@ -121,16 +122,18 @@ class ModelTrainer:
             ### SAVE BEST MODEL
             if test_acc > self.best_accuracy:
                 torch.save(self.model.state_dict(), self.path_artifact)
-                self.best_accuracy = test_acc
-                self.early_stopping_tolerance = self.config["hyperparameters"]["early_stopping_tolerance"]
-                
+                self.best_accuracy = test_acc                
                 print(f"Saved best parameters at epoch {e+1}")
+            
+            if test_loss < self.best_loss:
+                self.best_loss = test_loss
+                self.early_stopping_tolerance = self.config["hyperparameters"]["early_stopping_tolerance"]
             else:
                 self.early_stopping_tolerance -= 1
+                print(f"Did not decrease test loss. Tolerance left {self.early_stopping_tolerance}")
                 if self.early_stopping_tolerance <= 0:
                     print(f"EARLY STOPPING AT ITERATION {e+1}")
                     break
-                
             
         return self.model, self.data_logger
 
