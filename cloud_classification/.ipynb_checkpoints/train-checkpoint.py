@@ -14,7 +14,7 @@ from src import utils
 from src import dataset
 
 CONFIG_FILENAME = "config_gnn.json"
-PROJECT_WANDB = "gcd-gnn"
+PROJECT_WANDB = "gcd-classification"
 ENTITY = "leonardtd"
 
 def is_there_arg(args, master_arg):
