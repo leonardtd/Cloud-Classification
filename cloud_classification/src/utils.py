@@ -10,6 +10,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.optim import lr_scheduler
 
+from tqdm import tqdm
+
+from sklearn.metrics import accuracy_score
 
 def set_seed(seed):
     """Set seed"""
@@ -28,6 +31,8 @@ def parse_arguments_train():
                     help="name of the execution to save in wandb")
     ap.add_argument('-t', '--run_notes', required=False, type=str, default=None,
                     help="notes of the execution to save in wandb")
+    ap.add_argument('-x', '--num_experiments', default=1, type=int,
+                    help="number of experiments to run")
 
     args = ap.parse_args()
 
@@ -47,12 +52,10 @@ def parse_configuration(config_file):
     
 def configure_model(config_file, use_wandb):
     config_file = parse_configuration(config_file)
-    config = dict(
+    config_wandb = dict(
         device = config_file["hardware"]["device"],
         
         # data
-        path_dataset = config_file["data"]["path_dataset"],
-        path_save_weights = config_file["data"]["path_save_weights"],
         resize = config_file["data"]["resize"],
         use_augmentation = config_file["data"]["use_augmentation"],
         
@@ -60,11 +63,12 @@ def configure_model(config_file, use_wandb):
         epochs = config_file["hyperparameters"]["epochs"],
         batch_size = config_file["hyperparameters"]["batch_size"],
         learning_rate = config_file["hyperparameters"]["learning_rate"],
-        lr_decay_steps = config_file["hyperparameters"]["lr_decay_steps"],
-        lr_decay_gamma = config_file["hyperparameters"]["lr_decay_gamma"],
         early_stopping_tolerance = config_file["hyperparameters"]["early_stopping_tolerance"],
         criterion = config_file["hyperparameters"]["criterion"],
         optimizer = config_file["hyperparameters"]["optimizer"],
+        use_scheduler = config_file["hyperparameters"]["use_scheduler"],
+        lr_decay_steps = config_file["hyperparameters"]["lr_decay_steps"],
+        lr_decay_gamma = config_file["hyperparameters"]["lr_decay_gamma"],
         
         # model
         hidden_dim = config_file["model"]["hidden_dim"],
@@ -75,12 +79,11 @@ def configure_model(config_file, use_wandb):
         adjacency_builder = config_file["model"]["adjacency_builder"],
         builder_parameter = config_file["model"]["builder_parameter"],
         use_both_heads = config_file["model"]["use_both_heads"],
+        loss_lambda = config_file["model"]["loss_lambda"],
     )
 
-    if not use_wandb:
-        config = type("configuration", (object,), config)
 
-    return config
+    return config_file, config_wandb
 
 
 ####################################
@@ -108,7 +111,7 @@ def build_data_loader(dataset, batch_size, shuffle=False):
     data_loader = torch.utils.data.DataLoader(
         dataset,
         batch_size=batch_size,
-        num_workers=-1,
+        num_workers=6,
         shuffle=shuffle,
     )
     
@@ -166,3 +169,85 @@ def build_scheduler(optimizer, config):
     lr_decay_gamma = config["hyperparameters"]["lr_decay_gamma"]
     
     return lr_scheduler.StepLR(optimizer, step_size=lr_decay_steps, gamma=lr_decay_gamma)
+
+
+####################################
+# 2. TRAINING
+####################################
+
+def train_model(model, data_loader, criterions, optimizer, device, use_both_heads, loss_lambda):
+    model.train()
+    
+    fin_loss = 0
+    fin_preds = []
+    fin_targs = []
+
+    for data in tqdm(data_loader, total=len(data_loader)):
+        for k, v in data.items():
+            data[k] = v.to(device)
+                
+
+        optimizer.zero_grad()
+        
+        logits_main_head, logits_second_head = model(data["images"])
+        
+        if use_both_heads:
+            loss = criterions["main_head"](logits_main_head, data["targets"]) + loss_lambda*criterions["second_head"](logits_second_head, data["targets"])
+        else:
+            loss = criterions["main_head"](logits_main_head, data["targets"])
+        
+        loss.backward()
+        
+        optimizer.step()
+        
+        fin_loss += loss.item()
+
+        batch_preds = F.softmax(logits_main_head, dim=1)
+        batch_preds = torch.argmax(batch_preds, dim=1)
+
+        fin_preds.append(batch_preds.cpu().numpy())
+        fin_targs.append(data["targets"].cpu().numpy())
+    
+    targets = np.concatenate(fin_targs, axis=0)
+    predictions = np.concatenate(fin_preds, axis=0)
+    
+    accuracy = accuracy_score(targets, predictions)
+    loss = fin_loss / len(data_loader)
+    
+    return loss, accuracy, targets, predictions
+
+
+def test_model(model, data_loader, criterions, device, use_both_heads, loss_lambda):
+    model.eval()
+    
+    fin_loss = 0
+    fin_preds = []
+    fin_targs = []
+
+    with torch.no_grad():
+        for data in tqdm(data_loader, total=len(data_loader)):
+            for k, v in data.items():
+                data[k] = v.to(device)
+
+            logits_main_head, logits_second_head = model(data["images"])
+            
+            if use_both_heads:
+                loss = criterions["main_head"](logits_main_head, data["targets"]) + loss_lambda*criterions["second_head"](logits_second_head, data["targets"])
+            else:
+                loss = criterions["main_head"](logits_main_head, data["targets"])
+            
+            fin_loss += loss.item()
+
+            batch_preds = F.softmax(logits_main_head, dim=1)
+            batch_preds = torch.argmax(batch_preds, dim=1)
+
+            fin_preds.append(batch_preds.cpu().numpy())
+            fin_targs.append(data["targets"].cpu().numpy())
+            
+    targets = np.concatenate(fin_targs, axis=0)
+    predictions = np.concatenate(fin_preds, axis=0)
+    
+    accuracy = accuracy_score(targets, predictions)
+    loss = fin_loss / len(data_loader)
+    
+    return loss, accuracy, targets, predictions

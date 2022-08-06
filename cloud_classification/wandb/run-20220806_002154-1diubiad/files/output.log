@@ -1,0 +1,13 @@
+
+  0%|                                                                                         | 0/313 [00:00<?, ?it/s]
+  0%|                                                                                         | 0/313 [00:02<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 87, in <module>
+    train(CONFIG_FILENAME,
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 61, in train
+    model, data_logger = trainer.train()
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 58, in train
+    train_loss, train_acc, train_targets, train_predictions = utils.train_model(
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/utils.py", line 206, in train_model
+    batch_preds = F.softmax(logits, dim=1)
+NameError: name 'logits' is not defined

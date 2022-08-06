@@ -1,0 +1,11 @@
+
+<class 'wandb.sdk.wandb_config.Config'>
+STARTING TRAINING: experiment 1
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 90, in <module>
+    train(CONFIG_FILENAME,
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 64, in train
+    model, data_logger = trainer.train()
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 52, in train
+    epochs = config["hyperparameters"]["epochs"]
+NameError: name 'config' is not defined

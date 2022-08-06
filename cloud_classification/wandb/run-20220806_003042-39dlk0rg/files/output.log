@@ -1,0 +1,87 @@
+
+STARTING TRAINING: experiment 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|███████████████████████████████████████████████████████████████████████████████| 313/313 [01:45<00:00,  2.96it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|████████████████████████████████████████████████████████████████████████████▋  | 304/313 [00:44<00:01,  7.02it/s]
+
+100%|███████████████████████████████████████████████████████████████████████████████| 313/313 [00:45<00:00,  6.89it/s]
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 88, in <module>
+    train(CONFIG_FILENAME,
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 62, in train
+    model, data_logger = trainer.train()
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 114, in train
+    self.data_logger = pd.concat([self.data_logger, epoch_metrics], axis=0)
+AttributeError: 'ModelTrainer' object has no attribute 'data_logger'

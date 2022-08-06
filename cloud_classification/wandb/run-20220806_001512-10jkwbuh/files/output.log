@@ -1,0 +1,10 @@
+
+<class 'wandb.sdk.wandb_config.Config'>
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 91, in <module>
+    train(CONFIG_FILENAME,
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 57, in train
+    path_results = os.path.join(config["data"]["path_save_logs"], f"wandb_{wandb.run.id}_model.csv")
+  File "/home/ltorres/miniconda3/lib/python3.9/site-packages/wandb/sdk/wandb_config.py", line 131, in __getitem__
+    return self._items[key]
+KeyError: 'data'

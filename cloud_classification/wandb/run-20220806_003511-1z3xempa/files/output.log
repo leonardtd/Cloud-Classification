@@ -1,0 +1,83 @@
+
+  0%|                                                                                         | 0/313 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|███████████████████████████████████████████████████████████████████████████████| 313/313 [01:45<00:00,  2.96it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|███████████████████████████████████████████████████████████████████████████████| 282/282 [00:40<00:00,  6.98it/s]
+EPOCH 1: Train acc: 61.71% Train Loss: 0.7885 Test acc: 108.08% Test Loss: 0.6744
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 91, in <module>
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 65, in train
+    print(f"STARTING TRAINING: experiment {i}")
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 122, in train
+    torch.save(self.model.state_dict(), self.path_artifact)
+NameError: name 'torch' is not defined

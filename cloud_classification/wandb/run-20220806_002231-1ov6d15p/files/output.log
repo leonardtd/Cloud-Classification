@@ -1,0 +1,85 @@
+
+STARTING TRAINING: experiment 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|███████████████████████████████████████████████████████████████████████████████| 313/313 [01:45<00:00,  2.97it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|███████████████████████████████████████████████████████████████████████████████| 313/313 [00:45<00:00,  6.93it/s]
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 87, in <module>
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 61, in train
+    print(f"STARTING TRAINING: experiment {i}")
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 99, in train
+    class_names=config["data"]["class_names"])})
+NameError: name 'config' is not defined
+EPOCH 1: Train acc: 62.82% Train Loss: 0.7912 Test acc: 43.27% Test Loss: 0.8387

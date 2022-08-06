@@ -1,0 +1,610 @@
+2022-08-06 01:33:00,705 INFO    MainThread:16620 [internal.py:wandb_internal():92] W&B internal server running at pid: 16620, started at: 2022-08-06 01:33:00.705171
+2022-08-06 01:33:00,706 INFO    WriterThread:16620 [datastore.py:open_for_write():77] open: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/run-33ei64m2.wandb
+2022-08-06 01:33:00,708 DEBUG   SenderThread:16620 [sender.py:send():235] send: header
+2022-08-06 01:33:00,708 DEBUG   SenderThread:16620 [sender.py:send():235] send: run
+2022-08-06 01:33:01,050 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: check_version
+2022-08-06 01:33:01,051 INFO    SenderThread:16620 [dir_watcher.py:__init__():169] watching files in: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files
+2022-08-06 01:33:01,051 INFO    SenderThread:16620 [sender.py:_start_run_threads():812] run started: 33ei64m2 with start time 1659767579
+2022-08-06 01:33:01,051 DEBUG   SenderThread:16620 [sender.py:send():235] send: summary
+2022-08-06 01:33:01,052 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-08-06 01:33:01,052 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: check_version
+2022-08-06 01:33:01,081 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: run_start
+2022-08-06 01:33:01,084 DEBUG   HandlerThread:16620 [meta.py:__init__():37] meta init
+2022-08-06 01:33:01,084 DEBUG   HandlerThread:16620 [meta.py:__init__():51] meta init done
+2022-08-06 01:33:01,084 DEBUG   HandlerThread:16620 [meta.py:probe():211] probe
+2022-08-06 01:33:01,090 DEBUG   HandlerThread:16620 [meta.py:_setup_git():201] setup git
+2022-08-06 01:33:01,103 DEBUG   HandlerThread:16620 [meta.py:_setup_git():208] setup git done
+2022-08-06 01:33:01,103 DEBUG   HandlerThread:16620 [meta.py:_save_pip():55] save pip
+2022-08-06 01:33:01,104 DEBUG   HandlerThread:16620 [meta.py:_save_pip():69] save pip done
+2022-08-06 01:33:01,104 DEBUG   HandlerThread:16620 [meta.py:_save_conda():76] save conda
+2022-08-06 01:33:02,054 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/conda-environment.yaml
+2022-08-06 01:33:02,054 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/wandb-summary.json
+2022-08-06 01:33:02,054 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/requirements.txt
+2022-08-06 01:33:03,507 DEBUG   HandlerThread:16620 [meta.py:_save_conda():86] save conda done
+2022-08-06 01:33:03,507 DEBUG   HandlerThread:16620 [meta.py:probe():249] probe done
+2022-08-06 01:33:03,510 DEBUG   SenderThread:16620 [sender.py:send():235] send: files
+2022-08-06 01:33:03,510 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file wandb-metadata.json with policy now
+2022-08-06 01:33:03,513 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:33:03,514 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:33:03,778 DEBUG   SenderThread:16620 [sender.py:send():235] send: telemetry
+2022-08-06 01:33:04,054 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/conda-environment.yaml
+2022-08-06 01:33:04,054 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/wandb-metadata.json
+2022-08-06 01:33:04,054 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:04,246 INFO    Thread-11 :16620 [upload_job.py:push():137] Uploaded file /tmp/tmp40dk388bwandb/33te87t8-wandb-metadata.json
+2022-08-06 01:33:04,700 DEBUG   SenderThread:16620 [sender.py:send():235] send: telemetry
+2022-08-06 01:33:06,054 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:08,055 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:10,056 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:12,056 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:14,057 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:16,057 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:18,058 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:18,779 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:33:18,779 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:33:20,059 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:22,059 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:24,060 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:26,060 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:28,061 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:30,061 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:30,144 DEBUG   SenderThread:16620 [sender.py:send():235] send: stats
+2022-08-06 01:33:32,062 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:32,062 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/config.yaml
+2022-08-06 01:33:34,038 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:33:34,038 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:33:34,062 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:36,063 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:38,063 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:40,064 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:42,064 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:44,065 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:46,066 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:48,066 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:49,295 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:33:49,296 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:33:50,067 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:52,067 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:54,068 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:56,068 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:33:58,069 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:00,069 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:01,162 DEBUG   SenderThread:16620 [sender.py:send():235] send: stats
+2022-08-06 01:34:02,070 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:04,071 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:04,573 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:34:04,573 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:34:06,071 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:08,072 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:10,072 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:12,073 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:14,073 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:16,074 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:18,074 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:19,833 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:34:19,834 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:34:20,075 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:22,075 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:24,076 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:26,076 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:28,077 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:30,077 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:32,078 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:32,172 DEBUG   SenderThread:16620 [sender.py:send():235] send: stats
+2022-08-06 01:34:34,078 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:35,096 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:34:35,096 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:34:36,079 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:38,079 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:40,080 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:42,080 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:44,081 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:46,081 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:48,082 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:50,082 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:50,364 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:34:50,364 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:34:52,083 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:54,083 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:56,084 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:34:58,085 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:00,085 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:02,086 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:03,261 DEBUG   SenderThread:16620 [sender.py:send():235] send: stats
+2022-08-06 01:35:04,087 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:05,644 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:35:05,644 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:35:06,087 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:08,088 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:10,088 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:12,089 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:14,090 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:16,090 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:18,091 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:20,091 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:20,913 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:35:20,913 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:35:22,092 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:24,093 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:26,093 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:28,094 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:30,094 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:30,911 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:35:30,912 DEBUG   SenderThread:16620 [sender.py:send():235] send: history
+2022-08-06 01:35:30,912 DEBUG   SenderThread:16620 [sender.py:send():235] send: summary
+2022-08-06 01:35:30,913 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-08-06 01:35:30,925 DEBUG   SenderThread:16620 [sender.py:send():235] send: config
+2022-08-06 01:35:31,094 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/wandb-summary.json
+2022-08-06 01:35:31,214 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: log_artifact
+2022-08-06 01:35:31,214 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: log_artifact
+2022-08-06 01:35:31,827 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:35:32,095 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:32,095 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table/train/confusion_matrix_table_1_d94503cd8693b8908b56.table.json
+2022-08-06 01:35:32,095 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table
+2022-08-06 01:35:32,095 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media
+2022-08-06 01:35:32,095 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table/train
+2022-08-06 01:35:32,121 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: log_artifact
+2022-08-06 01:35:32,642 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:35:33,095 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table/test/confusion_matrix_table_2_6ca4eb4a28de7895f362.table.json
+2022-08-06 01:35:33,095 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table
+2022-08-06 01:35:33,095 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table/test
+2022-08-06 01:35:33,591 INFO    Thread-13 :16620 [upload_job.py:push():95] Uploaded file /home/ltorres/.cache/wandb/artifacts/obj/md5/3a/8246f7cb30065f850b028efe77a14f
+2022-08-06 01:35:34,096 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:34,764 INFO    SenderThread:16620 [sender.py:send_request_log_artifact():976] logged artifact run-33ei64m2-trainconfusion_matrix_table - {'id': 'QXJ0aWZhY3Q6MTY4MjYxODM5', 'digest': '5c5bd2172aa3c56786fd44835526e0fc', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjI1MzMyOTQx', 'latestArtifact': None}, 'version': 'latest'}
+2022-08-06 01:35:35,112 DEBUG   SenderThread:16620 [sender.py:send():235] send: files
+2022-08-06 01:35:35,112 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file media/table/train/confusion_matrix_table_1_d94503cd8693b8908b56.table.json with policy now
+2022-08-06 01:35:35,112 DEBUG   SenderThread:16620 [sender.py:send():235] send: history
+2022-08-06 01:35:35,112 DEBUG   SenderThread:16620 [sender.py:send():235] send: summary
+2022-08-06 01:35:35,113 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-08-06 01:35:35,113 DEBUG   SenderThread:16620 [sender.py:send():235] send: config
+2022-08-06 01:35:35,113 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: log_artifact
+2022-08-06 01:35:35,903 INFO    Thread-14 :16620 [upload_job.py:push():137] Uploaded file /tmp/tmp40dk388bwandb/2valvkpt-media/table/train/confusion_matrix_table_1_d94503cd8693b8908b56.table.json
+2022-08-06 01:35:36,096 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:36,096 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/wandb-summary.json
+2022-08-06 01:35:36,097 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/config.yaml
+2022-08-06 01:35:36,216 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:35:36,689 INFO    Thread-16 :16620 [upload_job.py:push():95] Uploaded file /home/ltorres/.cache/wandb/artifacts/obj/md5/ae/6c1532ed958ce08296abc653ae4b12
+2022-08-06 01:35:37,839 INFO    SenderThread:16620 [sender.py:send_request_log_artifact():976] logged artifact run-33ei64m2-testconfusion_matrix_table - {'id': 'QXJ0aWZhY3Q6MTY4MjYxODY5', 'digest': 'e8179e7b068423596fb411c887f7097a', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjI1MzMyOTQz', 'latestArtifact': None}, 'version': 'latest'}
+2022-08-06 01:35:37,839 DEBUG   SenderThread:16620 [sender.py:send():235] send: files
+2022-08-06 01:35:37,839 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file media/table/test/confusion_matrix_table_2_6ca4eb4a28de7895f362.table.json with policy now
+2022-08-06 01:35:37,839 DEBUG   SenderThread:16620 [sender.py:send():235] send: history
+2022-08-06 01:35:37,840 DEBUG   SenderThread:16620 [sender.py:send():235] send: summary
+2022-08-06 01:35:37,841 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-08-06 01:35:37,841 DEBUG   SenderThread:16620 [sender.py:send():235] send: stats
+2022-08-06 01:35:37,841 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:35:38,097 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:38,097 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/wandb-summary.json
+2022-08-06 01:35:38,620 INFO    Thread-17 :16620 [upload_job.py:push():137] Uploaded file /tmp/tmp40dk388bwandb/1cdeif2w-media/table/test/confusion_matrix_table_2_6ca4eb4a28de7895f362.table.json
+2022-08-06 01:35:40,098 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:42,098 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:44,099 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:46,100 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:48,100 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:50,101 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:52,102 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:53,106 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:35:53,106 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:35:54,102 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:56,103 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:35:58,104 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:00,104 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:02,105 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:04,106 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:05,448 DEBUG   SenderThread:16620 [sender.py:send():235] send: stats
+2022-08-06 01:36:06,107 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:06,107 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/config.yaml
+2022-08-06 01:36:08,108 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:08,365 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:36:08,365 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:36:10,108 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:12,109 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:14,110 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:16,111 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:18,111 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:20,112 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:22,113 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:23,616 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:36:23,616 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:36:24,113 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:26,114 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:28,115 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:30,116 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:32,116 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:34,117 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:36,118 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:36,442 DEBUG   SenderThread:16620 [sender.py:send():235] send: stats
+2022-08-06 01:36:38,119 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:39,090 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:36:39,090 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:36:40,119 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:42,120 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:44,121 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:46,121 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:48,122 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:50,123 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:52,124 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:54,124 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:54,360 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:36:54,361 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:36:56,125 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:36:58,126 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:00,127 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:02,128 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:04,128 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:06,129 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:07,416 DEBUG   SenderThread:16620 [sender.py:send():235] send: stats
+2022-08-06 01:37:08,130 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:09,625 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:37:09,625 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:37:10,131 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:12,131 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:14,132 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:16,133 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:18,134 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:20,134 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:22,135 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:24,136 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:24,888 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:37:24,888 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:37:26,137 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:28,137 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:30,138 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:31,820 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,820 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,821 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,821 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,822 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,822 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,824 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,824 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,825 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,826 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,826 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,836 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,836 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,837 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,837 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,838 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,838 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,839 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,841 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,841 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,842 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,842 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,843 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,843 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,855 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,856 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,856 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,859 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,859 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,859 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,860 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,861 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,861 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,862 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,862 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,863 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,866 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,867 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,867 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,877 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,878 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,878 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,883 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,895 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,903 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,906 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,906 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,906 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,939 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,939 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,939 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,941 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,941 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,942 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,944 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,944 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,945 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,996 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,997 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:31,997 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,016 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,017 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,017 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,018 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,019 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,019 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,044 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,045 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,045 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,064 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,064 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,065 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,075 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,087 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,095 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,106 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,115 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,123 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,139 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:32,229 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,239 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,240 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,244 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,244 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,255 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,321 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,321 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,322 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,325 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,331 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,339 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,342 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,342 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,343 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,345 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,345 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,346 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,369 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,370 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,371 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,374 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,374 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,375 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,378 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,379 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,387 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,392 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,392 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,393 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,396 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,407 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,408 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,411 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,412 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,413 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,417 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,418 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,418 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,433 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,434 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,435 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,453 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,454 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,455 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,459 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,471 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,472 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,475 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,476 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,491 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,495 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,496 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,497 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,588 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,589 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,589 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,609 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,609 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,610 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,652 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,663 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,664 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,669 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,670 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,670 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,693 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,693 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,694 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,708 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,708 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,709 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,726 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,726 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,726 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,768 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,783 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,795 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,843 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,843 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,844 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,849 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,850 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,853 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,854 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,878 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,879 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,880 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,880 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,881 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:32,882 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:37:34,140 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:36,141 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:38,141 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:38,513 DEBUG   SenderThread:16620 [sender.py:send():235] send: stats
+2022-08-06 01:37:40,142 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:40,268 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:37:40,268 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:37:42,143 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:44,144 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:46,144 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:48,145 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:50,146 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:52,147 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:54,148 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:55,530 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-06 01:37:55,531 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: stop_status
+2022-08-06 01:37:56,149 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:37:58,149 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:38:00,095 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:38:00,119 DEBUG   SenderThread:16620 [sender.py:send():235] send: history
+2022-08-06 01:38:00,143 DEBUG   SenderThread:16620 [sender.py:send():235] send: summary
+2022-08-06 01:38:00,163 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-08-06 01:38:00,163 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:38:00,163 DEBUG   SenderThread:16620 [sender.py:send():235] send: config
+2022-08-06 01:38:00,163 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/wandb-summary.json
+2022-08-06 01:38:00,409 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: log_artifact
+2022-08-06 01:38:00,409 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: log_artifact
+2022-08-06 01:38:01,024 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:38:01,163 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table/train/confusion_matrix_table_4_45e45d59652f48355886.table.json
+2022-08-06 01:38:01,163 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table/train
+2022-08-06 01:38:01,341 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: log_artifact
+2022-08-06 01:38:01,862 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:38:02,128 INFO    Thread-19 :16620 [upload_job.py:push():95] Uploaded file /home/ltorres/.cache/wandb/artifacts/obj/md5/75/100b849d1bdc4b4842e31327ebe448
+2022-08-06 01:38:02,164 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:38:02,164 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table/test/confusion_matrix_table_5_5f8b9e157f94d1c89304.table.json
+2022-08-06 01:38:02,164 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table/test
+2022-08-06 01:38:02,242 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-06 01:38:03,567 INFO    SenderThread:16620 [sender.py:send_request_log_artifact():976] logged artifact run-33ei64m2-trainconfusion_matrix_table - {'id': 'QXJ0aWZhY3Q6MTY4MjYzMDc5', 'digest': '60653787f48410f47abc23e0898bbee7', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjI1MzMyOTQx', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTY4MjYxODM5', 'versionIndex': 0}}, 'version': 'latest'}
+2022-08-06 01:38:03,567 DEBUG   SenderThread:16620 [sender.py:send():235] send: files
+2022-08-06 01:38:03,567 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file media/table/train/confusion_matrix_table_4_45e45d59652f48355886.table.json with policy now
+2022-08-06 01:38:03,567 DEBUG   SenderThread:16620 [sender.py:send():235] send: history
+2022-08-06 01:38:03,567 DEBUG   SenderThread:16620 [sender.py:send():235] send: summary
+2022-08-06 01:38:03,583 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-08-06 01:38:03,584 DEBUG   SenderThread:16620 [sender.py:send():235] send: config
+2022-08-06 01:38:03,584 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: log_artifact
+2022-08-06 01:38:04,164 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:38:04,164 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/wandb-summary.json
+2022-08-06 01:38:04,338 INFO    Thread-20 :16620 [upload_job.py:push():137] Uploaded file /tmp/tmp40dk388bwandb/2p065ll5-media/table/train/confusion_matrix_table_4_45e45d59652f48355886.table.json
+2022-08-06 01:38:05,082 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:05,165 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:38:05,240 INFO    Thread-22 :16620 [upload_job.py:push():95] Uploaded file /home/ltorres/.cache/wandb/artifacts/obj/md5/5f/cf11f1c159887bf845063aea6e8443
+2022-08-06 01:38:06,520 INFO    SenderThread:16620 [sender.py:send_request_log_artifact():976] logged artifact run-33ei64m2-testconfusion_matrix_table - {'id': 'QXJ0aWZhY3Q6MTY4MjYzMTA4', 'digest': '0f083fb0b811409d2e7f286da7c1a972', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjI1MzMyOTQz', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTY4MjYxODY5', 'versionIndex': 0}}, 'version': 'latest'}
+2022-08-06 01:38:06,804 DEBUG   SenderThread:16620 [sender.py:send():235] send: files
+2022-08-06 01:38:06,804 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file media/table/test/confusion_matrix_table_5_5f8b9e157f94d1c89304.table.json with policy now
+2022-08-06 01:38:06,804 DEBUG   SenderThread:16620 [sender.py:send():235] send: history
+2022-08-06 01:38:06,804 DEBUG   SenderThread:16620 [sender.py:send():235] send: summary
+2022-08-06 01:38:06,826 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-08-06 01:38:06,826 DEBUG   SenderThread:16620 [sender.py:send():235] send: telemetry
+2022-08-06 01:38:06,826 DEBUG   SenderThread:16620 [sender.py:send():235] send: telemetry
+2022-08-06 01:38:06,826 DEBUG   SenderThread:16620 [sender.py:send():235] send: exit
+2022-08-06 01:38:06,826 INFO    SenderThread:16620 [sender.py:send_exit():371] handling exit code: 0
+2022-08-06 01:38:06,826 INFO    SenderThread:16620 [sender.py:send_exit():373] handling runtime: 304
+2022-08-06 01:38:06,839 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-08-06 01:38:06,839 INFO    SenderThread:16620 [sender.py:send_exit():379] send defer
+2022-08-06 01:38:06,839 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:06,839 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: defer
+2022-08-06 01:38:06,839 INFO    HandlerThread:16620 [handler.py:handle_request_defer():164] handle defer: 0
+2022-08-06 01:38:06,839 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: defer
+2022-08-06 01:38:06,839 INFO    SenderThread:16620 [sender.py:send_request_defer():388] handle sender defer: 0
+2022-08-06 01:38:06,840 INFO    SenderThread:16620 [sender.py:transition_state():392] send defer: 1
+2022-08-06 01:38:06,840 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: defer
+2022-08-06 01:38:06,840 INFO    HandlerThread:16620 [handler.py:handle_request_defer():164] handle defer: 1
+2022-08-06 01:38:06,930 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: defer
+2022-08-06 01:38:06,930 INFO    SenderThread:16620 [sender.py:send_request_defer():388] handle sender defer: 1
+2022-08-06 01:38:06,930 INFO    SenderThread:16620 [sender.py:transition_state():392] send defer: 2
+2022-08-06 01:38:06,930 DEBUG   SenderThread:16620 [sender.py:send():235] send: stats
+2022-08-06 01:38:06,931 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: defer
+2022-08-06 01:38:06,931 INFO    HandlerThread:16620 [handler.py:handle_request_defer():164] handle defer: 2
+2022-08-06 01:38:06,931 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: defer
+2022-08-06 01:38:06,931 INFO    SenderThread:16620 [sender.py:send_request_defer():388] handle sender defer: 2
+2022-08-06 01:38:06,931 INFO    SenderThread:16620 [sender.py:transition_state():392] send defer: 3
+2022-08-06 01:38:06,931 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: defer
+2022-08-06 01:38:06,931 INFO    HandlerThread:16620 [handler.py:handle_request_defer():164] handle defer: 3
+2022-08-06 01:38:06,931 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: defer
+2022-08-06 01:38:06,931 INFO    SenderThread:16620 [sender.py:send_request_defer():388] handle sender defer: 3
+2022-08-06 01:38:06,931 INFO    SenderThread:16620 [sender.py:transition_state():392] send defer: 4
+2022-08-06 01:38:06,931 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: defer
+2022-08-06 01:38:06,931 INFO    HandlerThread:16620 [handler.py:handle_request_defer():164] handle defer: 4
+2022-08-06 01:38:06,940 DEBUG   SenderThread:16620 [sender.py:send():235] send: summary
+2022-08-06 01:38:06,941 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:06,961 INFO    SenderThread:16620 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-08-06 01:38:06,961 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: defer
+2022-08-06 01:38:06,961 INFO    SenderThread:16620 [sender.py:send_request_defer():388] handle sender defer: 4
+2022-08-06 01:38:06,961 INFO    SenderThread:16620 [sender.py:transition_state():392] send defer: 5
+2022-08-06 01:38:06,961 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:06,961 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: defer
+2022-08-06 01:38:06,961 INFO    HandlerThread:16620 [handler.py:handle_request_defer():164] handle defer: 5
+2022-08-06 01:38:06,961 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: defer
+2022-08-06 01:38:06,962 INFO    SenderThread:16620 [sender.py:send_request_defer():388] handle sender defer: 5
+2022-08-06 01:38:07,062 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:07,165 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/wandb-summary.json
+2022-08-06 01:38:07,165 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/config.yaml
+2022-08-06 01:38:07,255 INFO    SenderThread:16620 [sender.py:transition_state():392] send defer: 6
+2022-08-06 01:38:07,255 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:07,255 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: defer
+2022-08-06 01:38:07,255 INFO    HandlerThread:16620 [handler.py:handle_request_defer():164] handle defer: 6
+2022-08-06 01:38:07,255 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: defer
+2022-08-06 01:38:07,256 INFO    SenderThread:16620 [sender.py:send_request_defer():388] handle sender defer: 6
+2022-08-06 01:38:07,256 INFO    SenderThread:16620 [dir_watcher.py:finish():283] shutting down directory watcher
+2022-08-06 01:38:07,356 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:07,632 INFO    Thread-23 :16620 [upload_job.py:push():137] Uploaded file /tmp/tmp40dk388bwandb/27iwmnn9-media/table/test/confusion_matrix_table_5_5f8b9e157f94d1c89304.table.json
+2022-08-06 01:38:08,166 INFO    Thread-7  :16620 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/config.yaml
+2022-08-06 01:38:08,166 INFO    SenderThread:16620 [dir_watcher.py:finish():313] scan: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files
+2022-08-06 01:38:08,166 INFO    SenderThread:16620 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/config.yaml config.yaml
+2022-08-06 01:38:08,166 INFO    SenderThread:16620 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log output.log
+2022-08-06 01:38:08,166 INFO    SenderThread:16620 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/wandb-summary.json wandb-summary.json
+2022-08-06 01:38:08,167 INFO    SenderThread:16620 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/requirements.txt requirements.txt
+2022-08-06 01:38:08,169 INFO    SenderThread:16620 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/wandb-metadata.json wandb-metadata.json
+2022-08-06 01:38:08,171 INFO    SenderThread:16620 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/conda-environment.yaml conda-environment.yaml
+2022-08-06 01:38:08,178 INFO    SenderThread:16620 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table/train/confusion_matrix_table_1_d94503cd8693b8908b56.table.json media/table/train/confusion_matrix_table_1_d94503cd8693b8908b56.table.json
+2022-08-06 01:38:08,178 INFO    SenderThread:16620 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table/train/confusion_matrix_table_4_45e45d59652f48355886.table.json media/table/train/confusion_matrix_table_4_45e45d59652f48355886.table.json
+2022-08-06 01:38:08,178 INFO    SenderThread:16620 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table/test/confusion_matrix_table_5_5f8b9e157f94d1c89304.table.json media/table/test/confusion_matrix_table_5_5f8b9e157f94d1c89304.table.json
+2022-08-06 01:38:08,178 INFO    SenderThread:16620 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/media/table/test/confusion_matrix_table_2_6ca4eb4a28de7895f362.table.json media/table/test/confusion_matrix_table_2_6ca4eb4a28de7895f362.table.json
+2022-08-06 01:38:08,178 INFO    SenderThread:16620 [sender.py:transition_state():392] send defer: 7
+2022-08-06 01:38:08,179 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:08,179 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: defer
+2022-08-06 01:38:08,179 INFO    HandlerThread:16620 [handler.py:handle_request_defer():164] handle defer: 7
+2022-08-06 01:38:08,179 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: defer
+2022-08-06 01:38:08,179 INFO    SenderThread:16620 [sender.py:send_request_defer():388] handle sender defer: 7
+2022-08-06 01:38:08,179 INFO    SenderThread:16620 [file_pusher.py:finish():145] shutting down file pusher
+2022-08-06 01:38:08,279 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:08,280 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:08,380 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:08,380 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:08,481 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:08,481 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:08,582 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:08,582 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:08,683 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:08,683 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:08,783 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:08,783 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:08,884 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:08,884 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:08,920 INFO    Thread-27 :16620 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/requirements.txt
+2022-08-06 01:38:08,922 INFO    Thread-28 :16620 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/conda-environment.yaml
+2022-08-06 01:38:08,938 INFO    Thread-24 :16620 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/config.yaml
+2022-08-06 01:38:08,966 INFO    Thread-25 :16620 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/output.log
+2022-08-06 01:38:08,985 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:08,985 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:09,085 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:09,086 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:09,186 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:09,186 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:09,269 INFO    Thread-26 :16620 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/files/wandb-summary.json
+2022-08-06 01:38:09,287 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:09,287 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:09,387 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:09,388 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:09,469 INFO    Thread-6  :16620 [sender.py:transition_state():392] send defer: 8
+2022-08-06 01:38:09,469 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: defer
+2022-08-06 01:38:09,469 INFO    HandlerThread:16620 [handler.py:handle_request_defer():164] handle defer: 8
+2022-08-06 01:38:09,470 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: defer
+2022-08-06 01:38:09,470 INFO    SenderThread:16620 [sender.py:send_request_defer():388] handle sender defer: 8
+2022-08-06 01:38:09,488 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:10,471 INFO    SenderThread:16620 [sender.py:transition_state():392] send defer: 9
+2022-08-06 01:38:10,471 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:10,472 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: defer
+2022-08-06 01:38:10,472 INFO    HandlerThread:16620 [handler.py:handle_request_defer():164] handle defer: 9
+2022-08-06 01:38:10,472 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: defer
+2022-08-06 01:38:10,472 INFO    SenderThread:16620 [sender.py:send_request_defer():388] handle sender defer: 9
+2022-08-06 01:38:10,472 INFO    SenderThread:16620 [sender.py:transition_state():392] send defer: 10
+2022-08-06 01:38:10,472 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: defer
+2022-08-06 01:38:10,473 DEBUG   SenderThread:16620 [sender.py:send():235] send: final
+2022-08-06 01:38:10,473 INFO    HandlerThread:16620 [handler.py:handle_request_defer():164] handle defer: 10
+2022-08-06 01:38:10,473 DEBUG   SenderThread:16620 [sender.py:send():235] send: footer
+2022-08-06 01:38:10,473 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: defer
+2022-08-06 01:38:10,473 INFO    SenderThread:16620 [sender.py:send_request_defer():388] handle sender defer: 10
+2022-08-06 01:38:10,572 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-06 01:38:10,572 DEBUG   SenderThread:16620 [sender.py:send_request():249] send_request: poll_exit
+2022-08-06 01:38:10,573 INFO    SenderThread:16620 [file_pusher.py:join():150] waiting for file pusher
+2022-08-06 01:38:10,929 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: sampled_history
+2022-08-06 01:38:10,930 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: get_summary
+2022-08-06 01:38:10,940 DEBUG   HandlerThread:16620 [handler.py:handle_request():141] handle_request: shutdown
+2022-08-06 01:38:10,940 INFO    HandlerThread:16620 [handler.py:finish():778] shutting down handler
+2022-08-06 01:38:11,473 INFO    WriterThread:16620 [datastore.py:close():281] close: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_013259-33ei64m2/run-33ei64m2.wandb
+2022-08-06 01:38:11,829 INFO    SenderThread:16620 [sender.py:finish():1078] shutting down sender
+2022-08-06 01:38:11,829 INFO    SenderThread:16620 [file_pusher.py:finish():145] shutting down file pusher
+2022-08-06 01:38:11,829 INFO    SenderThread:16620 [file_pusher.py:join():150] waiting for file pusher
+2022-08-06 01:38:11,830 INFO    MainThread:16620 [internal.py:handle_exit():82] Internal process exited
