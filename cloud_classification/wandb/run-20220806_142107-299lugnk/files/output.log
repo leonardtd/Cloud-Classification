@@ -1,0 +1,17 @@
+
+STARTING TRAINING: experiment 1
+  0%|                                                                                                                                              | 0/250 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 93, in <module>
+    train(CONFIG_FILENAME,
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 66, in train
+    model, data_logger = trainer.train()
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 64, in train
+    train_loss, train_acc, train_targets, train_predictions, train_density = utils.train_model(
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/utils.py", line 198, in train_model
+    logits_main_head, logits_second_head, density = model(data["images"])
+  File "/home/ltorres/miniconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1110, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/modules/graph_modules.py", line 181, in forward
+    return logits_main_head, logits_second_head, utils.get_matrix_density(adj_matrix)
+NameError: name 'utils' is not defined

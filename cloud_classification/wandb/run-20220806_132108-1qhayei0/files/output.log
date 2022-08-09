@@ -1,0 +1,82 @@
+
+STARTING TRAINING: experiment 1
+  0%|                                                                                                                                              | 0/250 [00:00<?, ?it/s]
+0 GraphConvLayer(
+  (conv): GraphConv(in=2048, out=512, normalization=both, activation=None)
+)
+0
+1 GraphConvLayer(
+  (conv): GraphConv(in=512, out=512, normalization=both, activation=None)
+)
+0 GraphConvLayer(
+  (conv): GraphConv(in=2048, out=512, normalization=both, activation=None)
+)
+0
+1 GraphConvLayer(
+  (conv): GraphConv(in=512, out=512, normalization=both, activation=None)
+
+
+  2%|███▏                                                                                                                                  | 6/250 [00:03<01:56,  2.10it/s]
+0 GraphConvLayer(
+  (conv): GraphConv(in=2048, out=512, normalization=both, activation=None)
+)
+0
+1 GraphConvLayer(
+  (conv): GraphConv(in=512, out=512, normalization=both, activation=None)
+)
+0 GraphConvLayer(
+  (conv): GraphConv(in=2048, out=512, normalization=both, activation=None)
+)
+0
+1 GraphConvLayer(
+  (conv): GraphConv(in=512, out=512, normalization=both, activation=None)
+)
+0 GraphConvLayer(
+  (conv): GraphConv(in=2048, out=512, normalization=both, activation=None)
+)
+0
+1 GraphConvLayer(
+  (conv): GraphConv(in=512, out=512, normalization=both, activation=None)
+)
+0 GraphConvLayer(
+  (conv): GraphConv(in=2048, out=512, normalization=both, activation=None)
+)
+0
+1 GraphConvLayer(
+  (conv): GraphConv(in=512, out=512, normalization=both, activation=None)
+)
+0 GraphConvLayer(
+  (conv): GraphConv(in=2048, out=512, normalization=both, activation=None)
+)
+0
+1 GraphConvLayer(
+  (conv): GraphConv(in=512, out=512, normalization=both, activation=None)
+)
+0 GraphConvLayer(
+  (conv): GraphConv(in=2048, out=512, normalization=both, activation=None)
+)
+0
+1 GraphConvLayer(
+  (conv): GraphConv(in=512, out=512, normalization=both, activation=None)
+)
+0 GraphConvLayer(
+  (conv): GraphConv(in=2048, out=512, normalization=both, activation=None)
+)
+0
+1 GraphConvLayer(
+  (conv): GraphConv(in=512, out=512, normalization=both, activation=None)
+)
+0 GraphConvLayer(
+  (conv): GraphConv(in=2048, out=512, normalization=both, activation=None)
+)
+0
+1 GraphConvLayer(
+  (conv): GraphConv(in=512, out=512, normalization=both, activation=None)
+)
+0 GraphConvLayer(
+  (conv): GraphConv(in=2048, out=512, normalization=both, activation=None)
+)
+0
+1 GraphConvLayer(
+  (conv): GraphConv(in=512, out=512, normalization=both, activation=None)
+

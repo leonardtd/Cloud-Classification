@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 93, in <module>
+    train(CONFIG_FILENAME,
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 63, in train
+    trainer = ModelTrainer(config, use_wandb, data_loaders)
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 37, in __init__
+    self.optimizer = utils.build_optimizer(self.model, self.config)
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/utils.py", line 162, in build_optimizer
+    elif optim_type == "nadam":
+NameError: name 'optim_type' is not defined

@@ -3,6 +3,7 @@ import argparse
 import random
 import json
 import glob
+import math
 
 import numpy as np
 import torch
@@ -52,38 +53,38 @@ def parse_configuration(config_file):
     
 def configure_model(config_file, use_wandb):
     config_file = parse_configuration(config_file)
-    config_wandb = dict(
-        device = config_file["hardware"]["device"],
+#     config_wandb = dict(
+#         device = config_file["hardware"]["device"],
         
-        # data
-        resize = config_file["data"]["resize"],
-        use_augmentation = config_file["data"]["use_augmentation"],
+#         # data
+#         resize = config_file["data"]["resize"],
+#         use_augmentation = config_file["data"]["use_augmentation"],
         
-        # hyperparameters
-        epochs = config_file["hyperparameters"]["epochs"],
-        batch_size = config_file["hyperparameters"]["batch_size"],
-        learning_rate = config_file["hyperparameters"]["learning_rate"],
-        early_stopping_tolerance = config_file["hyperparameters"]["early_stopping_tolerance"],
-        criterion = config_file["hyperparameters"]["criterion"],
-        optimizer = config_file["hyperparameters"]["optimizer"],
-        use_scheduler = config_file["hyperparameters"]["use_scheduler"],
-        lr_decay_steps = config_file["hyperparameters"]["lr_decay_steps"],
-        lr_decay_gamma = config_file["hyperparameters"]["lr_decay_gamma"],
+#         # hyperparameters
+#         epochs = config_file["hyperparameters"]["epochs"],
+#         batch_size = config_file["hyperparameters"]["batch_size"],
+#         learning_rate = config_file["hyperparameters"]["learning_rate"],
+#         early_stopping_tolerance = config_file["hyperparameters"]["early_stopping_tolerance"],
+#         criterion = config_file["hyperparameters"]["criterion"],
+#         optimizer = config_file["hyperparameters"]["optimizer"],
+#         use_scheduler = config_file["hyperparameters"]["use_scheduler"],
+#         lr_decay_steps = config_file["hyperparameters"]["lr_decay_steps"],
+#         lr_decay_gamma = config_file["hyperparameters"]["lr_decay_gamma"],
         
-        # model
-        hidden_dim = config_file["model"]["hidden_dim"],
-        num_hidden = config_file["model"]["num_hidden"],
-        num_classes = config_file["model"]["num_classes"],
-        conv_type = config_file["model"]["conv_type"],
-        conv_parameters = config_file["model"]["conv_parameters"],
-        adjacency_builder = config_file["model"]["adjacency_builder"],
-        builder_parameter = config_file["model"]["builder_parameter"],
-        use_both_heads = config_file["model"]["use_both_heads"],
-        loss_lambda = config_file["model"]["loss_lambda"],
-    )
+#         # model
+#         hidden_dim = config_file["model"]["hidden_dim"],
+#         num_hidden = config_file["model"]["num_hidden"],
+#         num_classes = config_file["model"]["num_classes"],
+#         conv_type = config_file["model"]["conv_type"],
+#         conv_parameters = config_file["model"]["conv_parameters"],
+#         gnn_dropout = config_file["model"]["gnn_dropout"],
+#         adjacency_builder = config_file["model"]["adjacency_builder"],
+#         builder_parameter = config_file["model"]["builder_parameter"],
+#         use_both_heads = config_file["model"]["use_both_heads"],
+#         loss_lambda = config_file["model"]["loss_lambda"],
+#     )
 
-
-    return config_file, config_wandb
+    return config_file
 
 
 ####################################
@@ -158,8 +159,8 @@ def build_optimizer(model, config):
         return torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0.9, weight_decay=0.001)
     elif optim_name == "adam":
         return torch.optim.Adam(model.parameters(), lr=learning_rate)
-    elif optim_type == "nadam":
-        optim=torch.optim.NAdam(model.parameters(), lr=learning_rate)  
+    elif optim_name == "nadam":
+        return torch.optim.NAdam(model.parameters(), lr=learning_rate)  
     else:
         raise NotImplementedError(f"{optim_name} is not a valid optimizer")
         
@@ -170,6 +171,11 @@ def build_scheduler(optimizer, config):
     
     return lr_scheduler.StepLR(optimizer, step_size=lr_decay_steps, gamma=lr_decay_gamma)
 
+def get_matrix_density(tensor):
+    with torch.no_grad():
+        density = tensor.sum().item()/(tensor.flatten().shape[0])
+    return density
+
 
 ####################################
 # 2. TRAINING
@@ -179,6 +185,7 @@ def train_model(model, data_loader, criterions, optimizer, device, use_both_head
     model.train()
     
     fin_loss = 0
+    fin_density = 0
     fin_preds = []
     fin_targs = []
 
@@ -189,7 +196,8 @@ def train_model(model, data_loader, criterions, optimizer, device, use_both_head
 
         optimizer.zero_grad()
         
-        logits_main_head, logits_second_head = model(data["images"])
+        logits_main_head, logits_second_head, density = model(data["images"])
+        fin_density += density
         
         if use_both_heads:
             loss = criterions["main_head"](logits_main_head, data["targets"]) + loss_lambda*criterions["second_head"](logits_second_head, data["targets"])
@@ -213,14 +221,16 @@ def train_model(model, data_loader, criterions, optimizer, device, use_both_head
     
     accuracy = accuracy_score(targets, predictions)
     loss = fin_loss / len(data_loader)
+    density = fin_density / len(data_loader)
     
-    return loss, accuracy, targets, predictions
+    return loss, accuracy, targets, predictions, density
 
 
 def test_model(model, data_loader, criterions, device, use_both_heads, loss_lambda):
     model.eval()
     
     fin_loss = 0
+    fin_density = 0
     fin_preds = []
     fin_targs = []
 
@@ -229,7 +239,8 @@ def test_model(model, data_loader, criterions, device, use_both_heads, loss_lamb
             for k, v in data.items():
                 data[k] = v.to(device)
 
-            logits_main_head, logits_second_head = model(data["images"])
+            logits_main_head, logits_second_head, density = model(data["images"])
+            fin_density += density
             
             if use_both_heads:
                 loss = criterions["main_head"](logits_main_head, data["targets"]) + loss_lambda*criterions["second_head"](logits_second_head, data["targets"])
@@ -249,5 +260,6 @@ def test_model(model, data_loader, criterions, device, use_both_heads, loss_lamb
     
     accuracy = accuracy_score(targets, predictions)
     loss = fin_loss / len(data_loader)
+    density = fin_density / len(data_loader)
     
-    return loss, accuracy, targets, predictions
+    return loss, accuracy, targets, predictions, density

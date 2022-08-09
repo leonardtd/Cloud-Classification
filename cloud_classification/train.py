@@ -25,7 +25,7 @@ def is_there_arg(args, master_arg):
 
 def train(config_file, use_wandb, run_name, run_notes, num_experiments):
     set_seed(7)
-    config, wandb_config = configure_model(config_file, use_wandb)
+    config = configure_model(config_file, use_wandb)
 
         
     ### read dataset
@@ -52,7 +52,7 @@ def train(config_file, use_wandb, run_name, run_notes, num_experiments):
     for i in range(1, num_experiments+1):
         
         if use_wandb:
-            wandb.init(project=PROJECT_WANDB, entity=ENTITY, config=wandb_config, name=run_name, notes=run_notes, reinit=True)
+            wandb.init(project=PROJECT_WANDB, entity=ENTITY, config=config, name=run_name, notes=run_notes, reinit=True)
             wandb.watch_called = False
             ## logger
             path_results = os.path.join(config["data"]["path_save_logs"], f"wandb_{wandb.run.id}_model.csv")

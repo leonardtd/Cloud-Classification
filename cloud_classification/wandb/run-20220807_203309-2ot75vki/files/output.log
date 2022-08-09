@@ -1,0 +1,15 @@
+
+STARTING TRAINING: experiment 1
+  0%|                                                                                                                                              | 0/250 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 93, in <module>
+    train(CONFIG_FILENAME,
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 66, in train
+    model, data_logger = trainer.train()
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 65, in train
+    train_loss, train_acc, train_targets, train_predictions, train_density = utils.train_model(
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/utils.py", line 202, in train_model
+    loss = criterions["main_head"](logits_main_head, data["targets"]) + loss_lambda*criterions["second_head"](logits_second_head, data["targets"])
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/utils.py", line 123, in loge_loss
+    epsilon = 1 - math.log(2)
+NameError: name 'math' is not defined

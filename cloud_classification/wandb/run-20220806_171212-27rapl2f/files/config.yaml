@@ -1,0 +1,136 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.11
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.9.7
+    start_time: 1659823932
+    t:
+      1:
+      - 1
+      - 5
+      - 41
+      2:
+      - 1
+      - 5
+      - 41
+      3:
+      - 1
+      - 2
+      - 16
+      4: 3.9.7
+      5: 0.12.11
+      8:
+      - 5
+    visualize:
+      test/confusion_matrix:
+        panel_config:
+          fieldSettings:
+            Actual: Actual
+            Predicted: Predicted
+            nPredictions: nPredictions
+          panelDefId: wandb/confusion_matrix/v1
+          stringSettings:
+            title: ''
+          transform:
+            name: tableWithLeafColNames
+          userQuery:
+            queryFields:
+            - args:
+              - name: runSets
+                value: ${runSets}
+              fields:
+              - fields: []
+                name: id
+              - fields: []
+                name: name
+              - fields: []
+                name: _defaultColorIndex
+              - args:
+                - name: tableKey
+                  value: test/confusion_matrix_table
+                fields: []
+                name: summaryTable
+              name: runSets
+        panel_type: Vega2
+      train/confusion_matrix:
+        panel_config:
+          fieldSettings:
+            Actual: Actual
+            Predicted: Predicted
+            nPredictions: nPredictions
+          panelDefId: wandb/confusion_matrix/v1
+          stringSettings:
+            title: ''
+          transform:
+            name: tableWithLeafColNames
+          userQuery:
+            queryFields:
+            - args:
+              - name: runSets
+                value: ${runSets}
+              fields:
+              - fields: []
+                name: id
+              - fields: []
+                name: name
+              - fields: []
+                name: _defaultColorIndex
+              - args:
+                - name: tableKey
+                  value: train/confusion_matrix_table
+                fields: []
+                name: summaryTable
+              name: runSets
+        panel_type: Vega2
+data:
+  desc: null
+  value:
+    class_names:
+    - 1_cumulus
+    - 2_altocumulus
+    - 3_cirrus
+    - 4_clearsky
+    - 5_stratocumulus
+    - 6_cumulonimbus
+    - 7_mixed
+    path_dataset: /data/ltorres
+    path_save_logs: /data/ltorres/model_logs
+    path_save_weights: /data/ltorres/CLOUD_CLASSIFICATION_WEIGHTS
+    resize: 224
+    use_augmentation: true
+hardware:
+  desc: null
+  value:
+    device: cuda:3
+hyperparameters:
+  desc: null
+  value:
+    batch_size: 40
+    criterion: cross_entropy
+    early_stopping_tolerance: 8
+    epochs: 40
+    learning_rate: 0.0002
+    lr_decay_gamma: 0.5
+    lr_decay_steps: 15
+    optimizer: sgd
+    use_scheduler: true
+model:
+  desc: null
+  value:
+    adjacency_builder: cos_sim
+    builder_parameter: 0.7
+    conv_parameters:
+      agg: sum
+      num_heads: 2
+    conv_type: gcn
+    gnn_dropout: 0.3
+    hidden_dim: 512
+    loss_lambda: 1
+    num_classes: 7
+    num_hidden: 2
+    use_both_heads: false

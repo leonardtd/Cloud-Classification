@@ -12,8 +12,10 @@ def build_model(config):
                  hidden_dim = config["model"]["hidden_dim"], 
                  num_hidden = config["model"]["num_hidden"], 
                  num_classes = config["model"]["num_classes"],
+                 feature_extraction = config["model"]["feature_extraction"],
                  conv_type = config["model"]["conv_type"],
                  conv_parameters = config["model"]["conv_parameters"],
+                 gnn_dropout = config["model"]["gnn_dropout"],
                  adjacency_builder = config["model"]["adjacency_builder"],
                  builder_parameter = config["model"]["builder_parameter"],
                  use_both_heads = config["model"]["use_both_heads"],
@@ -39,7 +41,10 @@ class ModelTrainer:
         self.data_logger = pd.DataFrame(columns=["type", "epoch", "loss", "accuracy"])
         
         if self.use_wandb:
-            wandb.watch(self.model, log="all")
+            wandb.watch(self.model.graph_layers, log="all")
+            wandb.watch(self.model.head, log="all")
+            wandb.watch(self.model.second_head, log="all")
+            
             self.path_artifact = os.path.join(self.config["data"]["path_save_weights"], f"wandb_{wandb.run.id}_model.pt")
         else:
             self.path_artifact = os.path.join(self.config["data"]["path_save_weights"], f"parameters_model.pt")
@@ -57,25 +62,25 @@ class ModelTrainer:
         loss_lambda = self.config["model"]["loss_lambda"]
         
         for e in range(epochs):
-            train_loss, train_acc, train_targets, train_predictions = utils.train_model(
-                                                                                    self.model, 
-                                                                                    self.data_loaders["train"], 
-                                                                                    self.criterions, 
-                                                                                    self.optimizer, 
-                                                                                    device, 
-                                                                                    use_both_heads,
-                                                                                    loss_lambda,
-                                                                      )
+            train_loss, train_acc, train_targets, train_predictions, train_density = utils.train_model(
+                                                                                                    self.model, 
+                                                                                                    self.data_loaders["train"], 
+                                                                                                    self.criterions, 
+                                                                                                    self.optimizer, 
+                                                                                                    device, 
+                                                                                                    use_both_heads,
+                                                                                                    loss_lambda,
+                                                                                     )
             
             
-            test_loss, test_acc, test_targets, test_predictions = utils.test_model(
-                                                                                self.model, 
-                                                                                self.data_loaders["test"], 
-                                                                                self.criterions, 
-                                                                                device, 
-                                                                                use_both_heads,
-                                                                                loss_lambda,
-                                                                  )
+            test_loss, test_acc, test_targets, test_predictions, test_density = utils.test_model(
+                                                                                            self.model, 
+                                                                                            self.data_loaders["test"], 
+                                                                                            self.criterions, 
+                                                                                            device, 
+                                                                                            use_both_heads,
+                                                                                            loss_lambda,
+                                                                               )
             
             print("EPOCH {}: Train acc: {:.2%} Train Loss: {:.4f} Test acc: {:.2%} Test Loss: {:.4f}".format( 
                                                                                                             e+1,
@@ -90,8 +95,10 @@ class ModelTrainer:
             metrics = {
                 "train/train_loss": train_loss,
                 "train/train_accuracy": train_acc,
+                "train/train_adj_density": train_density,
                 "test/test_loss": test_loss,
                 "test/test_accuracy": test_acc,
+                "test/test_adj_density": test_density,
               }
 
             wandb.log(metrics)

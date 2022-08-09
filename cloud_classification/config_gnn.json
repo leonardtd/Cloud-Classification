@@ -13,10 +13,10 @@
     "hyperparameters": {
         "epochs": 40,
         "batch_size": 40,
-        "learning_rate": 0.0003,
-        "early_stopping_tolerance": 5,
-        "criterion": "cross_entropy",
-        "optimizer": "sgd",
+        "learning_rate": 0.00003,
+        "early_stopping_tolerance": 8,
+        "criterion": "loge",
+        "optimizer": "nadam",
         "use_scheduler": true,
         "lr_decay_steps": 15,
         "lr_decay_gamma": 0.5
@@ -25,11 +25,13 @@
         "hidden_dim": 512,
         "num_hidden": 2,
         "num_classes": 7,
-        "conv_type": "gcn",
-        "conv_parameters": {"num_heads":4, "residual": true, "agg":"mean"},
+        "feature_extraction": false,
+        "conv_type": "gat",
+        "conv_parameters": {"num_heads":4, "agg":"sum"},
+        "gnn_dropout": 0.35,
         "adjacency_builder": "cos_sim",
-        "builder_parameter": 0.7,
-        "use_both_heads": false,
+        "builder_parameter": 0.8,
+        "use_both_heads": true,
         "loss_lambda": 1
     }
 }

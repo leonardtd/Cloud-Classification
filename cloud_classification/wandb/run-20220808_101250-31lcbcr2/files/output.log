@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 93, in <module>
+    train(CONFIG_FILENAME,
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 63, in train
+    trainer = ModelTrainer(config, use_wandb, data_loaders)
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 38, in __init__
+    self.scheduler = utils.build_scheduler(self.optimizer, self.config) if config["hyperparameters"]["use_scheduler"] else None
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/utils.py", line 172, in build_scheduler
+    return lr_scheduler.StepLR(optimizer, step_size=lr_decay_steps, gamma=lr_decay_gamma)
+  File "/home/ltorres/miniconda3/lib/python3.9/site-packages/torch/optim/lr_scheduler.py", line 367, in __init__
+    super(StepLR, self).__init__(optimizer, last_epoch, verbose)
+  File "/home/ltorres/miniconda3/lib/python3.9/site-packages/torch/optim/lr_scheduler.py", line 28, in __init__
+    raise TypeError('{} is not an Optimizer'.format(
+TypeError: NoneType is not an Optimizer

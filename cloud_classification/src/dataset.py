@@ -55,7 +55,7 @@ class GCD:
         if self.resize is not None:
             image = T.Resize(self.resize)(image)
             
-        if self.use_augmentation is not None:
+        if self.use_augmentation:
             image = self.aug_transform(image)
 
         return {

@@ -6,6 +6,7 @@ import dgl
 from dgl.nn import GATConv, GraphConv
 
 from .conv_modules import CNNExtractor
+from .. import utils
 
 
 def normalize_features(dfs):
@@ -26,11 +27,11 @@ def build_graph_cosine_similarity(deep_features, threshold):
         batch_nodes = normalize_features(deep_features)
 
         sim_matrix = batch_nodes @ batch_nodes.T
-        adj_matrix = torch.where(sim_matrix > threshold, 1, 0)
+        adj_matrix = torch.where(sim_matrix >= threshold, 1, 0)
 
         row, col = torch.where(adj_matrix==1)
  
-    return dgl.graph((row, col))
+    return dgl.graph((row, col)), adj_matrix
 
 
 def build_graph_pearson_correlation(dfs, threshold):
@@ -40,10 +41,10 @@ def build_graph_pearson_correlation(dfs, threshold):
     """
     with torch.no_grad():
         corr_matrix = torch.corrcoef(dfs)
-        adj_matrix = torch.where(corr_matrix > threshold, 1, 0)
+        adj_matrix = torch.where(corr_matrix >= threshold, 1, 0)
         row, col = torch.where(adj_matrix==1)
     
-    return dgl.graph((row, col))
+    return dgl.graph((row, col)), adj_matrix
 
 
 ###########################
@@ -61,10 +62,10 @@ class GraphConvLayer(nn.Module):
     
     
 class GraphAttentionLayer(nn.Module):
-    def __init__(self, in_channels, out_channels, num_heads, residual, agg='mean'):
+    def __init__(self, in_channels, out_channels, num_heads, agg='mean'):
         super().__init__()
         
-        self.conv = GATConv(in_channels, out_channels, num_heads, residual)
+        self.conv = GATConv(in_channels, out_channels, num_heads)
         self.agg = agg
         
     def forward(self, g, x):
@@ -81,8 +82,10 @@ class GraphClassifier(nn.Module):
                  hidden_dim, 
                  num_hidden, 
                  num_classes,
+                 feature_extraction,
                  conv_type,
                  conv_parameters: dict,
+                 gnn_dropout,
                  adjacency_builder,
                  builder_parameter,
                  use_both_heads = True,
@@ -93,21 +96,26 @@ class GraphClassifier(nn.Module):
         self.hidden_dim = hidden_dim
         self.num_hidden = num_hidden
         self.num_classes = num_classes
+        self.feature_extraction = feature_extraction
         self.conv_type = conv_type
         self.conv_parameters = conv_parameters
+        self.gnn_dropout = gnn_dropout
         self.adjacency_builder = adjacency_builder
         self.builder_parameter = builder_parameter
         self.use_both_heads = use_both_heads
         
         ### modules
-        self.cnn = CNNExtractor() # 2048 output dims
+        self.cnn = CNNExtractor(feature_extraction=feature_extraction) # 2048 output dims
         
-        self.graph_layers = self.build_graph_layers(hidden_dim, num_hidden, conv_type, conv_parameters)
+        self.graph_layers, self.bn_layers = self.build_graph_layers(hidden_dim, num_hidden, conv_type, conv_parameters)
+        self.norms = nn.ModuleList()
+        
 
         self.head = nn.Sequential(
                     nn.Linear(2048 + hidden_dim, 1024),
                     nn.ReLU(),
                     nn.BatchNorm1d(1024),
+                    nn.Dropout(0.10),
                     nn.Linear(1024, num_classes),
                 )
         
@@ -117,21 +125,23 @@ class GraphClassifier(nn.Module):
         
     def build_graph_layers(self, hidden_dim, num_hidden, conv_type, conv_parameters):
         
-        module_list = nn.ModuleList()
+        graph_modules = nn.ModuleList()
+        bn_modules = nn.ModuleList()
         
         if conv_type == 'gcn':
-            module_list.append(GraphConvLayer(2048, hidden_dim))
+            graph_modules.append(GraphConvLayer(2048, hidden_dim))
             conv = GraphConvLayer(hidden_dim, hidden_dim)
         elif conv_type == 'gat':
-            module_list.append(GraphAttentionLayer(2048, hidden_dim, conv_parameters["num_heads"], conv_parameters["residual"], conv_parameters['agg']))
-            conv = GraphAttentionLayer(hidden_dim, hidden_dim, conv_parameters["num_heads"], conv_parameters["residual"], conv_parameters['agg'])
+            graph_modules.append(GraphAttentionLayer(2048, hidden_dim, conv_parameters["num_heads"], conv_parameters['agg']))
+            conv = GraphAttentionLayer(hidden_dim, hidden_dim, conv_parameters["num_heads"], conv_parameters['agg'])
         else:
             raise NotImplementedError("Invalid layer")
         
         for i in range(num_hidden-1):
-            module_list.append(conv)
+            graph_modules.append(conv)
+            bn_modules.append(nn.BatchNorm1d(hidden_dim))
             
-        return module_list
+        return graph_modules, bn_modules
         
         
     def reset_parameters(self):
@@ -147,12 +157,12 @@ class GraphClassifier(nn.Module):
         deep_features = self.cnn(x)
         
         ### ADJACENCY MATRIX CONSTRUCTION
-        # TODO: implement distance and mlp
         
+        # TODO: implement l2 distance and mlp
         if self.adjacency_builder == 'cos_sim':
-            g = build_graph_cosine_similarity(deep_features.detach(), self.builder_parameter)
+            g, adj_matrix = build_graph_cosine_similarity(deep_features.detach(), self.builder_parameter)
         elif self.adjacency_builder == 'pearson_corr':
-            g = build_graph_pearson_correlation(deep_features.detach(), self.builder_parameter)
+            g, adj_matrix = build_graph_pearson_correlation(deep_features.detach(), self.builder_parameter)
         else:
             raise NotImplementedError("Invalid builder")
     
@@ -162,14 +172,16 @@ class GraphClassifier(nn.Module):
         for i, gnn_layer in enumerate(self.graph_layers):
             x = gnn_layer(g, x)
             if i != len(self.graph_layers)-1:
+                x = self.bn_layers[i](x)
                 x = F.leaky_relu(x)
+                x = F.dropout(x, p=self.gnn_dropout, training=self.training)
         
         agg_features = torch.cat([deep_features, x], dim=1)
         logits_main_head = self.head(agg_features)
         
         logits_second_head = self.second_head(deep_features)
 
-        return logits_main_head, logits_second_head
+        return logits_main_head, logits_second_head, utils.get_matrix_density(adj_matrix)
     
     def get_deep_features(self, x):
         with torch.no_grad():

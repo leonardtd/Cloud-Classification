@@ -1,0 +1,185 @@
+2022-08-06 12:46:43,446 INFO    MainThread:11772 [wandb_setup.py:_flush():75] Loading settings from /home/ltorres/.config/wandb/settings
+2022-08-06 12:46:43,446 INFO    MainThread:11772 [wandb_setup.py:_flush():75] Loading settings from /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/settings
+2022-08-06 12:46:43,446 INFO    MainThread:11772 [wandb_setup.py:_flush():75] Loading settings from environment variables: {}
+2022-08-06 12:46:43,446 INFO    MainThread:11772 [wandb_setup.py:_flush():75] Inferring run settings from compute environment: {'program_relpath': 'cloud_classification/train.py', 'program': '/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py'}
+2022-08-06 12:46:43,446 INFO    MainThread:11772 [wandb_init.py:_log_setup():405] Logging user logs to /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_124643-2hbd2bwq/logs/debug.log
+2022-08-06 12:46:43,446 INFO    MainThread:11772 [wandb_init.py:_log_setup():406] Logging internal logs to /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220806_124643-2hbd2bwq/logs/debug-internal.log
+2022-08-06 12:46:43,446 INFO    MainThread:11772 [wandb_init.py:init():439] calling init triggers
+2022-08-06 12:46:43,446 INFO    MainThread:11772 [wandb_init.py:init():442] wandb.init called with sweep_config: {}
+config: {'device': 'cuda:3', 'resize': 224, 'use_augmentation': True, 'epochs': 4, 'batch_size': 40, 'learning_rate': 0.0003, 'early_stopping_tolerance': 5, 'criterion': 'cross_entropy', 'optimizer': 'sgd', 'use_scheduler': True, 'lr_decay_steps': 15, 'lr_decay_gamma': 0.5, 'hidden_dim': 512, 'num_hidden': 2, 'num_classes': 7, 'conv_type': 'gcn', 'conv_parameters': {'num_heads': 4, 'residual': True, 'agg': 'mean'}, 'adjacency_builder': 'cos_sim', 'builder_parameter': 0.7, 'use_both_heads': False, 'loss_lambda': 1}
+2022-08-06 12:46:43,446 INFO    MainThread:11772 [wandb_init.py:init():492] starting backend
+2022-08-06 12:46:43,446 INFO    MainThread:11772 [backend.py:_multiprocessing_setup():99] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-08-06 12:46:43,454 INFO    MainThread:11772 [backend.py:ensure_launched():219] starting backend process...
+2022-08-06 12:46:43,459 INFO    MainThread:11772 [backend.py:ensure_launched():224] started backend process with pid: 11788
+2022-08-06 12:46:43,460 INFO    MainThread:11772 [wandb_init.py:init():501] backend started and connected
+2022-08-06 12:46:43,466 INFO    MainThread:11772 [wandb_init.py:init():565] updated telemetry
+2022-08-06 12:46:43,483 INFO    MainThread:11772 [wandb_init.py:init():596] communicating run to backend with 30 second timeout
+2022-08-06 12:46:44,432 INFO    MainThread:11772 [wandb_run.py:_on_init():1759] communicating current version
+2022-08-06 12:46:44,486 INFO    MainThread:11772 [wandb_run.py:_on_init():1763] got version response upgrade_message: "wandb version 0.13.1 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2022-08-06 12:46:44,487 INFO    MainThread:11772 [wandb_init.py:init():625] starting run threads in backend
+2022-08-06 12:46:46,873 INFO    MainThread:11772 [wandb_run.py:_console_start():1733] atexit reg
+2022-08-06 12:46:46,873 INFO    MainThread:11772 [wandb_run.py:_redirect():1606] redirect: SettingsConsole.REDIRECT
+2022-08-06 12:46:46,874 INFO    MainThread:11772 [wandb_run.py:_redirect():1611] Redirecting console.
+2022-08-06 12:46:46,876 INFO    MainThread:11772 [wandb_run.py:_redirect():1667] Redirects installed.
+2022-08-06 12:46:46,876 INFO    MainThread:11772 [wandb_init.py:init():664] run started, returning control to user process
+2022-08-06 12:46:51,228 INFO    MainThread:11772 [wandb_watch.py:watch():47] Watching
+2022-08-06 12:49:09,941 INFO    MainThread:11772 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-08-06 12:49:11,193 INFO    MainThread:11772 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-08-06 12:51:29,549 INFO    MainThread:11772 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-08-06 12:51:30,384 INFO    MainThread:11772 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-08-06 12:53:48,963 INFO    MainThread:11772 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-08-06 12:53:49,799 INFO    MainThread:11772 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-08-06 12:56:08,735 INFO    MainThread:11772 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-08-06 12:56:09,557 INFO    MainThread:11772 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-08-06 12:56:10,780 INFO    MainThread:11772 [wandb_run.py:finish():1539] finishing run leonardtd/gcd-classification/2hbd2bwq
+2022-08-06 12:56:10,780 INFO    MainThread:11772 [wandb_run.py:_atexit_cleanup():1702] got exitcode: 0
+2022-08-06 12:56:10,782 INFO    MainThread:11772 [wandb_run.py:_restore():1674] restore
+2022-08-06 12:56:14,898 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 1
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 33020
+  total_bytes: 34929
+}
+
+2022-08-06 12:56:15,252 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 1
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 33020
+  total_bytes: 34929
+}
+
+2022-08-06 12:56:15,689 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 34929
+  total_bytes: 62216
+}
+
+2022-08-06 12:56:15,790 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 34929
+  total_bytes: 62216
+}
+
+2022-08-06 12:56:15,891 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 34929
+  total_bytes: 62216
+}
+
+2022-08-06 12:56:15,992 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 34929
+  total_bytes: 62216
+}
+
+2022-08-06 12:56:16,093 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 62216
+  total_bytes: 62216
+}
+
+2022-08-06 12:56:16,194 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 62216
+  total_bytes: 62216
+}
+
+2022-08-06 12:56:16,294 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 62216
+  total_bytes: 62216
+}
+
+2022-08-06 12:56:16,395 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 62216
+  total_bytes: 62216
+}
+
+2022-08-06 12:56:16,496 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 62216
+  total_bytes: 62216
+}
+
+2022-08-06 12:56:16,597 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 62216
+  total_bytes: 62216
+}
+
+2022-08-06 12:56:17,303 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 62216
+  total_bytes: 62216
+}
+
+2022-08-06 12:56:17,664 INFO    MainThread:11772 [wandb_run.py:_on_finish():1831] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 6
+  media_count: 8
+  artifact_count: 8
+}
+pusher_stats {
+  uploaded_bytes: 62216
+  total_bytes: 62216
+}
+local_info {
+}
+
+2022-08-06 12:56:18,827 INFO    MainThread:11772 [wandb_run.py:_footer_history_summary_info():2865] rendering history
+2022-08-06 12:56:18,827 INFO    MainThread:11772 [wandb_run.py:_footer_history_summary_info():2894] rendering summary
+2022-08-06 12:56:18,829 INFO    MainThread:11772 [wandb_run.py:_footer_sync_info():2822] logging synced files
