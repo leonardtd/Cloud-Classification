@@ -28,17 +28,21 @@ def parse_arguments_train():
                     help="use weights and biases")
     ap.add_argument('-n  ', '--no-wandb', dest='wandb', action='store_false',
                     help="not use weights and biases")
-    ap.add_argument('-a', '--run_name', required=False, type=str, default=None,
+    ap.add_argument('-r', '--run_name', required=False, type=str, default=None,
                     help="name of the execution to save in wandb")
     ap.add_argument('-t', '--run_notes', required=False, type=str, default=None,
                     help="notes of the execution to save in wandb")
     ap.add_argument('-x', '--num_experiments', default=1, type=int,
                     help="number of experiments to run")
+    ap.add_argument('-a', '--architecture', required=False, type=str, default="gnn",
+                    help="name of the model architecture")
 
     args = ap.parse_args()
 
     return args
 
+def get_config_filename(architecture:str):
+    return f"config_{architecture}.json"
 
 def parse_configuration(config_file):
     """
@@ -130,7 +134,7 @@ def loge_loss(x , labels):
     return loss
     
     
-def build_criterions(config):
+def build_criterions(architecture, config):
     
     criterions = {}
     criterion_name = config["hyperparameters"]["criterion"]
@@ -144,8 +148,9 @@ def build_criterions(config):
         
     criterions["main_head"] = main_criterion
     
-    if config["model"]["use_both_heads"]:
-        criterions["second_head"] = nn.CrossEntropyLoss()
+    if architecture == "gnn":
+        if config["model"]["use_both_heads"]:
+            criterions["second_head"] = nn.CrossEntropyLoss()
     
     return criterions
         
@@ -181,7 +186,7 @@ def get_matrix_density(tensor):
 # 2. TRAINING
 ####################################
 
-def train_model(model, data_loader, criterions, optimizer, device, use_both_heads, loss_lambda):
+def train_gnn_model(model, data_loader, criterions, optimizer, device, use_both_heads, loss_lambda):
     model.train()
     
     fin_loss = 0
@@ -226,7 +231,7 @@ def train_model(model, data_loader, criterions, optimizer, device, use_both_head
     return loss, accuracy, targets, predictions, density
 
 
-def test_model(model, data_loader, criterions, device, use_both_heads, loss_lambda):
+def test_gnn_model(model, data_loader, criterions, device, use_both_heads, loss_lambda):
     model.eval()
     
     fin_loss = 0
@@ -263,3 +268,72 @@ def test_model(model, data_loader, criterions, device, use_both_heads, loss_lamb
     density = fin_density / len(data_loader)
     
     return loss, accuracy, targets, predictions, density
+
+
+def train_cnn_model(model, data_loader, criterions, optimizer, device):
+    model.train()
+    
+    fin_loss = 0
+    fin_preds = []
+    fin_targs = []
+
+    for data in tqdm(data_loader, total=len(data_loader)):
+        for k, v in data.items():
+            data[k] = v.to(device)
+                
+
+        optimizer.zero_grad()
+        
+        logits = model(data["images"])
+        loss = criterions["main_head"](logits, data["targets"])
+        loss.backward()
+        
+        optimizer.step()
+        
+        fin_loss += loss.item()
+
+        batch_preds = F.softmax(logits, dim=1)
+        batch_preds = torch.argmax(batch_preds, dim=1)
+
+        fin_preds.append(batch_preds.cpu().numpy())
+        fin_targs.append(data["targets"].cpu().numpy())
+    
+    targets = np.concatenate(fin_targs, axis=0)
+    predictions = np.concatenate(fin_preds, axis=0)
+    
+    accuracy = accuracy_score(targets, predictions)
+    loss = fin_loss / len(data_loader)
+    
+    return loss, accuracy, targets, predictions
+
+
+def test_cnn_model(model, data_loader, criterions, device):
+    model.eval()
+    
+    fin_loss = 0
+    fin_preds = []
+    fin_targs = []
+
+    with torch.no_grad():
+        for data in tqdm(data_loader, total=len(data_loader)):
+            for k, v in data.items():
+                data[k] = v.to(device)
+
+            logits = model(data["images"])
+            loss = criterions["main_head"](logits, data["targets"])
+            
+            fin_loss += loss.item()
+
+            batch_preds = F.softmax(logits, dim=1)
+            batch_preds = torch.argmax(batch_preds, dim=1)
+
+            fin_preds.append(batch_preds.cpu().numpy())
+            fin_targs.append(data["targets"].cpu().numpy())
+            
+    targets = np.concatenate(fin_targs, axis=0)
+    predictions = np.concatenate(fin_preds, axis=0)
+    
+    accuracy = accuracy_score(targets, predictions)
+    loss = fin_loss / len(data_loader)
+    
+    return loss, accuracy, targets, predictions

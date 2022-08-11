@@ -5,35 +5,45 @@ import wandb
 
 from . import utils
 from .modules.graph_modules import GraphClassifier
+from .modules.conv_modules import CloudNet
 
 
-def build_model(config):
-    model = GraphClassifier(
-                 hidden_dim = config["model"]["hidden_dim"], 
-                 num_hidden = config["model"]["num_hidden"], 
-                 num_classes = config["model"]["num_classes"],
-                 feature_extraction = config["model"]["feature_extraction"],
-                 conv_type = config["model"]["conv_type"],
-                 conv_parameters = config["model"]["conv_parameters"],
-                 gnn_dropout = config["model"]["gnn_dropout"],
-                 adjacency_builder = config["model"]["adjacency_builder"],
-                 builder_parameter = config["model"]["builder_parameter"],
-                 use_both_heads = config["model"]["use_both_heads"],
-            )
+def build_model(architecture, config):
+    if architecture == "gnn":
+        model = GraphClassifier(
+                     hidden_dim = config["model"]["hidden_dim"], 
+                     num_hidden = config["model"]["num_hidden"], 
+                     num_classes = config["model"]["num_classes"],
+                     feature_extraction = config["model"]["feature_extraction"],
+                     conv_type = config["model"]["conv_type"],
+                     conv_parameters = config["model"]["conv_parameters"],
+                     gnn_dropout = config["model"]["gnn_dropout"],
+                     adjacency_builder = config["model"]["adjacency_builder"],
+                     builder_parameter = config["model"]["builder_parameter"],
+                     use_both_heads = config["model"]["use_both_heads"],
+                )
+    elif architecture == "cnn":
+        model = CloudNet(
+                    out_dims = config["model"]["num_classes"],
+                    dropout = config["model"]["dropout"]
+                )
     
     return model.to(config["hardware"]["device"])
     
 
 class ModelTrainer:
-    def __init__(self, config, use_wandb, data_loaders:dict):
+    def __init__(self, architecture, config, use_wandb, data_loaders:dict):
         
+        self.architecture = architecture
         self.use_wandb = use_wandb
         self.config = config
         self.data_loaders = data_loaders
         
-        self.model = build_model(self.config)
+        self.model = build_model(self.architecture, self.config)
         
-        self.criterions = utils.build_criterions(self.config)
+        print(self.model)
+        
+        self.criterions = utils.build_criterions(self.architecture, self.config)
         self.optimizer = utils.build_optimizer(self.model, self.config)
         self.scheduler = utils.build_scheduler(self.optimizer, self.config) if config["hyperparameters"]["use_scheduler"] else None
         
@@ -41,10 +51,7 @@ class ModelTrainer:
         self.data_logger = pd.DataFrame(columns=["type", "epoch", "loss", "accuracy"])
         
         if self.use_wandb:
-            wandb.watch(self.model.graph_layers, log="all")
-            wandb.watch(self.model.head, log="all")
-            wandb.watch(self.model.second_head, log="all")
-            
+            wandb.watch(self.model, log="all")
             self.path_artifact = os.path.join(self.config["data"]["path_save_weights"], f"wandb_{wandb.run.id}_model.pt")
         else:
             self.path_artifact = os.path.join(self.config["data"]["path_save_weights"], f"parameters_model.pt")
@@ -58,29 +65,73 @@ class ModelTrainer:
         
         epochs = self.config["hyperparameters"]["epochs"]
         device = self.config["hardware"]["device"]
-        use_both_heads = self.config["model"]["use_both_heads"]
-        loss_lambda = self.config["model"]["loss_lambda"]
         
         for e in range(epochs):
-            train_loss, train_acc, train_targets, train_predictions, train_density = utils.train_model(
-                                                                                                    self.model, 
-                                                                                                    self.data_loaders["train"], 
-                                                                                                    self.criterions, 
-                                                                                                    self.optimizer, 
-                                                                                                    device, 
-                                                                                                    use_both_heads,
-                                                                                                    loss_lambda,
-                                                                                     )
+            if self.architecture == "gnn":
+                use_both_heads = self.config["model"]["use_both_heads"]
+                loss_lambda = self.config["model"]["loss_lambda"]
+        
+                train_loss, train_acc, train_targets, train_predictions, train_density = utils.train_gnn_model(
+                                                                                                        self.model, 
+                                                                                                        self.data_loaders["train"], 
+                                                                                                        self.criterions, 
+                                                                                                        self.optimizer, 
+                                                                                                        device, 
+                                                                                                        use_both_heads,
+                                                                                                        loss_lambda,
+                                                                                         )
+
+
+                test_loss, test_acc, test_targets, test_predictions, test_density = utils.test_gnn_model(
+                                                                                                self.model, 
+                                                                                                self.data_loaders["test"], 
+                                                                                                self.criterions, 
+                                                                                                device, 
+                                                                                                use_both_heads,
+                                                                                                loss_lambda,
+                                                                                   )
+                
+                ### wandb logger
+                metrics = {
+                    "train/train_loss": train_loss,
+                    "train/train_accuracy": train_acc,
+                    "train/train_adj_density": train_density,
+                    "test/test_loss": test_loss,
+                    "test/test_accuracy": test_acc,
+                    "test/test_adj_density": test_density,
+                  }
+
+                wandb.log(metrics)
             
-            
-            test_loss, test_acc, test_targets, test_predictions, test_density = utils.test_model(
+            elif self.architecture == "cnn":
+                train_loss, train_acc, train_targets, train_predictions = utils.train_cnn_model(
                                                                                             self.model, 
-                                                                                            self.data_loaders["test"], 
+                                                                                            self.data_loaders["train"], 
                                                                                             self.criterions, 
-                                                                                            device, 
-                                                                                            use_both_heads,
-                                                                                            loss_lambda,
-                                                                               )
+                                                                                            self.optimizer, 
+                                                                                            device,
+                                                                          )
+
+
+                test_loss, test_acc, test_targets, test_predictions = utils.test_cnn_model(
+                                                                                        self.model, 
+                                                                                        self.data_loaders["test"], 
+                                                                                        self.criterions, 
+                                                                                        device, 
+                                                                      )
+
+                
+                ### wandb logger
+                metrics = {
+                    "train/train_loss": train_loss,
+                    "train/train_accuracy": train_acc,
+                    "test/test_loss": test_loss,
+                    "test/test_accuracy": test_acc,
+                  }
+
+                wandb.log(metrics)
+                
+                
             
             print("EPOCH {}: Train acc: {:.2%} Train Loss: {:.4f} Test acc: {:.2%} Test Loss: {:.4f}".format( 
                                                                                                             e+1,
@@ -90,27 +141,13 @@ class ModelTrainer:
                                                                                                             test_loss
                                                                                                         ))
             
-                
-            ### wandb logger
-            metrics = {
-                "train/train_loss": train_loss,
-                "train/train_accuracy": train_acc,
-                "train/train_adj_density": train_density,
-                "test/test_loss": test_loss,
-                "test/test_accuracy": test_acc,
-                "test/test_adj_density": test_density,
-              }
-
-            wandb.log(metrics)
-            
             wandb.log({"train/confusion_matrix" : wandb.plot.confusion_matrix(probs=None,
-                        y_true=train_targets, preds=train_predictions,
-                        class_names=self.config["data"]["class_names"])})
-            
+                            y_true=train_targets, preds=train_predictions,
+                            class_names=self.config["data"]["class_names"])})
+
             wandb.log({"test/confusion_matrix" : wandb.plot.confusion_matrix(probs=None,
                         y_true=test_targets, preds=test_predictions,
                         class_names=self.config["data"]["class_names"])})
-
             
             ### local logger
             epoch_metrics = pd.DataFrame({

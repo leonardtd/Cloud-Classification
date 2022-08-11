@@ -23,11 +23,12 @@ def is_there_arg(args, master_arg):
     else:
         return False
 
-def train(config_file, use_wandb, run_name, run_notes, num_experiments):
+def train(architecture, use_wandb, run_name, run_notes, num_experiments):
     set_seed(7)
+    
+    config_file = utils.get_config_filename(architecture)
     config = configure_model(config_file, use_wandb)
 
-        
     ### read dataset
     print("Reading Dataset")
     
@@ -60,7 +61,7 @@ def train(config_file, use_wandb, run_name, run_notes, num_experiments):
         else:
             path_results = os.path.join(config["data"]["path_save_logs"], f"results_model.csv")
         
-        trainer = ModelTrainer(config, use_wandb, data_loaders)
+        trainer = ModelTrainer(architecture, config, use_wandb, data_loaders)
         
         print(f"STARTING TRAINING: experiment {i}")
         model, data_logger = trainer.train()
@@ -84,13 +85,15 @@ if __name__ == '__main__':
         run_name = args.run_name
         run_notes = args.run_notes
         num_experiments = args.num_experiments
+        architecture = args.architecture
     else:
         use_wandb = True
         run_name = None
         run_notes = None
         num_experiments = args.num_experiments
+        architecture = args.architecture
 
-    train(CONFIG_FILENAME, 
+    train(architecture, 
           use_wandb=use_wandb, 
           run_name=run_name, 
           run_notes=run_notes, 

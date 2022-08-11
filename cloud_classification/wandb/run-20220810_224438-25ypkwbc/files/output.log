@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 96, in <module>
+    train(architecture,
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 64, in train
+    trainer = ModelTrainer(architecture, config, use_wandb, data_loaders)
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 42, in __init__
+    self.model = build_model(self.config)
+TypeError: build_model() missing 1 required positional argument: 'config'

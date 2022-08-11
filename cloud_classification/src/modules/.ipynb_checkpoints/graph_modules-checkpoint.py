@@ -115,7 +115,7 @@ class GraphClassifier(nn.Module):
                     nn.Linear(2048 + hidden_dim, 1024),
                     nn.ReLU(),
                     nn.BatchNorm1d(1024),
-                    nn.Dropout(0.10),
+                    nn.Dropout(0.20),
                     nn.Linear(1024, num_classes),
                 )
         
@@ -147,7 +147,10 @@ class GraphClassifier(nn.Module):
     def reset_parameters(self):
         for m in self.modules():
             if  isinstance(m, nn.Linear):
-                nn.init.xavier_uniform_(m.weight)
+                ### general init rule
+                n = m.in_features
+                y = 1.0/np.sqrt(n)
+                m.weight.data.uniform_(-y, y)
                 if m.bias is not None:
                     nn.init.zeros_(m.bias)
                 
