@@ -33,7 +33,7 @@ class CloudNet(nn.Module):
         self.b3 = nn.BatchNorm2d(384)
         self.conv4 = nn.Conv2d(384, 256, 3, padding=1, bias=False)
         self.b4 = nn.BatchNorm2d(256)
-        self.fc1 = nn.Linear(256 * 5 * 5, 9216)
+        self.fc1 = nn.Linear(256 * 6 * 6, 9216)
         self.fc2 = nn.Linear(9216, 4096)
         self.fc3 = nn.Linear(4096, out_dims)
         

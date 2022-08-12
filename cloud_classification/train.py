@@ -35,8 +35,8 @@ def train(architecture, use_wandb, run_name, run_notes, num_experiments):
     train_paths = utils.get_gcd_paths(config["data"]["path_dataset"], "train")
     test_paths = utils.get_gcd_paths(config["data"]["path_dataset"], "test")
     
-    train_dataset = dataset.GCD(train_paths, resize=config["data"]["resize"], use_augmentation=config["data"]["use_augmentation"])
-    test_dataset = dataset.GCD(test_paths, resize=config["data"]["resize"], use_augmentation=False)
+    train_dataset = dataset.GCDv2(train_paths, resize=config["data"]["resize"], use_augmentation=config["data"]["use_augmentation"])
+    test_dataset = dataset.GCDv2(test_paths, resize=config["data"]["resize"], use_augmentation=False)
     
     print("train_dataset:", len(train_dataset))
     print("test_dataset:", len(test_dataset))

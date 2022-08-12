@@ -1,0 +1,185 @@
+CloudNet(
+  (pool): MaxPool2d(kernel_size=3, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (conv1): Conv2d(3, 96, kernel_size=(11, 11), stride=(4, 4), bias=False)
+  (b1): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (conv2): Conv2d(96, 256, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), bias=False)
+  (b2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (conv3): Conv2d(256, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (b3): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (conv4): Conv2d(384, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+  (b4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (fc1): Linear(in_features=6400, out_features=9216, bias=True)
+  (fc2): Linear(in_features=9216, out_features=4096, bias=True)
+  (fc3): Linear(in_features=4096, out_features=7, bias=True)
+)
+STARTING TRAINING: experiment 1
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:21<00:00, 11.78it/s]
+
+
+
+ 98%|███████████████████████████████████████████████████████████████████████████████████████████▎ | 221/225 [00:08<00:00, 42.33it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 225/225 [00:09<00:00, 24.63it/s]
+  0%|                                                                                                       | 0/250 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:20<00:00, 12.13it/s]
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 225/225 [00:08<00:00, 25.82it/s]
+EPOCH 2: Train acc: 29.25% Train Loss: 1.7697 Test acc: 30.68% Test Loss: 1.8794
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:22<00:00, 11.35it/s]
+
+
+
+ 99%|████████████████████████████████████████████████████████████████████████████████████████████▏| 223/225 [00:08<00:00, 42.15it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 225/225 [00:09<00:00, 24.62it/s]
+Did not decrease test loss. Tolerance left 7
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:21<00:00, 11.84it/s]
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 225/225 [00:08<00:00, 26.22it/s]
+EPOCH 4: Train acc: 31.08% Train Loss: 1.6931 Test acc: 19.09% Test Loss: 1.9175
+  0%|                                                                                                       | 0/250 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:21<00:00, 11.45it/s]
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 225/225 [00:08<00:00, 25.12it/s]
+EPOCH 5: Train acc: 31.97% Train Loss: 1.6171 Test acc: 15.60% Test Loss: 1.9960
+Did not decrease test loss. Tolerance left 5
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:20<00:00, 11.94it/s]
+
+
+
+ 95%|████████████████████████████████████████████████████████████████████████████████████████     | 213/225 [00:07<00:00, 39.24it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 225/225 [00:08<00:00, 25.32it/s]
+  0%|                                                                                                       | 0/250 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:21<00:00, 11.77it/s]
+
+
+
+100%|████████████████████████████████████████████████████████████████████████████████████████████▌| 224/225 [00:08<00:00, 42.08it/s]
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 225/225 [00:08<00:00, 25.57it/s]
+  0%|                                                                                                       | 0/250 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 250/250 [00:21<00:00, 11.81it/s]
+
+
+
+ 88%|██████████████████████████████████████████████████████████████████████████████████▎          | 199/225 [00:07<00:00, 40.91it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████████████████| 225/225 [00:09<00:00, 24.60it/s]
+  0%|                                                                                                       | 0/250 [00:00<?, ?it/s]
+  0%|                                                                                                       | 0/250 [00:00<?, ?it/s]Exception ignored in: <function _releaseLock at 0x7fb1d4ff30d0>
+Traceback (most recent call last):
+  File "/home/ltorres/miniconda3/lib/python3.9/logging/__init__.py", line 227, in _releaseLock
+    def _releaseLock():
+KeyboardInterrupt:
+  0%|                                                                                                       | 0/250 [00:02<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 96, in <module>
+    train(architecture,
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 67, in train
+    model, data_logger = trainer.train()
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 107, in train
+    train_loss, train_acc, train_targets, train_predictions = utils.train_cnn_model(
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/utils.py", line 280, in train_cnn_model
+    for data in tqdm(data_loader, total=len(data_loader)):
+  File "/home/ltorres/miniconda3/lib/python3.9/site-packages/tqdm/std.py", line 1180, in __iter__
+    for obj in iterable:
+  File "/home/ltorres/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 530, in __next__
+    data = self._next_data()
+  File "/home/ltorres/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1207, in _next_data
+    idx, data = self._get_data()
+  File "/home/ltorres/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1173, in _get_data
+    success, data = self._try_get_data()
+  File "/home/ltorres/miniconda3/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1011, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/ltorres/miniconda3/lib/python3.9/multiprocessing/queues.py", line 113, in get
+    if not self._poll(timeout):
+  File "/home/ltorres/miniconda3/lib/python3.9/multiprocessing/connection.py", line 262, in poll
+    return self._poll(timeout)
+  File "/home/ltorres/miniconda3/lib/python3.9/multiprocessing/connection.py", line 429, in _poll
+    r = wait([self], timeout)
+  File "/home/ltorres/miniconda3/lib/python3.9/multiprocessing/connection.py", line 936, in wait
+    ready = selector.select(timeout)
+  File "/home/ltorres/miniconda3/lib/python3.9/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt
