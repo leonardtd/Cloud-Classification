@@ -204,16 +204,16 @@ def train_gnn_model(model, data_loader, criterions, optimizer, device, use_both_
         logits_main_head, logits_second_head, density = model(data["images"])
         fin_density += density
         
-        if use_both_heads:
-            loss = criterions["main_head"](logits_main_head, data["targets"]) + loss_lambda*criterions["second_head"](logits_second_head, data["targets"])
-        else:
-            loss = criterions["main_head"](logits_main_head, data["targets"])
+        loss = criterions["main_head"](logits_main_head, data["targets"])
         
+        if use_both_heads:
+            loss = loss + loss_lambda*criterions["second_head"](logits_second_head, data["targets"])
+
         loss.backward()
         
         optimizer.step()
         
-        fin_loss += loss.item()
+        fin_loss += loss.item() ### ONLY LOG MAIN HEAD LOSS
 
         batch_preds = F.softmax(logits_main_head, dim=1)
         batch_preds = torch.argmax(batch_preds, dim=1)
@@ -247,10 +247,10 @@ def test_gnn_model(model, data_loader, criterions, device, use_both_heads, loss_
             logits_main_head, logits_second_head, density = model(data["images"])
             fin_density += density
             
+            loss = criterions["main_head"](logits_main_head, data["targets"])
+            
             if use_both_heads:
-                loss = criterions["main_head"](logits_main_head, data["targets"]) + loss_lambda*criterions["second_head"](logits_second_head, data["targets"])
-            else:
-                loss = criterions["main_head"](logits_main_head, data["targets"])
+                loss = loss + loss_lambda*criterions["second_head"](logits_second_head, data["targets"])
             
             fin_loss += loss.item()
 
