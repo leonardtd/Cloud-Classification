@@ -161,7 +161,7 @@ class GraphClassifier(nn.Module):
         
         ### ADJACENCY MATRIX CONSTRUCTION
         
-        # TODO: implement l2 distance and mlp
+        # TODO: implement l2 distance
         if self.adjacency_builder == 'cos_sim':
             g, adj_matrix = build_graph_cosine_similarity(deep_features.detach(), self.builder_parameter)
         elif self.adjacency_builder == 'pearson_corr':
