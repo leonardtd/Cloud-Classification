@@ -107,9 +107,7 @@ class GraphClassifier(nn.Module):
         ### modules
         self.cnn = CNNExtractor(feature_extraction=feature_extraction) # 2048 output dims
         
-        self.graph_layers, self.bn_layers = self.build_graph_layers(hidden_dim, num_hidden, conv_type, conv_parameters)
-        self.norms = nn.ModuleList()
-        
+        self.graph_layers, self.bn_layers = self.build_graph_layers(hidden_dim, num_hidden, conv_type, conv_parameters)        
 
         self.head = nn.Sequential(
                     nn.Linear(2048 + hidden_dim, 1024),
@@ -157,9 +155,10 @@ class GraphClassifier(nn.Module):
 
     def forward(self, x):
         
+        ### 1. VECTORIZACION DE LAS IMAGENES
         deep_features = self.cnn(x)
         
-        ### ADJACENCY MATRIX CONSTRUCTION
+        ### 2. CONSTRUCCION DE LA MATRIZ DE ADYACENCIA
         
         # TODO: implement l2 distance
         if self.adjacency_builder == 'cos_sim':
@@ -169,7 +168,7 @@ class GraphClassifier(nn.Module):
         else:
             raise NotImplementedError("Invalid builder")
     
-        ### MESSAGE PASSING
+        ### 3. MODULOS GNN
         x = deep_features
         
         for i, gnn_layer in enumerate(self.graph_layers):
@@ -179,9 +178,13 @@ class GraphClassifier(nn.Module):
                 x = F.leaky_relu(x)
                 x = F.dropout(x, p=self.gnn_dropout, training=self.training)
         
+        ### CONCATENACION DE FEATURES CNN, GNN
         agg_features = torch.cat([deep_features, x], dim=1)
+        
+        ### 4. CLASIFICACION FINAL
         logits_main_head = self.head(agg_features)
         
+        ### 5. (OPCIONAL) clasificacion secundaria
         logits_second_head = self.second_head(deep_features)
 
         return logits_main_head, logits_second_head, utils.get_matrix_density(adj_matrix)

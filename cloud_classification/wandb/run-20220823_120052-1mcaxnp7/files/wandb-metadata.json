@@ -1,0 +1,28 @@
+{
+    "os": "Linux-5.4.0-124-generic-x86_64-with-glibc2.27",
+    "python": "3.9.7",
+    "heartbeatAt": "2022-08-23T17:00:53.313955",
+    "startedAt": "2022-08-23T17:00:52.303446",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_count": 4,
+    "cpu_count": 24,
+    "cuda": null,
+    "args": [
+        "--wandb",
+        "-a",
+        "gnn"
+    ],
+    "state": "running",
+    "program": "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py",
+    "codePath": "cloud_classification/train.py",
+    "git": {
+        "remote": "https://github.com/leonardtd/Cloud-Classification.git",
+        "commit": "4544e7747c6ef40ddfd291b59bea0fa3f06956ab"
+    },
+    "email": "leonardtd@gmail.com",
+    "root": "/home/ltorres/leo/Cloud-Classification",
+    "host": "discovery",
+    "username": "ltorres",
+    "executable": "/home/ltorres/miniconda3/bin/python3"
+}

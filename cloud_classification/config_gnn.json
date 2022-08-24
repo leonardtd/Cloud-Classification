@@ -11,11 +11,11 @@
         "use_augmentation": true
     },
     "hyperparameters": {
-        "epochs": 40,
+        "epochs": 30,
         "batch_size": 40,
         "learning_rate": 0.00005,
         "early_stopping_tolerance": 8,
-        "criterion": "loge",
+        "criterion": "cross_entropy",
         "optimizer": "sgd",
         "use_scheduler": true,
         "lr_decay_steps": 15,
@@ -31,7 +31,7 @@
         "gnn_dropout": 0.3,
         "adjacency_builder": "cos_sim",
         "builder_parameter": 0.7,
-        "use_both_heads": true,
+        "use_both_heads": false,
         "loss_lambda": 1
     }
 }
