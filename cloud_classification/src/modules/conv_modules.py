@@ -5,6 +5,9 @@ from torchvision import models
 
 class CNNExtractor(nn.Module):
     def __init__(self, feature_extraction=False):
+        """
+        parametro de cuantas capas descongelar (desde el final)
+        """
         super().__init__()
         
         self.cnn = torch.nn.Sequential(

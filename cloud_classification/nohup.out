@@ -1,0 +1,60 @@
+[I 2022-08-31 16:17:19.217 ServerApp] jupyterlab | extension was successfully linked.
+[I 2022-08-31 16:17:19.224 ServerApp] nbclassic | extension was successfully linked.
+[I 2022-08-31 16:17:19.339 ServerApp] notebook_shim | extension was successfully linked.
+[I 2022-08-31 16:17:19.359 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2022-08-31 16:17:19.360 LabApp] JupyterLab extension loaded from /home/ltorres/miniconda3/lib/python3.9/site-packages/jupyterlab
+[I 2022-08-31 16:17:19.360 LabApp] JupyterLab application directory is /home/ltorres/miniconda3/share/jupyter/lab
+[I 2022-08-31 16:17:19.362 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2022-08-31 16:17:19.366 ServerApp] nbclassic | extension was successfully loaded.
+[I 2022-08-31 16:17:19.366 ServerApp] Serving notebooks from local directory: /home/ltorres/leo/Cloud-Classification/cloud_classification
+[I 2022-08-31 16:17:19.366 ServerApp] Jupyter Server 1.15.6 is running at:
+[I 2022-08-31 16:17:19.366 ServerApp] http://localhost:9007/lab?token=12c7d9a7796d7fb7bf8a105c60a02ae5005c18f51784ee9c
+[I 2022-08-31 16:17:19.367 ServerApp]  or http://127.0.0.1:9007/lab?token=12c7d9a7796d7fb7bf8a105c60a02ae5005c18f51784ee9c
+[I 2022-08-31 16:17:19.367 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2022-08-31 16:17:19.369 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/ltorres/.local/share/jupyter/runtime/jpserver-3332-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:9007/lab?token=12c7d9a7796d7fb7bf8a105c60a02ae5005c18f51784ee9c
+     or http://127.0.0.1:9007/lab?token=12c7d9a7796d7fb7bf8a105c60a02ae5005c18f51784ee9c
+[W 2022-08-31 16:17:24.224 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-08-31 16:17:24.419 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/notebooks/RE4%20Adjacency%20Matrix.ipynb?content=0&1661980644352 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification/notebooks/RE4 Adjacency Matrix.ipynb
+[W 2022-08-31 16:17:24.419 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification/notebooks/RE4 Adjacency Matrix.ipynb
+[W 2022-08-31 16:17:24.419 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/notebooks/RE4%20Adjacency%20Matrix.ipynb?content=0&1661980644352 (127.0.0.1) 3.53ms referer=http://localhost:9007/lab
+[W 2022-08-31 16:17:24.420 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/test.ipynb?content=0&1661980644353 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification/test.ipynb
+[W 2022-08-31 16:17:24.420 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification/test.ipynb
+[W 2022-08-31 16:17:24.420 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/test.ipynb?content=0&1661980644353 (127.0.0.1) 0.66ms referer=http://localhost:9007/lab
+[W 2022-08-31 16:17:24.429 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/src/dataset.py?content=0&1661980644353 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification/src/dataset.py
+[W 2022-08-31 16:17:24.430 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification/src/dataset.py
+[W 2022-08-31 16:17:24.431 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/src/dataset.py?content=0&1661980644353 (127.0.0.1) 3.62ms referer=http://localhost:9007/lab
+[W 2022-08-31 16:17:24.435 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/train.py?content=0&1661980644353 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification/train.py
+[W 2022-08-31 16:17:24.436 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification/train.py
+[W 2022-08-31 16:17:24.437 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/train.py?content=0&1661980644353 (127.0.0.1) 4.38ms referer=http://localhost:9007/lab
+[W 2022-08-31 16:17:24.439 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/src/model.py?content=0&1661980644353 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification/src/model.py
+[W 2022-08-31 16:17:24.440 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification/src/model.py
+[W 2022-08-31 16:17:24.440 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/src/model.py?content=0&1661980644353 (127.0.0.1) 2.46ms referer=http://localhost:9007/lab
+[W 2022-08-31 16:17:24.444 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/src/modules/graph_modules.py?content=0&1661980644354 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification/src/modules/graph_modules.py
+[W 2022-08-31 16:17:24.444 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification/src/modules/graph_modules.py
+[W 2022-08-31 16:17:24.445 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/src/modules/graph_modules.py?content=0&1661980644354 (127.0.0.1) 2.89ms referer=http://localhost:9007/lab
+[W 2022-08-31 16:17:24.445 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/src/modules/conv_modules.py?content=0&1661980644354 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification/src/modules/conv_modules.py
+[W 2022-08-31 16:17:24.446 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification/src/modules/conv_modules.py
+[W 2022-08-31 16:17:24.446 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/src/modules/conv_modules.py?content=0&1661980644354 (127.0.0.1) 3.42ms referer=http://localhost:9007/lab
+[W 2022-08-31 16:17:24.448 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/config_gnn.json?content=0&1661980644355 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification/config_gnn.json
+[W 2022-08-31 16:17:24.448 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification/config_gnn.json
+[W 2022-08-31 16:17:24.448 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/config_gnn.json?content=0&1661980644355 (127.0.0.1) 1.12ms referer=http://localhost:9007/lab
+[W 2022-08-31 16:17:24.450 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/src/utils.py?content=0&1661980644355 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification/src/utils.py
+[W 2022-08-31 16:17:24.450 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification/src/utils.py
+[W 2022-08-31 16:17:24.451 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/src/utils.py?content=0&1661980644355 (127.0.0.1) 0.99ms referer=http://localhost:9007/lab
+[W 2022-08-31 16:17:24.455 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/config_cnn.json?content=0&1661980644355 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification/config_cnn.json
+[W 2022-08-31 16:17:24.455 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification/config_cnn.json
+[W 2022-08-31 16:17:24.456 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/config_cnn.json?content=0&1661980644355 (127.0.0.1) 1.92ms referer=http://localhost:9007/lab
+[I 2022-08-31 16:17:24.493 ServerApp] New terminal with automatic name: 1
+TermSocket.open: 1
+TermSocket.open: Opened 1
+[W 2022-08-31 16:17:25.106 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification?1661980645041 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification
+[W 2022-08-31 16:17:25.106 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification
+[W 2022-08-31 16:17:25.107 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification?1661980645041 (127.0.0.1) 1.99ms referer=http://localhost:9007/lab
+[I 2022-08-31 16:18:34.147 ServerApp] Saving file at /src/modules/graph_modules.py
+[I 2022-08-31 16:19:01.452 ServerApp] Saving file at /src/modules/graph_modules.py
+[I 2022-08-31 16:20:38.340 ServerApp] Saving file at /src/modules/graph_modules.py

@@ -1,6 +1,6 @@
 {
     "hardware": {
-        "device": "cuda:3"
+        "device": "cuda:2"
     },
     "data": {
         "path_dataset": "/data/ltorres",
@@ -12,7 +12,7 @@
     },
     "hyperparameters": {
         "epochs": 30,
-        "batch_size": 40,
+        "batch_size": 32,
         "learning_rate": 0.00005,
         "early_stopping_tolerance": 8,
         "criterion": "cross_entropy",
@@ -29,8 +29,8 @@
         "conv_type": "gcn",
         "conv_parameters": {"num_heads":2, "agg":"sum"},
         "gnn_dropout": 0.3,
-        "adjacency_builder": "cos_sim",
-        "builder_parameter": 0.7,
+        "adjacency_builder": "l2_distance",
+        "builder_parameter": 10,
         "use_both_heads": false,
         "loss_lambda": 1
     }
