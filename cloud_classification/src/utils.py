@@ -336,3 +336,36 @@ def test_cnn_model(model, data_loader, criterions, device):
     loss = fin_loss / len(data_loader)
     
     return loss, accuracy, targets, predictions
+
+
+########### PREDICTION UTILS
+
+def test_gnn_model(model, data_loader, pivot_tensors, device):
+    model.eval()
+    
+    fin_loss = 0
+    fin_density = 0
+    fin_preds = []
+    fin_targs = []
+
+    with torch.no_grad():
+        for data in tqdm(data_loader, total=len(data_loader)):
+            image = data["images"].to(device)
+            single_logits = model.get_deep_features(image)
+            
+            input = torch.cat((single_logits, pivot_tensors.to(device)), dim=0)
+            logits = model.predict(input)[0].unsqueeze(0) ### ONLY INTERESTED IN THE TEST SAMPLE PREDICTION
+            
+            batch_preds = F.softmax(logits, dim=1)
+            batch_preds = torch.argmax(batch_preds, dim=1)
+
+            fin_preds.append(batch_preds.cpu().numpy())
+            fin_targs.append(data["targets"].cpu().numpy())
+            
+    targets = np.concatenate(fin_targs, axis=0)
+    predictions = np.concatenate(fin_preds, axis=0)
+    
+    accuracy = accuracy_score(targets, predictions)
+
+    
+    return accuracy

@@ -243,3 +243,31 @@ class GraphClassifier(nn.Module):
             
         return features
     
+    def predict(self, deep_features):
+        ### 2. CONSTRUCCION DE LA MATRIZ DE ADYACENCIA
+        if self.adjacency_builder == 'cos_sim':
+            g, adj_matrix = build_graph_cosine_similarity(deep_features.detach(), self.builder_parameter)
+        elif self.adjacency_builder == 'pearson_corr':
+            g, adj_matrix = build_graph_pearson_correlation(deep_features.detach(), self.builder_parameter)
+        elif self.adjacency_builder == 'l2_distance':
+            g, adj_matrix = build_graph_l2_distance(deep_features.detach(), self.builder_parameter)
+        else:
+            raise NotImplementedError("Invalid builder")
+    
+        ### 3. MODULOS GNN
+        x = deep_features
+        
+        for i, gnn_layer in enumerate(self.graph_layers):
+            x = gnn_layer(g, x)
+            if i != len(self.graph_layers)-1:
+                x = self.bn_layers[i](x)
+                x = F.leaky_relu(x)
+                x = F.dropout(x, p=self.gnn_dropout, training=self.training)
+        
+        ### CONCATENACION DE FEATURES CNN, GNN
+        agg_features = torch.cat([deep_features, x], dim=1)
+        
+        ### 4. CLASIFICACION FINAL
+        logits = self.head(agg_features)
+        
+        return logits

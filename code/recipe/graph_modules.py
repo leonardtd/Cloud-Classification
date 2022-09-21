@@ -6,7 +6,6 @@ import dgl
 from dgl.nn import GATConv, GraphConv
 
 from .conv_modules import CNNExtractor
-from .. import utils
 
 
 def normalize_features(dfs):
@@ -109,7 +108,7 @@ class GraphAttentionLayer(nn.Module):
         else: return x
     
 
-class GraphClassifier(nn.Module):
+class GraphClassifierF(nn.Module):
     """
         Generic Graph classifier class
         Args:
@@ -235,7 +234,7 @@ class GraphClassifier(nn.Module):
         ### 5. (OPCIONAL) clasificacion secundaria
         logits_second_head = self.second_head(deep_features)
 
-        return logits_main_head, logits_second_head, utils.get_matrix_density(adj_matrix)
+        return logits_main_head, logits_second_head
     
     def get_deep_features(self, x):
         with torch.no_grad():
