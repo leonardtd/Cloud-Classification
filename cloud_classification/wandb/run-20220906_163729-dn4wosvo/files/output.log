@@ -1,0 +1,1130 @@
+GraphClassifier(
+  (cnn): CNNExtractor(
+    (cnn): Sequential(
+      (0): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+      (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (2): ReLU(inplace=True)
+      (3): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+      (4): Sequential(
+        (0): Bottleneck(
+          (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+          (downsample): Sequential(
+            (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+            (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): Bottleneck(
+          (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+        )
+        (2): Bottleneck(
+          (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+        )
+      )
+      (5): Sequential(
+        (0): Bottleneck(
+          (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+          (downsample): Sequential(
+            (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+            (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): Bottleneck(
+          (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+        )
+        (2): Bottleneck(
+          (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+        )
+        (3): Bottleneck(
+          (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+        )
+      )
+      (6): Sequential(
+        (0): Bottleneck(
+          (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+          (downsample): Sequential(
+            (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+            (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+        )
+        (2): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+        )
+        (3): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+        )
+        (4): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+        )
+        (5): Bottleneck(
+          (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+        )
+      )
+      (7): Sequential(
+        (0): Bottleneck(
+          (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+          (downsample): Sequential(
+            (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+            (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (1): Bottleneck(
+          (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+        )
+        (2): Bottleneck(
+          (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+          (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          (relu): ReLU(inplace=True)
+        )
+      )
+      (8): AdaptiveAvgPool2d(output_size=(1, 1))
+    )
+  )
+  (graph_layers): ModuleList(
+    (0): GraphConvLayer(
+      (conv): GraphConv(in=2048, out=512, normalization=both, activation=None)
+    )
+    (1): GraphConvLayer(
+      (conv): GraphConv(in=512, out=512, normalization=both, activation=None)
+    )
+  )
+  (bn_layers): ModuleList(
+    (0): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  )
+  (head): Sequential(
+    (0): Linear(in_features=2560, out_features=1024, bias=True)
+    (1): ReLU()
+    (2): BatchNorm1d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (3): Dropout(p=0.2, inplace=False)
+    (4): Linear(in_features=1024, out_features=7, bias=True)
+  )
+  (second_head): Identity()
+)
+STARTING TRAINING: experiment 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.70it/s]
+
+
+
+
+
+
+
+
+ 95%|█████████████████████████████████████████████████████████████████████████████▎   | 269/282 [00:16<00:00, 17.05it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.65it/s]
+Saved best parameters at epoch 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.73it/s]
+
+
+
+
+
+
+
+
+ 96%|█████████████████████████████████████████████████████████████████████████████▊   | 271/282 [00:16<00:00, 17.14it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:17<00:00, 16.57it/s]
+Saved best parameters at epoch 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.70it/s]
+
+
+
+
+
+
+
+
+ 96%|█████████████████████████████████████████████████████████████████████████████▊   | 271/282 [00:16<00:00, 16.93it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.79it/s]
+Did not decrease test loss. Tolerance left 7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.70it/s]
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.77it/s]
+EPOCH 4: Train acc: 85.22% Train Loss: 0.4027 Test acc: 67.47% Test Loss: 1.0106
+  0%|                                                                                           | 0/313 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.74it/s]
+
+
+
+
+
+
+
+ 92%|██████████████████████████████████████████████████████████████████████████▍      | 259/282 [00:15<00:01, 17.20it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.78it/s]
+Saved best parameters at epoch 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.71it/s]
+
+
+
+
+
+
+
+
+ 93%|██████████████████████████████████████████████████████████████████████████▉      | 261/282 [00:15<00:01, 17.27it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.70it/s]
+Saved best parameters at epoch 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.71it/s]
+
+
+
+
+
+
+
+
+ 96%|█████████████████████████████████████████████████████████████████████████████▊   | 271/282 [00:16<00:00, 17.22it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.60it/s]
+Saved best parameters at epoch 7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.73it/s]
+
+
+
+
+
+
+
+
+ 98%|██████████████████████████████████████████████████████████████████████████████▉  | 275/282 [00:16<00:00, 17.36it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.68it/s]
+Saved best parameters at epoch 8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.71it/s]
+
+
+
+
+
+
+
+
+ 98%|███████████████████████████████████████████████████████████████████████████████▌ | 277/282 [00:16<00:00, 17.47it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.69it/s]
+Did not decrease test loss. Tolerance left 7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.71it/s]
+
+
+
+
+
+
+
+ 93%|██████████████████████████████████████████████████████████████████████████▉      | 261/282 [00:15<00:01, 17.27it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.74it/s]
+Did not decrease test loss. Tolerance left 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.71it/s]
+
+
+
+
+
+
+
+ 95%|█████████████████████████████████████████████████████████████████████████████▎   | 269/282 [00:16<00:00, 16.71it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.74it/s]
+Saved best parameters at epoch 11
+Did not decrease test loss. Tolerance left 5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.73it/s]
+
+
+
+
+
+
+
+
+ 96%|█████████████████████████████████████████████████████████████████████████████▊   | 271/282 [00:16<00:00, 17.21it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:17<00:00, 16.52it/s]
+Did not decrease test loss. Tolerance left 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.72it/s]
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.81it/s]
+EPOCH 13: Train acc: 89.59% Train Loss: 0.2850 Test acc: 73.09% Test Loss: 0.8670
+Did not decrease test loss. Tolerance left 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.72it/s]
+
+
+
+
+
+
+
+ 95%|████████████████████████████████████████████████████████████████████████████▋    | 267/282 [00:16<00:00, 17.17it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.67it/s]
+Saved best parameters at epoch 14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.73it/s]
+
+
+
+
+
+
+
+
+ 98%|██████████████████████████████████████████████████████████████████████████████▉  | 275/282 [00:16<00:00, 17.18it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.70it/s]
+
+
+
+
+
+
+
+
+100%|████████████████████████████████████████████████████████████████████████████████▋| 281/282 [00:16<00:00, 17.57it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.63it/s]
+Saved best parameters at epoch 16
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.73it/s]
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:17<00:00, 16.57it/s]
+EPOCH 17: Train acc: 89.83% Train Loss: 0.2602 Test acc: 73.21% Test Loss: 0.8753
+  1%|▌                                                                                  | 2/313 [00:00<01:57,  2.64it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.73it/s]
+
+
+
+
+
+
+
+
+ 97%|██████████████████████████████████████████████████████████████████████████████▍  | 273/282 [00:16<00:00, 17.32it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.83it/s]
+Did not decrease test loss. Tolerance left 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.72it/s]
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.75it/s]
+EPOCH 19: Train acc: 90.36% Train Loss: 0.2525 Test acc: 73.28% Test Loss: 0.8829
+  0%|                                                                                           | 0/313 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.72it/s]
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.75it/s]
+EPOCH 20: Train acc: 90.39% Train Loss: 0.2535 Test acc: 73.24% Test Loss: 0.8764
+Did not decrease test loss. Tolerance left 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.72it/s]
+
+
+
+
+
+
+
+
+100%|████████████████████████████████████████████████████████████████████████████████▋| 281/282 [00:16<00:00, 17.55it/s]
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.70it/s]
+  0%|                                                                                           | 0/313 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.73it/s]
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:17<00:00, 16.53it/s]
+EPOCH 22: Train acc: 90.34% Train Loss: 0.2529 Test acc: 73.24% Test Loss: 0.8697
+  0%|▎                                                                                  | 1/313 [00:00<03:24,  1.53it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.71it/s]
+
+
+
+
+
+
+
+
+ 94%|████████████████████████████████████████████████████████████████████████████     | 265/282 [00:15<00:00, 17.27it/s]
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:16<00:00, 16.80it/s]
+Did not decrease test loss. Tolerance left 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 313/313 [00:54<00:00,  5.72it/s]
+
+
+
+
+
+
+
+
+100%|█████████████████████████████████████████████████████████████████████████████████| 282/282 [00:17<00:00, 16.54it/s]
+EPOCH 24: Train acc: 90.99% Train Loss: 0.2455 Test acc: 72.68% Test Loss: 0.9239
+Did not decrease test loss. Tolerance left 0
+EARLY STOPPING AT ITERATION 24
+SAVING RESULTS: experiment 1

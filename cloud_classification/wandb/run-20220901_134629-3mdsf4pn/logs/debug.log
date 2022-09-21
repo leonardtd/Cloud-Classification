@@ -1,0 +1,247 @@
+2022-09-01 13:46:29,012 INFO    MainThread:3199 [wandb_setup.py:_flush():75] Loading settings from /home/ltorres/.config/wandb/settings
+2022-09-01 13:46:29,013 INFO    MainThread:3199 [wandb_setup.py:_flush():75] Loading settings from /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/settings
+2022-09-01 13:46:29,013 INFO    MainThread:3199 [wandb_setup.py:_flush():75] Loading settings from environment variables: {}
+2022-09-01 13:46:29,013 INFO    MainThread:3199 [wandb_setup.py:_flush():75] Inferring run settings from compute environment: {'program_relpath': 'cloud_classification/train.py', 'program': '/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py'}
+2022-09-01 13:46:29,013 INFO    MainThread:3199 [wandb_init.py:_log_setup():405] Logging user logs to /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_134629-3mdsf4pn/logs/debug.log
+2022-09-01 13:46:29,013 INFO    MainThread:3199 [wandb_init.py:_log_setup():406] Logging internal logs to /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_134629-3mdsf4pn/logs/debug-internal.log
+2022-09-01 13:46:29,013 INFO    MainThread:3199 [wandb_init.py:init():439] calling init triggers
+2022-09-01 13:46:29,014 INFO    MainThread:3199 [wandb_init.py:init():442] wandb.init called with sweep_config: {}
+config: {'hardware': {'device': 'cuda:3'}, 'data': {'path_dataset': '/data/ltorres', 'path_save_weights': '/data/ltorres/CLOUD_CLASSIFICATION_WEIGHTS', 'path_save_logs': '/data/ltorres/model_logs', 'class_names': ['1_cumulus', '2_altocumulus', '3_cirrus', '4_clearsky', '5_stratocumulus', '6_cumulonimbus', '7_mixed'], 'resize': 256, 'use_augmentation': True}, 'hyperparameters': {'epochs': 30, 'batch_size': 32, 'learning_rate': 5e-05, 'early_stopping_tolerance': 8, 'criterion': 'cross_entropy', 'optimizer': 'sgd', 'use_scheduler': True, 'lr_decay_steps': 15, 'lr_decay_gamma': 0.5}, 'model': {'hidden_dim': 512, 'num_hidden': 2, 'num_classes': 7, 'feature_extraction': False, 'conv_type': 'gcn', 'conv_parameters': {'num_heads': 2, 'agg': 'sum'}, 'gnn_dropout': 0.3, 'adjacency_builder': 'cos_sim', 'builder_parameter': 0.85, 'use_both_heads': False, 'loss_lambda': 1}}
+2022-09-01 13:46:29,014 INFO    MainThread:3199 [wandb_init.py:init():492] starting backend
+2022-09-01 13:46:29,014 INFO    MainThread:3199 [backend.py:_multiprocessing_setup():99] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2022-09-01 13:46:29,028 INFO    MainThread:3199 [backend.py:ensure_launched():219] starting backend process...
+2022-09-01 13:46:29,035 INFO    MainThread:3199 [backend.py:ensure_launched():224] started backend process with pid: 3216
+2022-09-01 13:46:29,037 INFO    MainThread:3199 [wandb_init.py:init():501] backend started and connected
+2022-09-01 13:46:29,044 INFO    MainThread:3199 [wandb_init.py:init():565] updated telemetry
+2022-09-01 13:46:29,063 INFO    MainThread:3199 [wandb_init.py:init():596] communicating run to backend with 30 second timeout
+2022-09-01 13:46:29,927 INFO    MainThread:3199 [wandb_run.py:_on_init():1759] communicating current version
+2022-09-01 13:46:30,084 INFO    MainThread:3199 [wandb_run.py:_on_init():1763] got version response upgrade_message: "wandb version 0.13.2 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2022-09-01 13:46:30,084 INFO    MainThread:3199 [wandb_init.py:init():625] starting run threads in backend
+2022-09-01 13:46:31,825 INFO    MainThread:3199 [wandb_run.py:_console_start():1733] atexit reg
+2022-09-01 13:46:31,826 INFO    MainThread:3199 [wandb_run.py:_redirect():1606] redirect: SettingsConsole.REDIRECT
+2022-09-01 13:46:31,826 INFO    MainThread:3199 [wandb_run.py:_redirect():1611] Redirecting console.
+2022-09-01 13:46:31,828 INFO    MainThread:3199 [wandb_run.py:_redirect():1667] Redirects installed.
+2022-09-01 13:46:31,828 INFO    MainThread:3199 [wandb_init.py:init():664] run started, returning control to user process
+2022-09-01 13:46:34,654 INFO    MainThread:3199 [wandb_watch.py:watch():47] Watching
+2022-09-01 13:47:46,342 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:47:47,501 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:49:00,235 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:49:01,122 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:50:13,969 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:50:14,853 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:51:27,897 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:51:28,898 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:52:41,766 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:52:42,658 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:53:55,217 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:53:56,099 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:55:09,078 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:55:09,949 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:56:22,817 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:56:23,698 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:57:36,189 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:57:37,057 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:58:49,633 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 13:58:50,512 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 14:00:03,154 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 14:00:04,033 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 14:01:16,788 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 14:01:17,647 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 14:02:30,246 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 14:02:31,121 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 14:03:44,202 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 14:03:45,112 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 14:04:58,129 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'train/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'train/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 14:04:59,017 INFO    MainThread:3199 [wandb_run.py:_config_callback():992] config_cb ('_wandb', 'visualize', 'test/confusion_matrix') {'panel_type': 'Vega2', 'panel_config': {'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'test/confusion_matrix_table'}], 'fields': []}]}]}, 'panelDefId': 'wandb/confusion_matrix/v1', 'transform': {'name': 'tableWithLeafColNames'}, 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': ''}}} None
+2022-09-01 14:05:00,261 INFO    MainThread:3199 [wandb_run.py:finish():1539] finishing run leonardtd/adj-exp/3mdsf4pn
+2022-09-01 14:05:00,261 INFO    MainThread:3199 [wandb_run.py:_atexit_cleanup():1702] got exitcode: 0
+2022-09-01 14:05:00,266 INFO    MainThread:3199 [wandb_run.py:_restore():1674] restore
+2022-09-01 14:05:07,487 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 1
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 126536
+  total_bytes: 128441
+}
+
+2022-09-01 14:05:07,641 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 1
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 126536
+  total_bytes: 128441
+}
+
+2022-09-01 14:05:07,945 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 1
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 128441
+  total_bytes: 128441
+}
+
+2022-09-01 14:05:08,253 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 128441
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:08,356 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 128441
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:08,458 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 128441
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:08,561 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 128441
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:08,664 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 248483
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:08,767 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 641699
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:08,869 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 801041
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:08,974 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 801041
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:09,076 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 801041
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:09,179 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 801041
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:09,282 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 801041
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:09,384 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 801041
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:09,487 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 801041
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:10,663 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 801041
+  total_bytes: 801041
+}
+
+2022-09-01 14:05:11,031 INFO    MainThread:3199 [wandb_run.py:_on_finish():1831] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 6
+  media_count: 30
+  artifact_count: 30
+}
+pusher_stats {
+  uploaded_bytes: 801041
+  total_bytes: 801041
+}
+local_info {
+}
+
+2022-09-01 14:05:12,195 INFO    MainThread:3199 [wandb_run.py:_footer_history_summary_info():2865] rendering history
+2022-09-01 14:05:12,218 INFO    MainThread:3199 [wandb_run.py:_footer_history_summary_info():2894] rendering summary
+2022-09-01 14:05:12,220 INFO    MainThread:3199 [wandb_run.py:_footer_sync_info():2822] logging synced files

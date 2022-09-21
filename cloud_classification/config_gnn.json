@@ -1,6 +1,6 @@
 {
     "hardware": {
-        "device": "cuda:2"
+        "device": "cuda:3"
     },
     "data": {
         "path_dataset": "/data/ltorres",
@@ -29,8 +29,8 @@
         "conv_type": "gcn",
         "conv_parameters": {"num_heads":2, "agg":"sum"},
         "gnn_dropout": 0.3,
-        "adjacency_builder": "l2_distance",
-        "builder_parameter": 10,
+        "adjacency_builder": "pearson_corr",
+        "builder_parameter": 0.1,
         "use_both_heads": false,
         "loss_lambda": 1
     }

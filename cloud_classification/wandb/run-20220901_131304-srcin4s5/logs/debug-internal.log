@@ -1,0 +1,53 @@
+2022-09-01 13:13:04,951 INFO    MainThread:2676 [internal.py:wandb_internal():92] W&B internal server running at pid: 2676, started at: 2022-09-01 13:13:04.951279
+2022-09-01 13:13:04,954 INFO    WriterThread:2676 [datastore.py:open_for_write():77] open: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/run-srcin4s5.wandb
+2022-09-01 13:13:04,957 DEBUG   SenderThread:2676 [sender.py:send():235] send: header
+2022-09-01 13:13:04,957 DEBUG   SenderThread:2676 [sender.py:send():235] send: run
+2022-09-01 13:13:20,017 DEBUG   HandlerThread:2676 [handler.py:handle_request():141] handle_request: check_version
+2022-09-01 13:13:20,019 INFO    SenderThread:2676 [dir_watcher.py:__init__():169] watching files in: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files
+2022-09-01 13:13:20,019 INFO    SenderThread:2676 [sender.py:_start_run_threads():812] run started: srcin4s5 with start time 1662055984
+2022-09-01 13:13:20,019 DEBUG   SenderThread:2676 [sender.py:send():235] send: summary
+2022-09-01 13:13:20,019 INFO    SenderThread:2676 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-09-01 13:13:20,019 DEBUG   SenderThread:2676 [sender.py:send_request():249] send_request: check_version
+2022-09-01 13:13:20,072 DEBUG   HandlerThread:2676 [handler.py:handle_request():141] handle_request: run_start
+2022-09-01 13:13:20,080 DEBUG   HandlerThread:2676 [meta.py:__init__():37] meta init
+2022-09-01 13:13:20,081 DEBUG   HandlerThread:2676 [meta.py:__init__():51] meta init done
+2022-09-01 13:13:20,081 DEBUG   HandlerThread:2676 [meta.py:probe():211] probe
+2022-09-01 13:13:20,089 DEBUG   HandlerThread:2676 [meta.py:_setup_git():201] setup git
+2022-09-01 13:13:20,110 DEBUG   HandlerThread:2676 [meta.py:_setup_git():208] setup git done
+2022-09-01 13:13:20,111 DEBUG   HandlerThread:2676 [meta.py:_save_pip():55] save pip
+2022-09-01 13:13:20,112 DEBUG   HandlerThread:2676 [meta.py:_save_pip():69] save pip done
+2022-09-01 13:13:20,112 DEBUG   HandlerThread:2676 [meta.py:_save_conda():76] save conda
+2022-09-01 13:13:21,023 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/conda-environment.yaml
+2022-09-01 13:13:21,024 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/wandb-summary.json
+2022-09-01 13:13:21,024 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/requirements.txt
+2022-09-01 13:13:21,732 DEBUG   HandlerThread:2676 [meta.py:_save_conda():86] save conda done
+2022-09-01 13:13:21,732 DEBUG   HandlerThread:2676 [meta.py:probe():249] probe done
+2022-09-01 13:13:21,738 DEBUG   SenderThread:2676 [sender.py:send():235] send: files
+2022-09-01 13:13:21,739 INFO    SenderThread:2676 [sender.py:_save_file():947] saving file wandb-metadata.json with policy now
+2022-09-01 13:13:21,747 DEBUG   HandlerThread:2676 [handler.py:handle_request():141] handle_request: stop_status
+2022-09-01 13:13:21,747 DEBUG   SenderThread:2676 [sender.py:send_request():249] send_request: stop_status
+2022-09-01 13:13:22,014 DEBUG   SenderThread:2676 [sender.py:send():235] send: telemetry
+2022-09-01 13:13:22,022 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/conda-environment.yaml
+2022-09-01 13:13:22,023 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/wandb-metadata.json
+2022-09-01 13:13:22,023 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:22,435 INFO    Thread-11 :2676 [upload_job.py:push():137] Uploaded file /tmp/tmptnff7i5xwandb/2yaoae2e-wandb-metadata.json
+2022-09-01 13:13:24,615 DEBUG   SenderThread:2676 [sender.py:send():235] send: telemetry
+2022-09-01 13:13:26,024 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:28,025 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:30,026 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:32,027 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:34,028 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:36,030 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:37,016 DEBUG   HandlerThread:2676 [handler.py:handle_request():141] handle_request: stop_status
+2022-09-01 13:13:38,031 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:40,032 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:42,033 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:44,034 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:46,035 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:48,036 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:50,037 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:52,038 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:54,039 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:56,040 INFO    Thread-7  :2676 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220901_131304-srcin4s5/files/output.log
+2022-09-01 13:13:57,017 DEBUG   HandlerThread:2676 [handler.py:handle_request():141] handle_request: stop_status
+2022-09-01 13:13:58,041 INFO    Thread-

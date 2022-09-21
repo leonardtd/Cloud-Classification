@@ -58,3 +58,37 @@ TermSocket.open: Opened 1
 [I 2022-08-31 16:18:34.147 ServerApp] Saving file at /src/modules/graph_modules.py
 [I 2022-08-31 16:19:01.452 ServerApp] Saving file at /src/modules/graph_modules.py
 [I 2022-08-31 16:20:38.340 ServerApp] Saving file at /src/modules/graph_modules.py
+[I 2022-09-01 14:14:48.247 ServerApp] jupyterlab | extension was successfully linked.
+[I 2022-09-01 14:14:48.254 ServerApp] nbclassic | extension was successfully linked.
+[I 2022-09-01 14:14:48.371 ServerApp] notebook_shim | extension was successfully linked.
+[I 2022-09-01 14:14:48.390 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2022-09-01 14:14:48.391 LabApp] JupyterLab extension loaded from /home/ltorres/miniconda3/lib/python3.9/site-packages/jupyterlab
+[I 2022-09-01 14:14:48.391 LabApp] JupyterLab application directory is /home/ltorres/miniconda3/share/jupyter/lab
+[I 2022-09-01 14:14:48.393 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2022-09-01 14:14:48.397 ServerApp] nbclassic | extension was successfully loaded.
+[I 2022-09-01 14:14:48.397 ServerApp] Serving notebooks from local directory: /home/ltorres/leo/Cloud-Classification/cloud_classification
+[I 2022-09-01 14:14:48.397 ServerApp] Jupyter Server 1.15.6 is running at:
+[I 2022-09-01 14:14:48.397 ServerApp] http://localhost:9007/lab?token=2143d4933e5ec9a3274afb9707070fc2c1d7dcce2fb7df35
+[I 2022-09-01 14:14:48.397 ServerApp]  or http://127.0.0.1:9007/lab?token=2143d4933e5ec9a3274afb9707070fc2c1d7dcce2fb7df35
+[I 2022-09-01 14:14:48.397 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 2022-09-01 14:14:48.400 ServerApp] 
+    
+    To access the server, open this file in a browser:
+        file:///home/ltorres/.local/share/jupyter/runtime/jpserver-9099-open.html
+    Or copy and paste one of these URLs:
+        http://localhost:9007/lab?token=2143d4933e5ec9a3274afb9707070fc2c1d7dcce2fb7df35
+     or http://127.0.0.1:9007/lab?token=2143d4933e5ec9a3274afb9707070fc2c1d7dcce2fb7df35
+[W 2022-09-01 14:14:52.623 LabApp] Could not determine jupyterlab build status without nodejs
+[W 2022-09-01 14:14:52.908 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/config_gnn.json?content=0&1662059692813 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification/config_gnn.json
+[W 2022-09-01 14:14:52.908 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification/config_gnn.json
+[W 2022-09-01 14:14:52.909 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/config_gnn.json?content=0&1662059692813 (127.0.0.1) 2.21ms referer=http://localhost:9007/lab
+[W 2022-09-01 14:14:52.911 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/train.py?content=0&1662059692814 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification/train.py
+[W 2022-09-01 14:14:52.912 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification/train.py
+[W 2022-09-01 14:14:52.912 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification/train.py?content=0&1662059692814 (127.0.0.1) 2.30ms referer=http://localhost:9007/lab
+[I 2022-09-01 14:14:52.962 ServerApp] New terminal with automatic name: 1
+TermSocket.open: 1
+TermSocket.open: Opened 1
+[W 2022-09-01 14:14:53.593 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification?1662059693535 (127.0.0.1): No such file or directory: leo/Cloud-Classification/cloud_classification
+[W 2022-09-01 14:14:53.593 ServerApp] No such file or directory: leo/Cloud-Classification/cloud_classification
+[W 2022-09-01 14:14:53.594 ServerApp] 404 GET /api/contents/leo/Cloud-Classification/cloud_classification?1662059693535 (127.0.0.1) 2.85ms referer=http://localhost:9007/lab
+[I 2022-09-01 14:15:12.342 ServerApp] Saving file at /config_gnn.json
