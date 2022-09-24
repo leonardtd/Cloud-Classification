@@ -12,7 +12,7 @@ from src import dataset
 from src.modules.graph_modules import GraphClassifier
 
 ###TEST_DIFFERENT MODELS
-MODEL_NAME = "wandb_1353k0xc_model.pt"
+MODEL_NAME = "wandb_tact4jdo_model.pt"
 CONFIG_FILENAME = "config_gnn.json"
 
 MODEL_PATH = "/data/ltorres/CLOUD_CLASSIFICATION_WEIGHTS"
@@ -72,7 +72,7 @@ def predict(args):
     loader = utils.build_data_loader(test_dataset, batch_size=1, shuffle=True)
     
     ### Prediction
-    accuracy = utils.test_gnn_model(model, loader, pivot_tensors=samples, device=config["hardware"]["device"])
+    accuracy = utils.predict_gnn_model(model, loader, pivot_tensors=samples, device=config["hardware"]["device"])
     
     print("Test accuracy: {:.2%}".format(accuracy))
     
@@ -98,3 +98,44 @@ if __name__ == '__main__':
     
     
     predict(args)
+    
+    
+"""
+{
+    "hardware": {
+        "device": "cuda:3"
+    },
+    "data": {
+        "path_dataset": "/data/ltorres",
+        "path_save_weights": "/data/ltorres/CLOUD_CLASSIFICATION_WEIGHTS",
+        "path_save_logs": "/data/ltorres/model_logs",
+        "class_names": ["1_cumulus", "2_altocumulus", "3_cirrus", "4_clearsky", "5_stratocumulus", "6_cumulonimbus", "7_mixed"],
+        "resize": 256,
+        "use_augmentation": true
+    },
+    "hyperparameters": {
+        "epochs": 30,
+        "batch_size": 32,
+        "learning_rate": 0.00005,
+        "early_stopping_tolerance": 8,
+        "criterion": "cross_entropy",
+        "optimizer": "sgd",
+        "use_scheduler": true,
+        "lr_decay_steps": 15,
+        "lr_decay_gamma": 0.5
+    },
+    "model": {
+        "hidden_dim": 512,
+        "num_hidden": 2,
+        "num_classes": 7,
+        "feature_extraction": false,
+        "conv_type": "gcn",
+        "conv_parameters": {"num_heads":2, "agg":"sum"},
+        "gnn_dropout": 0.3,
+        "adjacency_builder": "pearson_corr",
+        "builder_parameter": 0.7,
+        "use_both_heads": false,
+        "loss_lambda": 1
+    }
+}
+"""

@@ -21,6 +21,18 @@ class CNNExtractor(nn.Module):
     def forward(self, x):
         return self.cnn(x).view(-1,2048)
     
+class ResNet50Classifier(nn.Module):
+    def __init__(self, num_classes, feature_extraction=False):
+        
+        super().__init__()
+        
+        self.cnn = CNNExtractor(feature_extraction)
+        self.head = nn.Linear(2048, num_classes)
+        
+    def forward(self, x):
+        x = self.cnn(x)
+        x = self.head(x)
+        return x
     
 class CloudNet(nn.Module):
     def __init__(self, out_dims, dropout=0.5):

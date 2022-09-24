@@ -5,7 +5,7 @@ import wandb
 
 from . import utils
 from .modules.graph_modules import GraphClassifier
-from .modules.conv_modules import CloudNet
+from .modules.conv_modules import CloudNet, ResNet50Classifier
 
 
 def build_model(architecture, config):
@@ -23,11 +23,14 @@ def build_model(architecture, config):
                      use_both_heads = config["model"]["use_both_heads"],
                 )
     elif architecture == "cnn":
-        model = CloudNet(
+        if config['model']['type'] == "cloudnet":
+            model = CloudNet(
                     out_dims = config["model"]["num_classes"],
                     dropout = config["model"]["dropout"]
                 )
-    
+        elif config['model']['type'] == "resnet":
+            model = ResNet50Classifier(config["model"]["num_classes"], feature_extraction=False)
+        
     return model.to(config["hardware"]["device"])
     
 

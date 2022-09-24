@@ -1,0 +1,67 @@
+2022-09-21 18:13:35,809 INFO    MainThread:16674 [internal.py:wandb_internal():92] W&B internal server running at pid: 16674, started at: 2022-09-21 18:13:35.809453
+2022-09-21 18:13:35,812 INFO    WriterThread:16674 [datastore.py:open_for_write():77] open: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/run-22uqtr3w.wandb
+2022-09-21 18:13:35,815 DEBUG   SenderThread:16674 [sender.py:send():235] send: header
+2022-09-21 18:13:35,815 DEBUG   SenderThread:16674 [sender.py:send():235] send: run
+2022-09-21 18:13:36,165 DEBUG   HandlerThread:16674 [handler.py:handle_request():141] handle_request: check_version
+2022-09-21 18:13:36,167 INFO    SenderThread:16674 [dir_watcher.py:__init__():169] watching files in: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files
+2022-09-21 18:13:36,167 INFO    SenderThread:16674 [sender.py:_start_run_threads():812] run started: 22uqtr3w with start time 1663802015
+2022-09-21 18:13:36,167 DEBUG   SenderThread:16674 [sender.py:send():235] send: summary
+2022-09-21 18:13:36,168 INFO    SenderThread:16674 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-09-21 18:13:36,168 DEBUG   SenderThread:16674 [sender.py:send_request():249] send_request: check_version
+2022-09-21 18:13:36,221 DEBUG   HandlerThread:16674 [handler.py:handle_request():141] handle_request: run_start
+2022-09-21 18:13:36,230 DEBUG   HandlerThread:16674 [meta.py:__init__():37] meta init
+2022-09-21 18:13:36,230 DEBUG   HandlerThread:16674 [meta.py:__init__():51] meta init done
+2022-09-21 18:13:36,230 DEBUG   HandlerThread:16674 [meta.py:probe():211] probe
+2022-09-21 18:13:36,238 DEBUG   HandlerThread:16674 [meta.py:_setup_git():201] setup git
+2022-09-21 18:13:36,261 DEBUG   HandlerThread:16674 [meta.py:_setup_git():208] setup git done
+2022-09-21 18:13:36,262 DEBUG   HandlerThread:16674 [meta.py:_save_pip():55] save pip
+2022-09-21 18:13:36,263 DEBUG   HandlerThread:16674 [meta.py:_save_pip():69] save pip done
+2022-09-21 18:13:36,263 DEBUG   HandlerThread:16674 [meta.py:_save_conda():76] save conda
+2022-09-21 18:13:37,172 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/conda-environment.yaml
+2022-09-21 18:13:37,172 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/requirements.txt
+2022-09-21 18:13:37,173 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/wandb-summary.json
+2022-09-21 18:13:37,747 DEBUG   HandlerThread:16674 [meta.py:_save_conda():86] save conda done
+2022-09-21 18:13:37,747 DEBUG   HandlerThread:16674 [meta.py:probe():249] probe done
+2022-09-21 18:13:37,750 DEBUG   SenderThread:16674 [sender.py:send():235] send: files
+2022-09-21 18:13:37,751 INFO    SenderThread:16674 [sender.py:_save_file():947] saving file wandb-metadata.json with policy now
+2022-09-21 18:13:37,759 DEBUG   HandlerThread:16674 [handler.py:handle_request():141] handle_request: stop_status
+2022-09-21 18:13:37,759 DEBUG   SenderThread:16674 [sender.py:send_request():249] send_request: stop_status
+2022-09-21 18:13:38,023 DEBUG   SenderThread:16674 [sender.py:send():235] send: telemetry
+2022-09-21 18:13:38,169 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/conda-environment.yaml
+2022-09-21 18:13:38,169 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/output.log
+2022-09-21 18:13:38,169 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/wandb-metadata.json
+2022-09-21 18:13:38,580 INFO    Thread-11 :16674 [upload_job.py:push():137] Uploaded file /tmp/tmphp2ecdg4wandb/suyhgfrv-wandb-metadata.json
+2022-09-21 18:13:39,732 DEBUG   SenderThread:16674 [sender.py:send():235] send: telemetry
+2022-09-21 18:13:40,170 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/output.log
+2022-09-21 18:13:42,171 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/output.log
+2022-09-21 18:13:44,172 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/output.log
+2022-09-21 18:13:46,173 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/output.log
+2022-09-21 18:13:48,174 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/output.log
+2022-09-21 18:13:50,175 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/output.log
+2022-09-21 18:13:52,176 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/output.log
+2022-09-21 18:13:53,025 DEBUG   HandlerThread:16674 [handler.py:handle_request():141] handle_request: stop_status
+2022-09-21 18:13:53,026 DEBUG   SenderThread:16674 [sender.py:send_request():249] send_request: stop_status
+2022-09-21 18:13:54,177 INFO    Thread-7  :16674 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/output.log
+2022-09-21 18:13:55,156 WARNING MainThread:16674 [internal.py:wandb_internal():155] Internal process interrupt: 1
+2022-09-21 18:13:55,213 DEBUG   SenderThread:16674 [sender.py:send():235] send: telemetry
+2022-09-21 18:13:55,214 DEBUG   HandlerThread:16674 [handler.py:handle_request():141] handle_request: partial_history
+2022-09-21 18:13:55,360 WARNING MainThread:16674 [internal.py:wandb_internal():155] Internal process interrupt: 2
+2022-09-21 18:13:55,360 ERROR   MainThread:16674 [internal.py:wandb_internal():158] Internal process interrupted.
+2022-09-21 18:13:56,214 INFO    WriterThread:16674 [datastore.py:close():281] close: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/run-22uqtr3w.wandb
+2022-09-21 18:13:56,214 INFO    SenderThread:16674 [sender.py:finish():1078] shutting down sender
+2022-09-21 18:13:56,214 INFO    SenderThread:16674 [dir_watcher.py:finish():283] shutting down directory watcher
+2022-09-21 18:13:57,179 INFO    SenderThread:16674 [dir_watcher.py:finish():313] scan: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files
+2022-09-21 18:13:57,179 INFO    SenderThread:16674 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/config.yaml config.yaml
+2022-09-21 18:13:57,179 INFO    SenderThread:16674 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/output.log output.log
+2022-09-21 18:13:57,180 INFO    SenderThread:16674 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/wandb-summary.json wandb-summary.json
+2022-09-21 18:13:57,185 INFO    SenderThread:16674 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/requirements.txt requirements.txt
+2022-09-21 18:13:57,196 INFO    SenderThread:16674 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/wandb-metadata.json wandb-metadata.json
+2022-09-21 18:13:57,196 INFO    SenderThread:16674 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/conda-environment.yaml conda-environment.yaml
+2022-09-21 18:13:57,197 INFO    SenderThread:16674 [file_pusher.py:finish():145] shutting down file pusher
+2022-09-21 18:13:57,197 INFO    SenderThread:16674 [file_pusher.py:join():150] waiting for file pusher
+2022-09-21 18:13:57,922 INFO    Thread-16 :16674 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/conda-environment.yaml
+2022-09-21 18:13:57,949 INFO    Thread-14 :16674 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/wandb-summary.json
+2022-09-21 18:13:57,952 INFO    Thread-12 :16674 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/config.yaml
+2022-09-21 18:13:57,954 INFO    Thread-15 :16674 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/requirements.txt
+2022-09-21 18:13:57,980 INFO    Thread-13 :16674 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20220921_181335-22uqtr3w/files/output.log
+2022-09-21 18:13:58,352 INFO    MainThread:16674 [internal.py:handle_exit():82] Internal process exited

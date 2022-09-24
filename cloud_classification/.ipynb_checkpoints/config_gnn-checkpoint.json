@@ -1,6 +1,6 @@
 {
     "hardware": {
-        "device": "cuda:3"
+        "device": "cuda:2"
     },
     "data": {
         "path_dataset": "/data/ltorres",
@@ -11,19 +11,19 @@
         "use_augmentation": true
     },
     "hyperparameters": {
-        "epochs": 30,
+        "epochs": 200,
         "batch_size": 32,
         "learning_rate": 0.00005,
-        "early_stopping_tolerance": 8,
-        "criterion": "cross_entropy",
+        "early_stopping_tolerance": 200,
+        "criterion": "loge",
         "optimizer": "sgd",
         "use_scheduler": true,
-        "lr_decay_steps": 15,
+        "lr_decay_steps": 30,
         "lr_decay_gamma": 0.5
     },
     "model": {
-        "hidden_dim": 512,
-        "num_hidden": 2,
+        "hidden_dim": 600,
+        "num_hidden": 3,
         "num_classes": 7,
         "feature_extraction": false,
         "conv_type": "gcn",
@@ -31,7 +31,7 @@
         "gnn_dropout": 0.3,
         "adjacency_builder": "pearson_corr",
         "builder_parameter": 0.7,
-        "use_both_heads": false,
-        "loss_lambda": 1
+        "use_both_heads": true,
+        "loss_lambda": 0.8
     }
 }

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 96, in <module>
+    train(architecture,
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/train.py", line 64, in train
+    trainer = ModelTrainer(architecture, config, use_wandb, data_loaders)
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 45, in __init__
+    self.model = build_model(self.architecture, self.config)
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/model.py", line 32, in build_model
+    model = ResNet50Classifier(config["model"]["num_classes"], feature_extraction=False)
+  File "/home/ltorres/leo/Cloud-Classification/cloud_classification/src/modules/conv_modules.py", line 26, in __init__
+    self.cnn = CNNExtractor(feature_extraction)
+  File "/home/ltorres/miniconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1214, in __setattr__
+    raise AttributeError(
+AttributeError: cannot assign module before Module.__init__() call

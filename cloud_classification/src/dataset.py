@@ -37,27 +37,33 @@ class GCD:
         self.norm_transform = T.Normalize(mean=[self.meanR, self.meanG, self.meanB], std=[self.stdR, self.stdG, self.stdB])
         
         ### Augmentation
+        # self.aug_transform = T.Compose([
+        #                               T.RandomHorizontalFlip(p=0.5),
+        #                               T.RandomVerticalFlip(p=0.5),
+        #                               T.RandomRotation((-12,12)),
+        #                       ])
+        
         self.aug_transform = T.Compose([
-                                      T.RandomHorizontalFlip(p=0.5),
-                                      T.RandomVerticalFlip(p=0.5),
-                                      T.RandomRotation((-12,12)),
-                              ])
+                                T.TrivialAugmentWide(), 
+                                #T.RandomErasing(0.1),
+                            ])
 
     def __len__(self):
         return len(self.image_paths)
 
     def __getitem__(self, item):
-        image = read_image(self.image_paths[item]).float()
+        image = read_image(self.image_paths[item])
         
-        #Normalize by channel
-        image = self.norm_transform(image)      
-        target = torch.tensor(self.targets[item], dtype=torch.long)
-
         if self.resize is not None:
             image = T.Resize(self.resize)(image)
-            
+
         if self.use_augmentation:
             image = self.aug_transform(image)
+        
+        #Normalize by channel
+        image = self.norm_transform(image.float())
+        
+        target = torch.tensor(self.targets[item], dtype=torch.long)
 
         return {
             "images": image,

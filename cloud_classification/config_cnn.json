@@ -1,6 +1,6 @@
 {
     "hardware": {
-        "device": "cuda:3"
+        "device": "cuda:2"
     },
     "data": {
         "path_dataset": "/data/ltorres",
@@ -23,6 +23,7 @@
     },
     "model": {
         "num_classes": 7,
-        "dropout": 0.4
+        "dropout": 0.4,
+        "type":"resnet"
     }
 }

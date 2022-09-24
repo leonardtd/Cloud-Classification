@@ -126,7 +126,7 @@ def build_data_loader(dataset, batch_size, shuffle=False):
 def loge_loss(x , labels):
     
     epsilon = 1 - math.log(2)
-    criterion = nn.CrossEntropyLoss(reduction='none')
+    criterion = nn.CrossEntropyLoss(reduction='none', label_smoothing=0.1)
     loss = criterion(x, labels)
    
     loss = torch.mean(torch.log(epsilon + loss) - math.log(epsilon))
@@ -140,7 +140,7 @@ def build_criterions(architecture, config):
     criterion_name = config["hyperparameters"]["criterion"]
     
     if criterion_name == 'cross_entropy':
-        main_criterion = nn.CrossEntropyLoss()
+        main_criterion = nn.CrossEntropyLoss(label_smoothing=0.1)
     elif criterion_name == 'loge':
         main_criterion = loge_loss
     else:
@@ -161,7 +161,7 @@ def build_optimizer(model, config):
     learning_rate = config["hyperparameters"]["learning_rate"]
     
     if optim_name == "sgd":
-        return torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0.9, weight_decay=0.001)
+        return torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0.9, weight_decay=2e-05)
     elif optim_name == "adam":
         return torch.optim.Adam(model.parameters(), lr=learning_rate)
     elif optim_name == "nadam":
@@ -340,7 +340,7 @@ def test_cnn_model(model, data_loader, criterions, device):
 
 ########### PREDICTION UTILS
 
-def test_gnn_model(model, data_loader, pivot_tensors, device):
+def predict_gnn_model(model, data_loader, pivot_tensors, device):
     model.eval()
     
     fin_loss = 0
