@@ -370,3 +370,31 @@ def predict_gnn_model(model, data_loader, pivot_tensors, device):
     accuracy = accuracy_score(targets, predictions)
 
     return results, accuracy
+
+
+def predict_cnn_model(model, data_loader, device):
+    model.eval()
+    
+    fin_preds = []
+    fin_targs = []
+
+    with torch.no_grad():
+        for data in tqdm(data_loader, total=len(data_loader)):
+            for k, v in data.items():
+                data[k] = v.to(device)
+
+            logits = model(data["images"])
+
+            batch_preds = F.softmax(logits, dim=1)
+            batch_preds = torch.argmax(batch_preds, dim=1)
+
+            fin_preds.append(batch_preds.cpu().numpy())
+            fin_targs.append(data["targets"].cpu().numpy())
+            
+    targets = np.concatenate(fin_targs, axis=0)
+    predictions = np.concatenate(fin_preds, axis=0)
+    
+    results = pd.DataFrame({"targets": targets, "predictions": predictions})
+    accuracy = accuracy_score(targets, predictions)
+
+    return results, accuracy

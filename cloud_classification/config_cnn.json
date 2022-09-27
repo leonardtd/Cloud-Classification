@@ -4,7 +4,7 @@
     },
     "data": {
         "path_dataset": "/data/ltorres",
-        "path_save_weights": "/data/ltorres/CLOUD_CLASSIFICATION_WEIGHTS",
+        "path_save_weights": "/data/ltorres/CLOUD_CLASSIFICATION_WEIGHTS/cnn",
         "path_save_logs": "/data/ltorres/model_logs",
         "class_names": ["1_cumulus", "2_altocumulus", "3_cirrus", "4_clearsky", "5_stratocumulus", "6_cumulonimbus", "7_mixed"],
         "resize": 256,
@@ -24,6 +24,6 @@
     "model": {
         "num_classes": 7,
         "dropout": 0.4,
-        "type":"resnet"
+        "type":"cloudnet"
     }
 }
