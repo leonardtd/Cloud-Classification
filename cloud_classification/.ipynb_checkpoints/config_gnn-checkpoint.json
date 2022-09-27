@@ -22,8 +22,8 @@
         "lr_decay_gamma": 0.5
     },
     "model": {
-        "hidden_dim": 600,
-        "num_hidden": 3,
+        "hidden_dim": 512,
+        "num_hidden": 2,
         "num_classes": 7,
         "feature_extraction": false,
         "conv_type": "gcn",
@@ -31,7 +31,7 @@
         "gnn_dropout": 0.3,
         "adjacency_builder": "pearson_corr",
         "builder_parameter": 0.7,
-        "use_both_heads": true,
-        "loss_lambda": 0.8
+        "use_both_heads": false,
+        "loss_lambda": 1
     }
 }

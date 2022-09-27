@@ -12,7 +12,7 @@ from src import dataset
 from src.modules.graph_modules import GraphClassifier
 
 ###TEST_DIFFERENT MODELS
-MODEL_NAME = "wandb_tact4jdo_model.pt"
+MODEL_NAME = "wandb_1353k0xc_model.pt"
 
 CONFIG_FILENAME = "config_gnn.json"
 PIVOT_TENSORS_PATH = "pivot_nodes"
@@ -32,7 +32,7 @@ def load_model(config):
                      use_both_heads = config["model"]["use_both_heads"],
                 )
     
-    model.load_state_dict(torch.load(os.path.join(MODEL_PATH, MODEL_NAME)))
+    model.load_state_dict(torch.load(os.path.join(config['data']['path_save_weights'], MODEL_NAME)))
     
     return model.to(config["hardware"]["device"])
 
