@@ -6,6 +6,7 @@ import glob
 import math
 
 import numpy as np
+import pandas as pd
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -365,7 +366,7 @@ def predict_gnn_model(model, data_loader, pivot_tensors, device):
     targets = np.concatenate(fin_targs, axis=0)
     predictions = np.concatenate(fin_preds, axis=0)
     
+    results = pd.DataFrame({"targets": targets, "predictions": predictions})
     accuracy = accuracy_score(targets, predictions)
 
-    
-    return accuracy
+    return results, accuracy

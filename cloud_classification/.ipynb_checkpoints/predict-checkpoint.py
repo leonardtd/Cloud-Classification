@@ -13,11 +13,10 @@ from src.modules.graph_modules import GraphClassifier
 
 ###TEST_DIFFERENT MODELS
 MODEL_NAME = "wandb_tact4jdo_model.pt"
+
 CONFIG_FILENAME = "config_gnn.json"
-
-MODEL_PATH = "/data/ltorres/CLOUD_CLASSIFICATION_WEIGHTS"
 PIVOT_TENSORS_PATH = "pivot_nodes"
-
+SAVE_PATH = "/data/ltorres/predictions"
 
 def load_model(config):
     model = GraphClassifier(
@@ -72,14 +71,12 @@ def predict(args):
     loader = utils.build_data_loader(test_dataset, batch_size=1, shuffle=True)
     
     ### Prediction
-    accuracy = utils.predict_gnn_model(model, loader, pivot_tensors=samples, device=config["hardware"]["device"])
-    
+    results, accuracy = utils.predict_gnn_model(model, loader, pivot_tensors=samples, device=config["hardware"]["device"])
+
     print("Test accuracy: {:.2%}".format(accuracy))
+    print("SAVING RESULTS")
+    results.to_csv(os.path.join(SAVE_PATH, f"predictions_{args.sampling_method}.csv"), index=False)
     
-    
-
-
-
 
 
 if __name__ == '__main__':
