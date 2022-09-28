@@ -12,7 +12,7 @@ from src import dataset
 from src.modules.conv_modules import CloudNet, ResNet50Classifier
 
 ###TEST_DIFFERENT MODELS
-MODEL_NAME = "wandb_1bchftg5_model.pt"
+MODEL_NAME = "wandb_2iryxig7_model.pt"
 
 CONFIG_FILENAME = "config_cnn.json"
 SAVE_PATH = "/data/ltorres/predictions"

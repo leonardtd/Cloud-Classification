@@ -12,7 +12,7 @@ from src import dataset
 from src.modules.graph_modules import GraphClassifier
 
 ###TEST_DIFFERENT MODELS
-MODEL_NAME = "wandb_1353k0xc_model.pt"
+MODEL_NAME = "wandb_tact4jdo_model.pt"
 
 CONFIG_FILENAME = "config_gnn.json"
 PIVOT_TENSORS_PATH = "pivot_nodes"

@@ -83,7 +83,3 @@ class CloudNet(nn.Module):
         x = self.fc3(x)
         return x
     
-model = CloudNet(7)
-input = torch.randn(1,3,256,256)
-
-print(model(input).shape)
