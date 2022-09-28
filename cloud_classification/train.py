@@ -14,7 +14,7 @@ from src import utils
 from src import dataset
 
 CONFIG_FILENAME = "config_gnn.json"
-PROJECT_WANDB = "Tesis-tuning"
+PROJECT_WANDB = "re4.1"
 ENTITY = "leonardtd"
 
 def is_there_arg(args, master_arg):
