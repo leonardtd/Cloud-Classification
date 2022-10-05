@@ -159,8 +159,8 @@ class GraphClassifier(nn.Module):
 
         self.head = nn.Sequential(
                     nn.Linear(2048 + hidden_dim, 1024),
-                    nn.GELU(),
-                    nn.LayerNorm(1024),
+                    nn.ReLU(), #GELU
+                    nn.BatchNorm1d(1024), #LayerNorm
                     nn.Dropout(0.4),
                     nn.Linear(1024, num_classes),
                 )
@@ -185,7 +185,7 @@ class GraphClassifier(nn.Module):
         
         for i in range(num_hidden-1):
             graph_modules.append(conv)
-            bn_modules.append(nn.LayerNorm(hidden_dim))
+            bn_modules.append(nn.BatchNorm1d(hidden_dim)) #LayerNorm
             
         return graph_modules, bn_modules
         
@@ -223,7 +223,7 @@ class GraphClassifier(nn.Module):
             x = gnn_layer(g, x)
             if i != len(self.graph_layers)-1:
                 x = self.bn_layers[i](x)
-                x = nn.GELU()(x)
+                x = nn.ReLU()(x) #GELU
                 x = F.dropout(x, p=self.gnn_dropout, training=self.training)
         
         ### CONCATENACION DE FEATURES CNN, GNN
@@ -261,7 +261,7 @@ class GraphClassifier(nn.Module):
             x = gnn_layer(g, x)
             if i != len(self.graph_layers)-1:
                 x = self.bn_layers[i](x)
-                x = nn.GELU()(x)
+                x = nn.ReLU()(x)
                 x = F.dropout(x, p=self.gnn_dropout, training=self.training)
         
         ### CONCATENACION DE FEATURES CNN, GNN
