@@ -175,10 +175,10 @@ class GraphClassifier(nn.Module):
         bn_modules = nn.ModuleList()
         
         if conv_type == 'gcn':
-            graph_modules.append(GraphConvLayer(2048, hidden_dim))
+            graph_modules.append(GraphConvLayer(2048+7, hidden_dim))
             conv = GraphConvLayer(hidden_dim, hidden_dim)
         elif conv_type == 'gat':
-            graph_modules.append(GraphAttentionLayer(2048, hidden_dim, conv_parameters["num_heads"], conv_parameters['agg']))
+            graph_modules.append(GraphAttentionLayer(2048+7, hidden_dim, conv_parameters["num_heads"], conv_parameters['agg']))
             conv = GraphAttentionLayer(hidden_dim, hidden_dim, conv_parameters["num_heads"], conv_parameters['agg'])
         else:
             raise NotImplementedError("Invalid layer")
@@ -201,7 +201,7 @@ class GraphClassifier(nn.Module):
                     nn.init.zeros_(m.bias)
                 
 
-    def forward(self, x):
+    def forward(self, x, one_hot_labels):
         
         ### 1. VECTORIZACION DE LAS IMAGENES
         deep_features = self.cnn(x)
@@ -218,6 +218,8 @@ class GraphClassifier(nn.Module):
     
         ### 3. MODULOS GNN
         x = deep_features
+        x = torch.cat([x, one_hot_labels], dim=1) ### LABEL PROPAGATION
+       
         
         for i, gnn_layer in enumerate(self.graph_layers):
             x = gnn_layer(g, x)
@@ -243,7 +245,7 @@ class GraphClassifier(nn.Module):
             
         return features
     
-    def predict(self, deep_features):
+    def predict(self, deep_features, one_hot_labels):
         ### 2. CONSTRUCCION DE LA MATRIZ DE ADYACENCIA
         if self.adjacency_builder == 'cos_sim':
             g, adj_matrix = build_graph_cosine_similarity(deep_features.detach(), self.builder_parameter)
@@ -256,6 +258,7 @@ class GraphClassifier(nn.Module):
     
         ### 3. MODULOS GNN
         x = deep_features
+        x = torch.cat([x, one_hot_labels], dim=1) ### LABEL PROPAGATION
         
         for i, gnn_layer in enumerate(self.graph_layers):
             x = gnn_layer(g, x)

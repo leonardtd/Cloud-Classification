@@ -183,11 +183,17 @@ def get_matrix_density(tensor):
     return density
 
 
+def one_hot_encoding(num_samples, num_classes, index, labels):
+    onehot = torch.zeros((num_samples, num_classes))
+    onehot[index,labels[index]] = 1
+    
+    return onehot
+
 ####################################
 # 2. TRAINING
 ####################################
 
-def train_gnn_model(model, data_loader, criterions, optimizer, device, use_both_heads, loss_lambda):
+def train_gnn_model(model, data_loader, criterions, optimizer, device, use_both_heads, loss_lambda, num_classes=7):
     model.train()
     
     fin_loss = 0
@@ -196,16 +202,27 @@ def train_gnn_model(model, data_loader, criterions, optimizer, device, use_both_
     fin_targs = []
 
     for data in tqdm(data_loader, total=len(data_loader)):
+        
+        ### Label prop
+        num_nodes = data["targets"].shape[0]
+        
+        random_permutation = torch.randperm(num_nodes)
+        
+        Dl_train_idx = random_permutation[:num_nodes//2] # use these nodes to label propagate
+        Du_train_idx = random_permutation[num_nodes//2:] # use these to train (backpropagation)
+
+        one_hot_labels = one_hot_encoding(num_nodes, num_classes, Dl_train_idx, data["targets"]).to(device)
+        
         for k, v in data.items():
             data[k] = v.to(device)
                 
 
         optimizer.zero_grad()
         
-        logits_main_head, logits_second_head, density = model(data["images"])
+        logits_main_head, logits_second_head, density = model(data["images"], one_hot_labels)
         fin_density += density
         
-        loss = criterions["main_head"](logits_main_head, data["targets"])
+        loss = criterions["main_head"](logits_main_head[Du_train_idx], data["targets"][Du_train_idx])
         
         fin_loss += loss.item() ### ONLY LOG MAIN HEAD LOSS
         
@@ -232,7 +249,7 @@ def train_gnn_model(model, data_loader, criterions, optimizer, device, use_both_
     return loss, accuracy, targets, predictions, density
 
 
-def test_gnn_model(model, data_loader, criterions, device, use_both_heads, loss_lambda):
+def test_gnn_model(model, data_loader, criterions, device, use_both_heads, loss_lambda, num_classes):
     model.eval()
     
     fin_loss = 0
@@ -242,13 +259,24 @@ def test_gnn_model(model, data_loader, criterions, device, use_both_heads, loss_
 
     with torch.no_grad():
         for data in tqdm(data_loader, total=len(data_loader)):
+            
+            ### Label prop
+            num_nodes = data["targets"].shape[0]
+
+            random_permutation = torch.randperm(num_nodes)
+
+            Dl_train_idx = random_permutation[:num_nodes//2] # use these nodes to label propagate
+            Du_train_idx = random_permutation[num_nodes//2:] # use these to train (backpropagation)
+
+            one_hot_labels = one_hot_encoding(num_nodes, num_classes, Dl_train_idx, data["targets"]).to(device)
+            
             for k, v in data.items():
                 data[k] = v.to(device)
 
-            logits_main_head, logits_second_head, density = model(data["images"])
+            logits_main_head, logits_second_head, density = model(data["images"], one_hot_labels)
             fin_density += density
             
-            loss = criterions["main_head"](logits_main_head, data["targets"])
+            loss = criterions["main_head"](logits_main_head[Du_train_idx], data["targets"][Du_train_idx])
             fin_loss += loss.item()
             
             if use_both_heads:
@@ -341,7 +369,7 @@ def test_cnn_model(model, data_loader, criterions, device):
 
 ########### PREDICTION UTILS
 
-def predict_gnn_model(model, data_loader, pivot_tensors, device):
+def predict_gnn_model(model, encoded_sample_labels, data_loader, pivot_tensors, device):
     model.eval()
     
     fin_loss = 0
@@ -355,7 +383,9 @@ def predict_gnn_model(model, data_loader, pivot_tensors, device):
             single_logits = model.get_deep_features(image)
             
             input = torch.cat((single_logits, pivot_tensors.to(device)), dim=0)
-            logits = model.predict(input)[0].unsqueeze(0) ### ONLY INTERESTED IN THE TEST SAMPLE PREDICTION
+            encoded_labels = torch.cat([torch.zeros(1,7), encoded_sample_labels],dim=0).to(device)
+            
+            logits = model.predict(input, encoded_labels)[0].unsqueeze(0) ### ONLY INTERESTED IN THE TEST SAMPLE PREDICTION
             
             batch_preds = F.softmax(logits, dim=1)
             batch_preds = torch.argmax(batch_preds, dim=1)

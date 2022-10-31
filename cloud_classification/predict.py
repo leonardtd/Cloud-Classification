@@ -12,7 +12,7 @@ from src import dataset
 from src.modules.graph_modules import GraphClassifier
 
 ###TEST_DIFFERENT MODELS
-MODEL_NAME = "wandb_tact4jdo_model.pt"
+MODEL_NAME = "wandb_168m8i1x_model.pt"
 
 CONFIG_FILENAME = "config_gnn.json"
 PIVOT_TENSORS_PATH = "pivot_nodes"
@@ -32,9 +32,9 @@ def load_model(config):
                      use_both_heads = config["model"]["use_both_heads"],
                 )
     
-    model.load_state_dict(torch.load(os.path.join(config['data']['path_save_weights'], MODEL_NAME)))
+    model.load_state_dict(torch.load(os.path.join(config['data']['path_save_weights'], MODEL_NAME), map_location=config["hardware"]["device"]))
     
-    return model.to(config["hardware"]["device"])
+    return model
 
 def predict(args):
     config = utils.parse_configuration(CONFIG_FILENAME)
@@ -45,11 +45,15 @@ def predict(args):
     samples_path = os.path.join(PIVOT_TENSORS_PATH, f"{args.sampling_method}_sample.pt")
     samples = torch.load(samples_path)
     
-    if args.use_centroids:
-        centroids = torch.load(os.path.join(PIVOT_TENSORS_PATH, "centroids.pt"))
-        centroids = torch.cat([t.clone().detach().view(1,-1).float() for t in list(centroids.values())], dim=0)
+    encoded_labels = samples['encoded_labels']
+    samples = samples['features']
+    
+    
+#     if args.use_centroids:
+#         centroids = torch.load(os.path.join(PIVOT_TENSORS_PATH, "centroids.pt"))
+#         centroids = torch.cat([t.clone().detach().view(1,-1).float() for t in list(centroids.values())], dim=0)
         
-        samples = torch.cat((samples,centroids), dim=0)
+#         samples = torch.cat((samples,centroids), dim=0)
         
     print("Number of pivot samples: {}".format(samples.shape[0]))
     print(50*"-")
@@ -71,7 +75,7 @@ def predict(args):
     loader = utils.build_data_loader(test_dataset, batch_size=1, shuffle=True)
     
     ### Prediction
-    results, accuracy = utils.predict_gnn_model(model, loader, pivot_tensors=samples, device=config["hardware"]["device"])
+    results, accuracy = utils.predict_gnn_model(model, encoded_labels, loader, pivot_tensors=samples, device=config["hardware"]["device"])
 
     print("Test accuracy: {:.2%}".format(accuracy))
     print("SAVING RESULTS")

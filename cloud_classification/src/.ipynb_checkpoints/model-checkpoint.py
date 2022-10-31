@@ -82,6 +82,7 @@ class ModelTrainer:
                                                                                                         device, 
                                                                                                         use_both_heads,
                                                                                                         loss_lambda,
+                                                                                                        self.config["model"]["num_classes"],
                                                                                          )
 
 
@@ -92,6 +93,7 @@ class ModelTrainer:
                                                                                                 device, 
                                                                                                 use_both_heads,
                                                                                                 loss_lambda,
+                                                                                                self.config["model"]["num_classes"],
                                                                                    )
                 
                 ### wandb logger

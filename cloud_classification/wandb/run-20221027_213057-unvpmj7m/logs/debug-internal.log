@@ -1,0 +1,156 @@
+2022-10-27 21:30:57,752 INFO    MainThread:36579 [internal.py:wandb_internal():92] W&B internal server running at pid: 36579, started at: 2022-10-27 21:30:57.751947
+2022-10-27 21:30:57,754 INFO    WriterThread:36579 [datastore.py:open_for_write():77] open: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/run-unvpmj7m.wandb
+2022-10-27 21:30:57,757 DEBUG   SenderThread:36579 [sender.py:send():235] send: header
+2022-10-27 21:30:57,757 DEBUG   SenderThread:36579 [sender.py:send():235] send: run
+2022-10-27 21:30:58,147 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: check_version
+2022-10-27 21:30:58,149 INFO    SenderThread:36579 [dir_watcher.py:__init__():169] watching files in: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files
+2022-10-27 21:30:58,149 INFO    SenderThread:36579 [sender.py:_start_run_threads():812] run started: unvpmj7m with start time 1666924257
+2022-10-27 21:30:58,149 DEBUG   SenderThread:36579 [sender.py:send():235] send: summary
+2022-10-27 21:30:58,149 INFO    SenderThread:36579 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-10-27 21:30:58,149 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: check_version
+2022-10-27 21:30:58,215 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: run_start
+2022-10-27 21:30:58,231 DEBUG   HandlerThread:36579 [meta.py:__init__():37] meta init
+2022-10-27 21:30:58,231 DEBUG   HandlerThread:36579 [meta.py:__init__():51] meta init done
+2022-10-27 21:30:58,231 DEBUG   HandlerThread:36579 [meta.py:probe():211] probe
+2022-10-27 21:30:58,238 DEBUG   HandlerThread:36579 [meta.py:_setup_git():201] setup git
+2022-10-27 21:30:58,263 DEBUG   HandlerThread:36579 [meta.py:_setup_git():208] setup git done
+2022-10-27 21:30:58,263 DEBUG   HandlerThread:36579 [meta.py:_save_pip():55] save pip
+2022-10-27 21:30:58,264 DEBUG   HandlerThread:36579 [meta.py:_save_pip():69] save pip done
+2022-10-27 21:30:58,264 DEBUG   HandlerThread:36579 [meta.py:_save_conda():76] save conda
+2022-10-27 21:30:59,153 INFO    Thread-7  :36579 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/conda-environment.yaml
+2022-10-27 21:30:59,154 INFO    Thread-7  :36579 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/wandb-summary.json
+2022-10-27 21:30:59,154 INFO    Thread-7  :36579 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/requirements.txt
+2022-10-27 21:30:59,945 DEBUG   HandlerThread:36579 [meta.py:_save_conda():86] save conda done
+2022-10-27 21:30:59,945 DEBUG   HandlerThread:36579 [meta.py:probe():249] probe done
+2022-10-27 21:30:59,951 DEBUG   SenderThread:36579 [sender.py:send():235] send: files
+2022-10-27 21:30:59,952 INFO    SenderThread:36579 [sender.py:_save_file():947] saving file wandb-metadata.json with policy now
+2022-10-27 21:30:59,960 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: stop_status
+2022-10-27 21:30:59,961 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: stop_status
+2022-10-27 21:31:00,152 INFO    Thread-7  :36579 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/conda-environment.yaml
+2022-10-27 21:31:00,153 INFO    Thread-7  :36579 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/output.log
+2022-10-27 21:31:00,153 INFO    Thread-7  :36579 [dir_watcher.py:_on_file_created():217] file/dir created: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/wandb-metadata.json
+2022-10-27 21:31:00,225 DEBUG   SenderThread:36579 [sender.py:send():235] send: telemetry
+2022-10-27 21:31:00,718 INFO    Thread-11 :36579 [upload_job.py:push():137] Uploaded file /tmp/tmpaczc3vqewandb/2je7g5ns-wandb-metadata.json
+2022-10-27 21:31:02,893 DEBUG   SenderThread:36579 [sender.py:send():235] send: telemetry
+2022-10-27 21:31:03,466 DEBUG   SenderThread:36579 [sender.py:send():235] send: telemetry
+2022-10-27 21:31:03,467 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: partial_history
+2022-10-27 21:31:04,154 INFO    Thread-7  :36579 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/output.log
+2022-10-27 21:31:06,002 DEBUG   SenderThread:36579 [sender.py:send():235] send: exit
+2022-10-27 21:31:06,003 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:06,003 INFO    SenderThread:36579 [sender.py:send_exit():371] handling exit code: 1
+2022-10-27 21:31:06,003 INFO    SenderThread:36579 [sender.py:send_exit():373] handling runtime: 7
+2022-10-27 21:31:06,006 INFO    SenderThread:36579 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-10-27 21:31:06,007 INFO    SenderThread:36579 [sender.py:send_exit():379] send defer
+2022-10-27 21:31:06,007 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:06,008 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: defer
+2022-10-27 21:31:06,008 INFO    HandlerThread:36579 [handler.py:handle_request_defer():164] handle defer: 0
+2022-10-27 21:31:06,008 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: defer
+2022-10-27 21:31:06,008 INFO    SenderThread:36579 [sender.py:send_request_defer():388] handle sender defer: 0
+2022-10-27 21:31:06,009 INFO    SenderThread:36579 [sender.py:transition_state():392] send defer: 1
+2022-10-27 21:31:06,009 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: defer
+2022-10-27 21:31:06,009 INFO    HandlerThread:36579 [handler.py:handle_request_defer():164] handle defer: 1
+2022-10-27 21:31:06,065 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: defer
+2022-10-27 21:31:06,065 INFO    SenderThread:36579 [sender.py:send_request_defer():388] handle sender defer: 1
+2022-10-27 21:31:06,065 INFO    SenderThread:36579 [sender.py:transition_state():392] send defer: 2
+2022-10-27 21:31:06,066 DEBUG   SenderThread:36579 [sender.py:send():235] send: stats
+2022-10-27 21:31:06,067 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: defer
+2022-10-27 21:31:06,067 INFO    HandlerThread:36579 [handler.py:handle_request_defer():164] handle defer: 2
+2022-10-27 21:31:06,067 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: defer
+2022-10-27 21:31:06,067 INFO    SenderThread:36579 [sender.py:send_request_defer():388] handle sender defer: 2
+2022-10-27 21:31:06,067 INFO    SenderThread:36579 [sender.py:transition_state():392] send defer: 3
+2022-10-27 21:31:06,068 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: defer
+2022-10-27 21:31:06,068 INFO    HandlerThread:36579 [handler.py:handle_request_defer():164] handle defer: 3
+2022-10-27 21:31:06,068 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: defer
+2022-10-27 21:31:06,069 INFO    SenderThread:36579 [sender.py:send_request_defer():388] handle sender defer: 3
+2022-10-27 21:31:06,069 INFO    SenderThread:36579 [sender.py:transition_state():392] send defer: 4
+2022-10-27 21:31:06,069 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: defer
+2022-10-27 21:31:06,069 INFO    HandlerThread:36579 [handler.py:handle_request_defer():164] handle defer: 4
+2022-10-27 21:31:06,070 DEBUG   SenderThread:36579 [sender.py:send():235] send: summary
+2022-10-27 21:31:06,070 INFO    SenderThread:36579 [sender.py:_save_file():947] saving file wandb-summary.json with policy end
+2022-10-27 21:31:06,070 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: defer
+2022-10-27 21:31:06,070 INFO    SenderThread:36579 [sender.py:send_request_defer():388] handle sender defer: 4
+2022-10-27 21:31:06,070 INFO    SenderThread:36579 [sender.py:transition_state():392] send defer: 5
+2022-10-27 21:31:06,071 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: defer
+2022-10-27 21:31:06,071 INFO    HandlerThread:36579 [handler.py:handle_request_defer():164] handle defer: 5
+2022-10-27 21:31:06,071 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: defer
+2022-10-27 21:31:06,072 INFO    SenderThread:36579 [sender.py:send_request_defer():388] handle sender defer: 5
+2022-10-27 21:31:06,109 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:06,155 INFO    Thread-7  :36579 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/wandb-summary.json
+2022-10-27 21:31:06,156 INFO    Thread-7  :36579 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/output.log
+2022-10-27 21:31:06,421 INFO    SenderThread:36579 [sender.py:transition_state():392] send defer: 6
+2022-10-27 21:31:06,421 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:06,422 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: defer
+2022-10-27 21:31:06,422 INFO    HandlerThread:36579 [handler.py:handle_request_defer():164] handle defer: 6
+2022-10-27 21:31:06,423 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: defer
+2022-10-27 21:31:06,423 INFO    SenderThread:36579 [sender.py:send_request_defer():388] handle sender defer: 6
+2022-10-27 21:31:06,423 INFO    SenderThread:36579 [dir_watcher.py:finish():283] shutting down directory watcher
+2022-10-27 21:31:06,524 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:07,156 INFO    Thread-7  :36579 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/config.yaml
+2022-10-27 21:31:07,157 INFO    SenderThread:36579 [dir_watcher.py:finish():313] scan: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files
+2022-10-27 21:31:07,157 INFO    SenderThread:36579 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/config.yaml config.yaml
+2022-10-27 21:31:07,158 INFO    SenderThread:36579 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/output.log output.log
+2022-10-27 21:31:07,158 INFO    SenderThread:36579 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/wandb-summary.json wandb-summary.json
+2022-10-27 21:31:07,159 INFO    SenderThread:36579 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/requirements.txt requirements.txt
+2022-10-27 21:31:07,175 INFO    SenderThread:36579 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/wandb-metadata.json wandb-metadata.json
+2022-10-27 21:31:07,176 INFO    SenderThread:36579 [dir_watcher.py:finish():327] scan save: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/conda-environment.yaml conda-environment.yaml
+2022-10-27 21:31:07,176 INFO    SenderThread:36579 [sender.py:transition_state():392] send defer: 7
+2022-10-27 21:31:07,181 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:07,183 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: defer
+2022-10-27 21:31:07,183 INFO    HandlerThread:36579 [handler.py:handle_request_defer():164] handle defer: 7
+2022-10-27 21:31:07,189 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: defer
+2022-10-27 21:31:07,189 INFO    SenderThread:36579 [sender.py:send_request_defer():388] handle sender defer: 7
+2022-10-27 21:31:07,189 INFO    SenderThread:36579 [file_pusher.py:finish():145] shutting down file pusher
+2022-10-27 21:31:07,284 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:07,284 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:07,387 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:07,387 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:07,489 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:07,490 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:07,592 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:07,592 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:07,695 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:07,695 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:07,797 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:07,797 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:07,901 INFO    Thread-15 :36579 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/requirements.txt
+2022-10-27 21:31:07,902 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:07,902 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:07,926 INFO    Thread-14 :36579 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/wandb-summary.json
+2022-10-27 21:31:07,929 INFO    Thread-13 :36579 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/output.log
+2022-10-27 21:31:07,939 INFO    Thread-12 :36579 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/config.yaml
+2022-10-27 21:31:07,965 INFO    Thread-16 :36579 [upload_job.py:push():137] Uploaded file /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/files/conda-environment.yaml
+2022-10-27 21:31:08,004 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:08,005 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:08,107 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:08,107 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:08,166 INFO    Thread-6  :36579 [sender.py:transition_state():392] send defer: 8
+2022-10-27 21:31:08,167 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: defer
+2022-10-27 21:31:08,167 INFO    HandlerThread:36579 [handler.py:handle_request_defer():164] handle defer: 8
+2022-10-27 21:31:08,167 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: defer
+2022-10-27 21:31:08,167 INFO    SenderThread:36579 [sender.py:send_request_defer():388] handle sender defer: 8
+2022-10-27 21:31:08,209 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:08,580 INFO    SenderThread:36579 [sender.py:transition_state():392] send defer: 9
+2022-10-27 21:31:08,581 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:08,582 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: defer
+2022-10-27 21:31:08,582 INFO    HandlerThread:36579 [handler.py:handle_request_defer():164] handle defer: 9
+2022-10-27 21:31:08,582 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: defer
+2022-10-27 21:31:08,582 INFO    SenderThread:36579 [sender.py:send_request_defer():388] handle sender defer: 9
+2022-10-27 21:31:08,583 INFO    SenderThread:36579 [sender.py:transition_state():392] send defer: 10
+2022-10-27 21:31:08,583 DEBUG   SenderThread:36579 [sender.py:send():235] send: final
+2022-10-27 21:31:08,584 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: defer
+2022-10-27 21:31:08,584 DEBUG   SenderThread:36579 [sender.py:send():235] send: footer
+2022-10-27 21:31:08,584 INFO    HandlerThread:36579 [handler.py:handle_request_defer():164] handle defer: 10
+2022-10-27 21:31:08,585 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: defer
+2022-10-27 21:31:08,585 INFO    SenderThread:36579 [sender.py:send_request_defer():388] handle sender defer: 10
+2022-10-27 21:31:08,683 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: poll_exit
+2022-10-27 21:31:08,683 DEBUG   SenderThread:36579 [sender.py:send_request():249] send_request: poll_exit
+2022-10-27 21:31:08,684 INFO    SenderThread:36579 [file_pusher.py:join():150] waiting for file pusher
+2022-10-27 21:31:09,341 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: sampled_history
+2022-10-27 21:31:09,343 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: get_summary
+2022-10-27 21:31:09,344 DEBUG   HandlerThread:36579 [handler.py:handle_request():141] handle_request: shutdown
+2022-10-27 21:31:09,344 INFO    HandlerThread:36579 [handler.py:finish():778] shutting down handler
+2022-10-27 21:31:09,584 INFO    WriterThread:36579 [datastore.py:close():281] close: /home/ltorres/leo/Cloud-Classification/cloud_classification/wandb/run-20221027_213057-unvpmj7m/run-unvpmj7m.wandb
+2022-10-27 21:31:10,240 INFO    SenderThread:36579 [sender.py:finish():1078] shutting down sender
+2022-10-27 21:31:10,240 INFO    SenderThread:36579 [file_pusher.py:finish():145] shutting down file pusher
+2022-10-27 21:31:10,240 INFO    SenderThread:36579 [file_pusher.py:join():150] waiting for file pusher
+2022-10-27 21:31:10,243 INFO    MainThread:36579 [internal.py:handle_exit():82] Internal process exited

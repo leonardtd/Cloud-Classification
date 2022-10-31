@@ -1,6 +1,6 @@
 {
     "hardware": {
-        "device": "cuda:1"
+        "device": "cpu"
     },
     "data": {
         "path_dataset": "/data/ltorres",
@@ -11,10 +11,10 @@
         "use_augmentation": true
     },
     "hyperparameters": {
-        "epochs": 200,
+        "epochs": 120,
         "batch_size": 32,
         "learning_rate": 0.00005,
-        "early_stopping_tolerance": 200,
+        "early_stopping_tolerance": 120,
         "criterion": "loge",
         "optimizer": "sgd",
         "use_scheduler": true,
